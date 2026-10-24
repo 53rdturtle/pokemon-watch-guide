@@ -1,5 +1,5 @@
 window.GUIDE = {
- "generated": "2026-10-24T07:12:44.825Z",
+ "generated": "2026-10-24T07:15:25.446Z",
  "series": [
   {
    "id": "indigo-league",
