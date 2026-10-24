@@ -179,7 +179,7 @@
   <h1>宝可梦观看指南 <small id="seriesTitle"></small></h1>
   <div class="controls">
     <div class="seg" id="minRating">
-      <button data-v="0" class="on">全部</button><button data-v="3">3分以上</button><button data-v="4">4分以上 推荐</button><button data-v="5">5分 必看</button>
+      <button data-v="0" class="on">全部</button><button data-v="3">3分以上 看一半</button><button data-v="4">4分以上 推荐</button><button data-v="5">5分 必看</button>
     </div>
     <div class="seg" id="mood" title="可爱/搞笑的集">
       <button data-v="" class="on">照常</button><button data-v="add">＋可爱搞笑</button><button data-v="only">只看可爱搞笑</button>
@@ -196,7 +196,7 @@
   <details class="note">
     <summary>使用说明 · 备份进度</summary>
     <p>
-      <b>评分：</b>5 必看 · 4 推荐 · 3 可看可不看 · 2 可跳过 · 1 跳过。4分以上的集数简介不含剧透。
+      <b>评分：</b>5 必看 · 4 推荐 · 3 可看（有点特别、可爱或搞笑的集）· 2 可跳过 · 1 跳过。4分以上约占三分之一，3分以上约占一半。4分以上的集数简介不含剧透。
       <span class="mood cute">可爱</span><span class="mood comedy">搞笑</span>标出以可爱宝可梦或搞笑为主的集，不论评分；选“＋可爱搞笑”可在评分筛选之外加上这些集（例如“4分以上”再加上3分以下的可爱/搞笑集），“只看可爱搞笑”则只显示它们。
       <b>#</b> 为腾讯视频集数（无印和超世代各是一个专辑，各自从1数起），下方是日本原版集数（无印为EP，超世代为AG）。
       点击 ♡ 收藏喜欢的集，勾选“只看收藏”即可只显示它们。
@@ -212,7 +212,7 @@
   </details>
   <div id="list"></div>
 </main>
-<script src="data/guide.js?v=9724ea2711"></script>
+<script src="data/guide.js?v=56d13ebe0b"></script>
 <script>
   const G = window.GUIDE;
   const PROGRESS_KEY = "pokemon-guide-progress";
@@ -221,7 +221,7 @@
   const state = { min: 0, mood: "", extras: true, hideWatched: false, onlyFav: false, q: "" };
   const LABEL = { game: "游戏", movie: "电影", special: "特别篇", event: "事件" };
   const MOOD = { cute: "可爱", comedy: "搞笑" };
-  const RLABEL = { 5: "必看", 4: "推荐", 3: "可看可不看", 2: "可跳过", 1: "跳过" };
+  const RLABEL = { 5: "必看", 4: "推荐", 3: "可看", 2: "可跳过", 1: "跳过" };
 
   // Header: one "<series> <first>–<last>" span per anime series, e.g. "无印 EP001–276 · 超世代 AG001–192".
   const GROUPS = [...new Set(G.series.map(s => s.group))].map(name => G.series.filter(s => s.group === name));
@@ -348,15 +348,16 @@
     }
     const eps = G.rows.filter(r => r.type === "episode");
     const ahead = G.rows.filter((r, i) => !isWatched(i) && r.type === "episode");
-    const top = eps.filter(r => r.rating >= 4), topAhead = ahead.filter(r => r.rating >= 4);
+    const bar = state.min >= 3 ? state.min : 4; // follow the 3分以上 / 5分 filter; otherwise count 4+
+    const top = eps.filter(r => r.rating >= bar), topAhead = ahead.filter(r => r.rating >= bar);
     const moodEps = eps.filter(r => r.tags.length), moodAhead = ahead.filter(r => r.tags.length);
     const lastEp = G.rows.slice(0, progress + 1).reverse().find(r => r.type === "episode");
     const parts = [
       lastEp ? `已看到 ${epLabel(lastEp)}` : "尚未开始",
       ahead[0] ? `下一集：${epLabel(ahead[0])}` : "已全部看完",
-      topAhead[0] && topAhead[0] !== ahead[0] ? `下一集4分以上：${epLabel(topAhead[0])}` : "",
+      topAhead[0] && topAhead[0] !== ahead[0] ? `下一集${bar}分${bar < 5 ? "以上" : ""}：${epLabel(topAhead[0])}` : "",
       `剩余 ${ahead.length}/${eps.length} 集`,
-      `4分以上剩余 ${topAhead.length}/${top.length}`,
+      `${bar}分${bar < 5 ? "以上" : ""}剩余 ${topAhead.length}/${top.length}`,
       state.mood ? `可爱/搞笑剩余 ${moodAhead.length}/${moodEps.length}` : "",
       favs.size ? `收藏 ${favs.size}` : "",
       `显示 ${rows.length} 条`,

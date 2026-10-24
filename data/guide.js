@@ -1,5 +1,5 @@
 window.GUIDE = {
- "generated": "2026-10-24T22:29:59.793Z",
+ "generated": "2026-10-24T23:37:57.780Z",
  "series": [
   {
    "id": "indigo-league",
@@ -213,7 +213,7 @@ window.GUIDE = {
    "title": "Challenge of the Samurai",
    "titleZh": "武士少年的挑战！",
    "japanese": "サムライしょうねんのちょうせん!",
-   "rating": 3,
+   "rating": 2,
    "summary": "年轻训练家武士少年在常磐森林向小智挑战。大针蜂群掳走了铁甲蛹，救援途中它进化成了巴大蝴。",
    "star": {
     "dex": 11,
@@ -865,7 +865,7 @@ window.GUIDE = {
    "title": "The Flame Pokémon-athon!",
    "titleZh": "火焰神奇宝贝大赛跑！",
    "japanese": "ほのおのポケモンだいレース!",
-   "rating": 3,
+   "rating": 2,
    "summary": "小智替受伤的少女骑着小火马参加牧场赛跑，而比赛被火箭队动了手脚；小火马在比赛中进化成烈焰马。",
    "star": {
     "dex": 77,
@@ -1069,7 +1069,7 @@ window.GUIDE = {
    "title": "Wake Up Snorlax!",
    "titleZh": "醒来吧！卡比兽！",
    "japanese": "おきろ! カビゴン!",
-   "rating": 2,
+   "rating": 3,
    "summary": "一只沉睡的卡比兽堵住了小镇的水源，大家想尽办法叫醒它。不是小智后来收服的那只卡比兽。",
    "star": {
     "dex": 143,
@@ -1460,7 +1460,7 @@ window.GUIDE = {
    "title": "The Ultimate Test",
    "titleZh": "神奇宝贝检定考！？",
    "japanese": "ポケモンけんていしけん!?",
-   "rating": 3,
+   "rating": 2,
    "summary": "徽章不够的小智参加神奇宝贝联盟入学考试，才发现自己的书本知识少得可怜。",
    "star": {
     "dex": 25,
@@ -1775,7 +1775,7 @@ window.GUIDE = {
    "title": "Showdown at the Po-ké Corral",
    "titleZh": "宿敌大决斗！大木研究所",
    "japanese": "ライバルたいけつ! オーキドけんきゅうじょ",
-   "rating": 3,
+   "rating": 2,
    "summary": "回到真新镇，小智发现小茂正在等他，大木博士在联盟大赛前有话要对他们两人说。",
    "star": {
     "dex": 89,
@@ -1979,7 +1979,7 @@ window.GUIDE = {
    "title": "All Fired Up!",
    "titleZh": "开火！神奇宝贝联盟的火焰！",
    "japanese": "ファイヤー! ポケモンリーグかいかいしき!",
-   "rating": 3,
+   "rating": 2,
    "summary": "石英高原开幕式：小智参加火炬接力，在联盟大赛开始前见到了各路参赛者。",
    "star": {
     "dex": 146,
@@ -2179,7 +2179,7 @@ window.GUIDE = {
    "title": "Pokéball Peril",
    "titleZh": "南国神奇宝贝与GS球",
    "japanese": "なんごくポケモンとGSボール",
-   "rating": 3,
+   "rating": 2,
    "summary": "一行人在柚子岛的研究所拿到打不开也传送不了的GS球，小刚决定留下来不走了。胖丁的歌声让飞行船坠毁在橘子岛上。",
    "star": {
     "dex": 39,
@@ -2267,7 +2267,7 @@ window.GUIDE = {
    "title": "The Crystal Onix",
    "titleZh": "水晶大岩蛇",
    "japanese": "クリスタルのイワーク",
-   "rating": 3,
+   "rating": 2,
    "summary": "一封漂流瓶里的信，引一行人去寻找传说中由水晶构成的大岩蛇。画面漂亮，故事普通。",
    "star": {
     "dex": 95,
@@ -2838,7 +2838,7 @@ window.GUIDE = {
    "title": "The Stun Spore Detour",
    "titleZh": "蚊香蝌蚪和小霞！",
    "japanese": "ニョロモとカスミ",
-   "rating": 3,
+   "rating": 2,
    "summary": "小智和小建中了霸王花的麻痹粉，只能靠小霞和新伙伴蚊香蝌蚪去找解药。小霞的个人集。",
    "star": {
     "dex": 60,
@@ -2948,7 +2948,7 @@ window.GUIDE = {
    "title": "A Tent Situation",
    "titleZh": "真新镇，我回来了",
    "japanese": "かえってきたマサラタウン!",
-   "rating": 3,
+   "rating": 2,
    "summary": "回到真新镇，小刚也回来了却不肯说为什么离开柚子岛；火箭队吸走了大木研究所的所有精灵球，包括GS球。",
    "star": {
     "dex": 74,
@@ -3014,7 +3014,7 @@ window.GUIDE = {
    "title": "The Double Trouble Header",
    "titleZh": "投手的菊草叶",
    "japanese": "ルーキーのチコリータ!",
-   "rating": 3,
+   "rating": 2,
    "summary": "热爱棒球的新人训练家小菜登场，向小智挑战却被喷火龙一只全灭，气得和火箭队联手报复，最后发现自己被利用。",
    "star": {
     "dex": 6,
@@ -3080,7 +3080,7 @@ window.GUIDE = {
    "title": "Illusion Confusion!",
    "titleZh": "咕咕跟迷惑森林",
    "japanese": "ホーホーとあやしいもり!",
-   "rating": 3,
+   "rating": 2,
    "summary": "迷惑森林中的幽灵制造幻象，小茂建议借一只咕咕来看穿，结果小智租到的却是只调皮捣蛋的咕咕。",
    "star": {
     "dex": 163,
@@ -3302,7 +3302,7 @@ window.GUIDE = {
    "title": "A Bout with Sprout",
    "titleZh": "喇叭芽之塔，大危机",
    "japanese": "だいピンチ! マダツボミのとう!",
-   "rating": 3,
+   "rating": 2,
    "summary": "抵达桔梗市，小智到学校给孩子们讲课，一个小男孩认定皮卡丘应该是他的，追着它闯进了喇叭芽之塔。",
    "star": {
     "dex": 69,
@@ -3578,7 +3578,7 @@ window.GUIDE = {
    "title": "A Shadow of a Drought",
    "titleZh": "桧皮镇的呆呆兽之井",
    "japanese": "ヒワダタウン! ヤドンのいど!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "小智在桧皮镇得罪了崇拜呆呆兽的居民，火箭队来抓呆呆兽时他获得了将功赎罪的机会。",
    "star": {
     "dex": 79,
@@ -3644,7 +3644,7 @@ window.GUIDE = {
    "title": "A Farfetch'd Tale",
    "titleZh": "桐树林，寻找大葱鸭",
    "japanese": "ウバメのもり! カモネギをさがせ!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "新手训练家吓跑了自己的大葱鸭，一行人在桐树林里帮他寻找，还要赶在火箭队之前。普通但温馨。",
    "star": {
     "dex": 83,
@@ -3828,7 +3828,7 @@ window.GUIDE = {
    "title": "Love, Totodile Style",
    "titleZh": "小锯鳄！跳出爱的舞步！",
    "japanese": "おどれワニノコ! あいのステップを!!",
-   "rating": 2,
+   "rating": 3,
    "summary": "小锯鳄爱上了玛力露丽却表白失败，火箭队抓走玛力露丽后它挺身相救。纯搞笑集。",
    "star": {
     "dex": 184,
@@ -4055,7 +4055,7 @@ window.GUIDE = {
    "title": "The Bug Stops Here",
    "titleZh": "捕虫大会，在自然公园收服他！",
    "japanese": "むしとりたいかい! しぜんこうえんでゲットだぜ!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "自然公园的捕虫大会上，小智和热爱棒球的少女训练家再次较劲，火箭队照例来捣乱。",
    "star": {
     "dex": 15,
@@ -4165,7 +4165,7 @@ window.GUIDE = {
    "title": "Two Hits and a Miss",
    "titleZh": "柯波朗对抗妙蛙种子，格斗大对决",
    "japanese": "カポエラーVSフシギダネ! かくとうたいけつ!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "小智和妙蛙种子帮助道场师范的孙女和她的柯波朗特训，争取成为下一任师范。妙蛙种子有不错的发挥。",
    "star": {
     "dex": 237,
@@ -4345,7 +4345,7 @@ window.GUIDE = {
    "title": "Wobbu-Palooza",
    "titleZh": "果然翁之村",
    "japanese": "ソーナンスのむら!?",
-   "rating": 2,
+   "rating": 3,
    "summary": "果然翁之村的祭典遭到一伙不良少年袭击，小智被禁止对战，最后反倒要靠火箭队。偏搞笑的填充集。",
    "star": {
     "dex": 202,
@@ -4484,7 +4484,7 @@ window.GUIDE = {
    "title": "The Grass Route",
    "titleZh": "毽子花，草神奇宝贝战斗",
    "japanese": "ポポッコ! くさポケモンバトル!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "一行人碰上一年一度的草系神奇宝贝大赛，小智派出菊草叶参赛。菊草叶有戏份，比赛本身一般。",
    "star": {
     "dex": 188,
@@ -4642,7 +4642,7 @@ window.GUIDE = {
    "title": "All That Glitters!",
    "titleZh": "黑暗鸦！被夺走的徽章！",
    "japanese": "ヤミカラス! うばわれたバッジ!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "小智正得意地擦拭徽章，一群黑暗鸦飞来把徽章全叼走了。追回徽章的过程中途有点拖沓。",
    "star": {
     "dex": 198,
@@ -4778,7 +4778,7 @@ window.GUIDE = {
    "title": "The Stolen Stones!",
    "titleZh": "风速狗与火焰之石！",
    "japanese": "ウインディとほのおのいし!",
-   "rating": 3,
+   "rating": 2,
    "summary": "送货兄妹中的哥哥被火箭队打伤，小智要带领风速狗队把火焰之石送到目的地。还算有冒险感。",
    "star": {
     "dex": 59,
@@ -4822,7 +4822,7 @@ window.GUIDE = {
    "title": "The Wayward Wobbuffet",
    "titleZh": "果然翁遇难了！？",
    "japanese": "ソーナンス! そうなんす?",
-   "rating": 2,
+   "rating": 3,
    "summary": "火箭队把皮卡丘锁进笼子，钥匙却在走失的果然翁身上，它独自展开一段冒险。纯搞笑填充。",
    "star": {
     "dex": 202,
@@ -5055,7 +5055,7 @@ window.GUIDE = {
    "title": "The Big Balloon Blow-Up",
    "titleZh": "神奇宝贝气球大赛，超越暴风雨",
    "japanese": "ポケモンききゅうだいレース! あらしをこえて!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "一行人参加用神奇宝贝驱动的热气球大赛，火箭队一路破坏其他选手。轻松热闹，可看可不看。",
    "star": {
     "dex": 25,
@@ -5216,7 +5216,7 @@ window.GUIDE = {
    "title": "Got Miltank?",
    "titleZh": "圣母大奶罐，沙漠的秘密",
    "japanese": "せいぼミルタンク! さばくのひみつ!",
-   "rating": 3,
+   "rating": 2,
    "summary": "火球鼠走失，小智一路追到沙漠深处一座守卫森严的绿洲，那里有一群大奶罐。",
    "star": {
     "dex": 241,
@@ -5282,7 +5282,7 @@ window.GUIDE = {
    "title": "Around the Whirlpool",
    "titleZh": "漩涡列岛，新的挑战！",
    "japanese": "うずまきれっとう! あらたなるちょうせん!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "去漩涡列岛的船上与火箭队一番混战，三人被甩进海里，漂到岛上遇见空木博士，得知了即将举行的漩涡列岛大赛。新篇章的开场集。",
    "star": {
     "dex": 223,
@@ -5352,7 +5352,7 @@ window.GUIDE = {
    "title": "A Corsola Caper!",
    "titleZh": "太阳珊瑚好朋友！黄岩岛的对决",
    "japanese": "サニーゴでアミーゴ! おうがんとうのたいけつ!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "黄岩岛上太阳珊瑚泛滥成灾，小霞一心想收服一只，最后如愿以偿——它将成为小霞在大赛中的主力。",
    "star": {
     "dex": 222,
@@ -5396,7 +5396,7 @@ window.GUIDE = {
    "title": "Octillery the Outcast",
    "titleZh": "章鱼桶跟铁炮鱼！漩涡列岛大赛预赛！",
    "japanese": "オクタンとテッポウオ! うずまきカップよせん!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "漩涡列岛大赛预赛开打，小智和小霞帮一位少年开导进化后被同伴排挤的章鱼桶。主要看点是两人顺利晋级。",
    "star": {
     "dex": 224,
@@ -5418,7 +5418,7 @@ window.GUIDE = {
    "title": "Dueling Heroes",
    "titleZh": "漩涡列岛大赛，在水的运动场大战斗！",
    "japanese": "うずまきカップ! みずのコロシアムでだいバトル!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "漩涡列岛大赛正赛第二轮，小智和小霞各自迎战水系高手，水上赛场的对战节奏很快。为下一集的大战铺垫。",
    "star": {
     "dex": 99,
@@ -5506,7 +5506,7 @@ window.GUIDE = {
    "title": "Hi Ho Silver... Away!",
    "titleZh": "银色之翼的传说，银岩岛的战斗！",
    "japanese": "ぎんいろのはねのでんせつ! ぎんがんとうのたたかい!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "银岩岛上，珠宝匠讲述了大海深处一只神秘神奇宝贝的传说，为接下来的洛奇亚三部曲铺路。",
    "star": {
     "dex": 249,
@@ -5594,7 +5594,7 @@ window.GUIDE = {
    "title": "Throwing in the Noctowl",
    "titleZh": "飞吧咕咕号！以浅葱市为目标！",
    "japanese": "とべホーホーごう! アサギをめざし!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "错过渡轮的小智搭上一位老飞行员的破旧飞机赶回浅葱市，暴风雨中猫头夜鹰派上了用场。小品式的冒险，还不错。",
    "star": {
     "dex": 164,
@@ -5662,7 +5662,7 @@ window.GUIDE = {
    "title": "Espeon, Not Included",
    "titleZh": "太阳精灵与樱花！重新回到圆朱市！",
    "japanese": "エーフィとサクラ! エンジュシティふたたび!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "回到圆朱市与樱花姐妹重逢，樱花的伊布已经进化成了太阳精灵。为下一集凤王传说铺垫的过渡集。",
    "star": {
     "dex": 196,
@@ -5996,7 +5996,7 @@ window.GUIDE = {
    "title": "Hocus Pokémon",
    "titleZh": "神奇宝贝魔法大变身",
    "japanese": "ポケモンまほうでだいへんしん!?",
-   "rating": 2,
+   "rating": 3,
    "summary": "魔法少女的咒语失败，把小智变成了一只皮卡丘。搞笑向，接下来一集还会接着讲。",
    "star": {
     "dex": 190,
@@ -6020,7 +6020,7 @@ window.GUIDE = {
    "title": "As Clear as Crystal",
    "titleZh": "闪电鸟跟水晶，湖的秘密",
    "japanese": "サンダーとクリスタル! みずうみのひみつ!",
-   "rating": 3,
+   "rating": 2,
    "summary": "小智恢复人形后皮卡丘却病倒了，一行人到能治疗电系神奇宝贝的湖边求医，被偷走水晶的火箭队引来了愤怒的闪电鸟。",
    "star": {
     "dex": 145,
@@ -6142,7 +6142,7 @@ window.GUIDE = {
    "titleZh": "蚊香蛙的进化",
    "japanese": "ニョロゾのしんか!",
    "rating": 3,
-   "summary": "小霞的蚊香蛙戴上小智赢来的王者之证，在对战中进化成了牛蛙君，从此爱上了跳舞加油。队伍变化，可看可不看。",
+   "summary": "小霞的蚊香蛙戴上小智赢来的王者之证，在对战中进化成了牛蛙君，从此爱上了跳舞加油。牛蛙君的加油舞很好笑。",
    "star": {
     "dex": 186,
     "name": "牛蛙君"
@@ -6233,7 +6233,7 @@ window.GUIDE = {
    "title": "Beauty Is Skin Deep",
    "titleZh": "小桩跟迷你龙",
    "japanese": "イブキとミニリュウ!",
-   "rating": 3,
+   "rating": 2,
    "summary": "烟墨道馆馆主小椿要去参加龙之牙的仪式，同时还得保护一只迷你龙。为最后一个道馆战做铺垫。",
    "star": {
     "dex": 147,
@@ -6459,7 +6459,7 @@ window.GUIDE = {
    "title": "Entei at Your Own Risk",
    "titleZh": "炎帝与温泉的同伴们！",
    "japanese": "エンテイとおんせんのなかまたち!",
-   "rating": 3,
+   "rating": 2,
    "summary": "一位训练家在温泉附近埋伏，想收服传说中的炎帝。传说神奇宝贝露脸集，剧情一般。",
    "star": {
     "dex": 244,
@@ -6595,7 +6595,7 @@ window.GUIDE = {
    "title": "Pop Goes the Sneasel",
    "titleZh": "狃拉与圣火",
    "japanese": "ニューラとせいなるほのお!",
-   "rating": 3,
+   "rating": 2,
    "summary": "白银大会开幕前，小智结识了来自丰缘地区的训练家叶越，两人联手对付扰乱圣火仪式的狃拉和腕力。新劲敌登场。",
    "star": {
     "dex": 215,
@@ -6617,7 +6617,7 @@ window.GUIDE = {
    "title": "A Claim to Flame!",
    "titleZh": "白银大会跟小茂再度交手！！",
    "japanese": "シロガネリーグかいまく! シゲルふたたび!",
-   "rating": 3,
+   "rating": 2,
    "summary": "白银大会正式开幕，小智与老对手小茂在会场重逢。城都之旅最后的舞台拉开了帷幕。",
    "star": {
     "dex": 59,
@@ -7083,7 +7083,7 @@ window.GUIDE = {
    "title": "The Lotad Lowdown",
    "titleZh": "莲叶童子与花店三姊妹！",
    "japanese": "ハスボーとフラワーショップの三姉妹!",
-   "rating": 3,
+   "rating": 2,
    "summary": "小刚为了一群莲叶童子和花店三姐妹忙前忙后，最后收服了一只莲叶童子。",
    "star": {
     "dex": 270,
@@ -7127,7 +7127,7 @@ window.GUIDE = {
    "title": "All in a Day's Wurmple",
    "titleZh": "双打比赛，捕捉刺尾虫！",
    "japanese": "ダブルバトルとダブルでケムッソ!?",
-   "rating": 3,
+   "rating": 2,
    "summary": "小遥想要一只属于自己的狩猎凤蝶，于是去捉刺尾虫，还碰上了双打对战。",
    "star": {
     "dex": 265,
@@ -7371,7 +7371,7 @@ window.GUIDE = {
    "title": "A Mudkip Mission",
    "titleZh": "秘密之池！好多水跃鱼！？",
    "japanese": "秘密の池! ミズゴロウがいっぱい!?",
-   "rating": 3,
+   "rating": 2,
    "summary": "一行人在训练途中发现一个满是水跃鱼的秘密池塘，守护池塘的老人只放心把它们交给值得托付的人。小刚收服了水跃鱼。",
    "star": {
     "dex": 258,
@@ -7711,7 +7711,7 @@ window.GUIDE = {
    "title": "A Different Kind of Misty",
    "titleZh": "正电拍拍与负电拍拍！山上的灯塔！",
    "japanese": "プラスルとマイナン! 山の灯台!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "一行人在浓雾的山路上迷路，被当成偷走灯塔宝石的小偷，正电拍拍和负电拍拍成了关键。",
    "star": {
     "dex": 311,
@@ -8234,7 +8234,7 @@ window.GUIDE = {
    "title": "Delcatty Got Your Tongue",
    "titleZh": "向尾喵与优雅猫，传说的神奇宝贝协调训练家登场",
    "japanese": "エネコとエネコロロ！伝説のコーディネーター登場！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "前往绿荫镇的路上，向尾喵在火箭队绑架它和优雅猫时意外学会了暴风雪。",
    "star": {
     "dex": 301,
@@ -8602,7 +8602,7 @@ window.GUIDE = {
    "title": "Whiscash and Ash",
    "titleZh": "对决！巨大鲶鱼王与钓鱼高手！",
    "japanese": "対決！巨大ナマズンと釣り名人！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "一只外号“尼禄”的巨大鲶鱼王把小智的徽章盒吞了，小智只好跟钓鱼高手一起去钓它。",
    "star": {
     "dex": 340,
@@ -8668,7 +8668,7 @@ window.GUIDE = {
    "title": "Cruisin' for a Losin'",
    "titleZh": "神奇宝贝华丽大赛！长寿大会！",
    "japanese": "ポケモンコンテスト！ルイボス大会！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "长寿镇华丽大赛，小遥的妙蛙种子对上那位妈妈协调训练家的可多拉，小瞬也在场。",
    "star": {
     "dex": 305,
@@ -8783,7 +8783,7 @@ window.GUIDE = {
    "title": "Unfair-Weather Friends",
    "titleZh": "天气研究所的漂浮泡泡！",
    "japanese": "お天気研究所のポワルン！",
-   "rating": 3,
+   "rating": 2,
    "summary": "一行人来到天气研究所，见到会预报天气的飘浮泡泡，水舰队却挟持了研究所，想找盖欧卡和固拉多的资料。",
    "star": {
     "dex": 351,
@@ -9595,7 +9595,7 @@ window.GUIDE = {
    "title": "Mean with Envy",
    "titleZh": "混战、混乱！神奇宝贝华丽大赛暮水大会！（前篇）",
    "japanese": "混戦、混乱！ポケモンコンテスト・キナギ大会！（前編）",
-   "rating": 3,
+   "rating": 2,
    "summary": "丰缘最后一场华丽大赛在暮水镇开始，一个女孩误会小遥要抢她男朋友，处处针对她。",
    "star": {
     "dex": 300,
@@ -9617,7 +9617,7 @@ window.GUIDE = {
    "title": "Pacifidlog Jam",
    "titleZh": "混战、混乱！神奇宝贝华丽大赛暮水大会！（后篇）",
    "japanese": "混戦、混乱！ポケモンコンテスト・キナギ大会！（後編）",
-   "rating": 3,
+   "rating": 2,
    "summary": "暮水大会进入对战阶段，小遥的向尾喵对上黑鲁加；武藏用喵喵假扮变身也闹出了笑话。",
    "star": {
     "dex": 300,
@@ -9664,7 +9664,7 @@ window.GUIDE = {
    "title": "Less is Morrison",
    "titleZh": "劲敌登场！政宗与铁哑铃！！",
    "japanese": "ライバル登場！マサムネとダンバル！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "前往大型庆典的路上，一行人遇见带着铁哑铃的冒失少年政宗，他也要参加丰缘联盟。新劲敌登场。",
    "star": {
     "dex": 374,
@@ -9730,7 +9730,7 @@ window.GUIDE = {
    "title": "Hi Ho Silver Wind!",
    "titleZh": "开幕！大型庆典（1）！！",
    "japanese": "開幕！グランドフェスティバル①！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "一行人来到凯那市，丰缘大型庆典开幕，小遥收到了妈妈和沿途朋友们的来信。",
    "star": {
     "dex": 267,
@@ -9752,7 +9752,7 @@ window.GUIDE = {
    "title": "Deceit and Assist",
    "titleZh": "热斗！大型庆典（2）！！",
    "japanese": "熱闘！グランドフェスティバル②！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "大型庆典第二轮，小遥、小瞬和哈利各显神通。",
    "star": {
     "dex": 315,
@@ -9840,7 +9840,7 @@ window.GUIDE = {
    "title": "Saved by the Beldum",
    "titleZh": "预赛开始！政宗登场！！",
    "japanese": "予備選スタート！マサムネ登場!!",
-   "rating": 3,
+   "rating": 2,
    "summary": "彩幽大会的预赛开始，小智、政宗和哲也各自出战。",
    "star": {
     "dex": 374,
@@ -10293,7 +10293,7 @@ window.GUIDE = {
    "title": "A Hurdle for Squirtle",
    "titleZh": "神奇宝贝华丽大赛・金黄大会（后篇）",
    "japanese": "ポケモンコンテスト・ヤマブキ大会！！（後編）",
-   "rating": 3,
+   "rating": 2,
    "summary": "金黄市华丽大赛开始，小遥派出杰尼龟争取关都的第一枚缎带，哈利也虎视眈眈。",
    "star": {
     "dex": 7,
@@ -10433,7 +10433,7 @@ window.GUIDE = {
    "title": "May's Egg-cellent Adventure!",
    "titleZh": "抚养家与神奇宝贝蛋！",
    "japanese": "そだて屋さんとポケモンのタマゴ！",
-   "rating": 3,
+   "rating": 2,
    "summary": "前往对战巨蛋的路上，一行人来到满是神奇宝贝蛋的育婴中心；一个女孩对身为协调训练家的小遥满怀敌意。",
    "star": {
     "dex": 255,
@@ -10653,7 +10653,7 @@ window.GUIDE = {
    "title": "Off the Unbeaten Path",
    "titleZh": "优胜将落入谁手中？神奇宝贝定向越野竞赛！",
    "japanese": "優勝は誰の手に！？ポケモンオリエンテーリング！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "在一座小岛上，大家参加神奇宝贝定向越野赛，要带一只神奇宝贝跑遍五个地点集章。",
    "star": {
     "dex": 25,
@@ -10675,7 +10675,7 @@ window.GUIDE = {
    "title": "Harley Rides Again",
    "titleZh": "小卡比兽的出道赛！与哈利的认真比赛！",
    "japanese": "ゴンベのデビュー戦！ハーリーと真剣勝負！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "小遥在新的华丽大赛上再遇哈利，这回他一心要拿下第四枚缎带；小卡比兽第一次登上舞台。",
    "star": {
     "dex": 143,
@@ -10723,7 +10723,7 @@ window.GUIDE = {
    "title": "Spontaneous Combusken!",
    "titleZh": "神奇宝贝华丽大赛！让叶大会！",
    "japanese": "ポケモンコンテスト！ユズリハ大会！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "小遥来到菊花岛争取第三枚缎带，小瞬也到了；小智则在帮伙伴找回招式。",
    "star": {
     "dex": 256,
@@ -10745,7 +10745,7 @@ window.GUIDE = {
    "title": "Cutting the Ties That Bind!",
    "titleZh": "蜥蜴王！复活的黎明！",
    "japanese": "ジュカイン！復活の夜明け！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "来到对战宫殿所在的小岛，小智想帮蜥蜴王找回信心，它却一个人跑进了树林。",
    "star": {
     "dex": 254,
@@ -11039,7 +11039,7 @@ window.GUIDE = {
    "title": "Going for Choke!",
    "titleZh": "小遥对抗武藏！最后的华丽大赛！！",
    "japanese": "ハルカVSムサシ！最後のコンテスト！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "华丽大赛对战开始，火箭队把小智他们关进铁箱不让他们加油；小遥最后要对上武藏。",
    "star": {
     "dex": 269,
@@ -11085,7 +11085,7 @@ window.GUIDE = {
    "title": "Grating Spaces!",
    "titleZh": "小刚与小智！用双打对战保护尼比道馆！！",
    "japanese": "タケシ&サトシ！タッグバトルでニビジムを守れ！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "火箭队把小刚的父母骗出尼比道馆，小智和小刚只好联手守住道馆。",
    "star": {
     "dex": 208,
@@ -11151,7 +11151,7 @@ window.GUIDE = {
    "title": "May, We Harley Drew'd Ya!",
    "titleZh": "开幕！宝可梦华丽大赛．华丽大型庆典！！",
    "japanese": "開幕！ポケモンコンテスト・グランドフェスティバル！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "一行人抵达石英高原，关都大型庆典即将开始；小遥结识了一位来自尼比市的老练协调训练家。",
    "star": {
     "dex": 267,
@@ -11173,7 +11173,7 @@ window.GUIDE = {
    "title": "Thinning the Hoard!",
    "titleZh": "小遥VS哈利！在双打比赛中登上舞台！！",
    "japanese": "ハルカVSハーリー！ダブルバトルでステージ・オン！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "大型庆典的表演审查结束，进入对战阶段，小遥第一轮就要对上哈利。",
    "star": {
     "dex": 332,
@@ -11358,7 +11358,7 @@ window.GUIDE = {
    "title": "The Unbeatable Lightness of Seeing!",
    "titleZh": "小遥VS小瞬！永远的劲敌！！",
    "japanese": "ハルカVSシュウ！ライバルよ永遠に！！",
-   "rating": 3,
+   "rating": 2,
    "summary": "小智暂时找不到突破口，大木博士带来了妈妈的包裹和老朋友们的礼物；小瞬也来找小遥。",
    "star": {
     "dex": 330,
