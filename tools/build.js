@@ -13,9 +13,17 @@ const imdb = read("sources/imdb-original-series.json");
 const tencent = read("sources/tencent-original-series.json");
 const tencentMovies = read("sources/tencent-movies.json");
 const editorial = read("editorial/indigo-league.json");
+const pokemonZh = read("sources/pokemon-names-zh.json");
 
 const tencentUrl = (cid, vid) => `https://v.qq.com/x/cover/${cid}/${vid}.html`;
 const imdbUrl = (id) => `https://www.imdb.com/title/${id}/`;
+// Starred Pokémon: national dex number -> { dex, name }; sprite lives at assets/sprites/<dex>.png.
+const starOf = (dex) => {
+  if (dex == null) return null;
+  if (!pokemonZh[dex]) throw new Error(`No Chinese name for Pokémon #${dex} in sources/pokemon-names-zh.json`);
+  if (!fs.existsSync(path.join(root, `assets/sprites/${dex}.png`))) throw new Error(`Missing sprite assets/sprites/${dex}.png`);
+  return { dex, name: pokemonZh[dex] };
+};
 
 // Tencent numbering skips some Japanese episodes; walk both lists in order.
 const missing = new Set(editorial.tencentMissingJp);
@@ -43,6 +51,7 @@ for (const ep of wiki) {
     japanese: ep.japanese,
     rating: ed[0],
     summary: ed[1],
+    star: starOf(ed[2]),
     imdbRating: im ? im.rating : null,
     imdbVotes: im ? im.votes : null,
     imdbUrl: im ? imdbUrl(im.id) : null,
@@ -64,6 +73,7 @@ for (const x of editorial.extras) {
     japanese: "",
     rating: x.rating,
     summary: x.summary,
+    star: starOf(x.star),
     imdbRating: im ? im.rating : null,
     imdbVotes: im ? im.votes : null,
     imdbUrl: x.imdb ? imdbUrl(x.imdb) : null,

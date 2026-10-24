@@ -29,7 +29,7 @@
   .stats { color: var(--muted); font-size: 13px; margin-top: 6px; }
   main { max-width: 1100px; margin: 0 auto; padding: 8px 12px 60px; }
   .note { color: var(--muted); font-size: 13px; margin: 8px 4px 12px; }
-  .row { display: grid; grid-template-columns: 26px 64px minmax(0, 1fr) 92px 96px; gap: 4px 12px; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 6px; }
+  .row { display: grid; grid-template-columns: 26px 48px 64px minmax(0, 1fr) 92px 96px; gap: 4px 12px; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 6px; }
   .row.watched { opacity: .5; }
   .row.extra { border-left: 4px solid var(--event); }
   .row.extra.game { border-left-color: var(--game); }
@@ -37,6 +37,15 @@
   .num { font-variant-numeric: tabular-nums; }
   .num b { display: block; font-size: 16px; }
   .num span { color: var(--muted); font-size: 12px; }
+  .star { height: 40px; }
+  .star img { display: block; width: 64px; height: 64px; margin: -14px -8px -10px; image-rendering: pixelated; transform-origin: 50% 85%; }
+  .meta .starname { white-space: nowrap; }
+  .row:hover .star img { animation: hop .45s ease-out; }
+  .row.next .star img { animation: idle 1.6s ease-in-out infinite; }
+  .row.watched .star img { filter: grayscale(1); }
+  @keyframes hop { 0%, 100% { transform: translateY(0); } 40% { transform: translateY(-7px) scale(1.05, .95); } 70% { transform: translateY(0) scale(1.06, .94); } }
+  @keyframes idle { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+  @media (prefers-reduced-motion: reduce) { .star img { animation: none !important; } }
   .title { font-weight: 600; }
   .title .en { font-weight: normal; color: var(--muted); font-size: 13px; margin-left: 6px; }
   .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 1px 6px; border-radius: 5px; color: #fff; margin-right: 6px; vertical-align: 1px; text-transform: uppercase; letter-spacing: .03em; }
@@ -64,6 +73,9 @@
     .row { grid-template-columns: 22px minmax(0, 1fr) 84px; }
     .row .num { grid-column: 2; grid-row: 1; display: flex; gap: 8px; align-items: baseline; }
     .row .num b { display: inline; font-size: 14px; }
+    .row .star { grid-column: 2; grid-row: 1; height: 24px; }
+    .row .star img { width: 40px; height: 40px; margin: -10px -6px -6px; }
+    .row .num { padding-left: 34px; }
     .row .body { grid-column: 1 / 3; grid-row: 2; }
     .row .rating { grid-column: 3; grid-row: 1; }
     .row .links { grid-column: 3; grid-row: 2; }
@@ -131,12 +143,15 @@
       if (r.type !== "episode" && !state.extras) return false;
       if (state.min && (r.rating ?? 0) < state.min && !(r.type !== "episode" && r.rating == null && state.extras)) return false;
       if (state.hideWatched && isWatched(r.i)) return false;
-      if (q && !`${r.title} ${r.titleZh} ${r.summary} ${r.japanese}`.toLowerCase().includes(q)) return false;
+      if (q && !`${r.title} ${r.titleZh} ${r.summary} ${r.japanese} ${r.star?.name ?? ""}`.toLowerCase().includes(q)) return false;
       return true;
     });
     const nextI = rows.find(r => !isWatched(r.i))?.i;
     document.getElementById("list").innerHTML = rows.map(r => {
       const isEp = r.type === "episode", w = isWatched(r.i);
+      const star = r.star
+        ? `<div class="star" title="本集明星：${esc(r.star.name)} #${String(r.star.dex).padStart(3, "0")}"><img src="assets/sprites/${r.star.dex}.png" alt="${esc(r.star.name)}" loading="lazy"></div>`
+        : `<div></div>`;
       const num = isEp
         ? `<div class="num"><b>${r.tencentNo ?? "—"}</b><span>EP${String(r.jp).padStart(3, "0")}</span></div>`
         : `<div class="num"><span>${r.date.slice(0, 7)}</span></div>`;
@@ -152,11 +167,12 @@
       const cls = [isEp ? "" : "extra " + r.type, w ? "watched" : "", r.i === progress ? "bookmark" : "", r.i === nextI ? "next" : ""].join(" ");
       return `<div class="row ${cls}" data-i="${r.i}">
         <button class="mark" title="${r.i === progress ? "书签——点击后退一条" : "看到这里"}">▶</button>
+        ${star}
         ${num}
         <div class="body">
           <div class="title">${isEp ? "" : `<span class="tag ${r.type}">${LABEL[r.type]}</span>`}${esc(r.titleZh || r.title)}${r.titleZh ? `<span class="en">${esc(r.title)}</span>` : ""}</div>
           <div class="summary">${esc(r.summary)}</div>
-          <div class="meta">${r.date}${r.japanese ? " · " + esc(r.japanese) : ""}</div>
+          <div class="meta">${r.date}${r.japanese ? " · " + esc(r.japanese) : ""}${r.star ? ` · <span class="starname">★ ${esc(r.star.name)}</span>` : ""}</div>
         </div>
         ${rating}
         <div class="links">${tx}${imdb}</div>
