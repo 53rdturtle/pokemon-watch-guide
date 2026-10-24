@@ -83,7 +83,60 @@
   .row.next { outline: 2px solid var(--text); }
   #jumpNext { font: inherit; padding: 5px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); cursor: pointer; }
   .row { scroll-margin-top: 140px; }
+
+  /* Timeline rail: a gutter left of the list with month labels, a line that fills red up to the bookmark, and a node per row. */
+  #list { --gut: 74px; --rail: 56px; padding-left: var(--gut); }
+  .tl-item { position: relative; padding-bottom: 6px; }
+  .tl-item .row { margin-bottom: 0; }
+  .tl { position: absolute; top: 0; bottom: 0; left: calc(-1 * var(--gut)); width: var(--gut); pointer-events: none; }
+  .tl::before { content: ""; position: absolute; left: calc(var(--rail) - 1px); top: 0; bottom: 0; width: 2px; background: var(--line); }
+  .tl.done::before { background: var(--r5); box-shadow: 0 0 6px color-mix(in srgb, var(--r5) 55%, transparent); }
+  .tl.half::before { background: linear-gradient(var(--r5) 0 22px, var(--line) 22px); }
+  .tl-item:first-child .tl::before { top: 22px; }
+  .tl-year:first-child .tl::before { top: 38px; }
+  .tl-item:last-child .tl::before { bottom: calc(100% - 22px); }
+  .tl .mo { position: absolute; top: 14px; right: calc(var(--gut) - var(--rail) + 12px); font-size: 12px; line-height: 16px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .dot { position: absolute; left: var(--rail); top: 22px; width: 8px; height: 8px; transform: translate(-50%, -50%); border-radius: 50%; background: var(--card); border: 2px solid var(--r2); }
+  .dot.r5 { width: 14px; height: 14px; background: var(--r5); border-color: var(--r5); box-shadow: 0 0 0 4px color-mix(in srgb, var(--r5) 22%, transparent), 0 0 12px color-mix(in srgb, var(--r5) 60%, transparent); }
+  .dot.r4 { width: 11px; height: 11px; background: var(--r4); border-color: var(--r4); box-shadow: 0 0 0 3px color-mix(in srgb, var(--r4) 20%, transparent); }
+  .dot.r3 { background: var(--card); border-color: var(--r3); }
+  .dot.r2, .dot.r1 { width: 6px; height: 6px; border-width: 0; background: var(--r2); }
+  .dot.game { width: 12px; height: 12px; border-radius: 2px; background: var(--game); border-color: var(--game); transform: translate(-50%, -50%) rotate(45deg); }
+  .dot.movie, .dot.special { width: 18px; height: 18px; border: 0; background: none; color: var(--movie); font-size: 18px; line-height: 18px; text-align: center; text-shadow: 0 0 8px color-mix(in srgb, var(--movie) 60%, transparent); }
+  .dot.movie::after, .dot.special::after { content: "★"; }
+  .dot.event { width: 16px; height: 16px; background: var(--event); border-color: var(--event); color: var(--bg); font-size: 11px; font-weight: 800; line-height: 12px; text-align: center; }
+  .dot.event::after { content: "!"; }
+  .tl.done .dot { filter: saturate(.35); opacity: .75; }
+  /* Bookmark: a Poké Ball sitting on the rail. */
+  .tl .dot.ball { width: 20px; height: 20px; border: 2px solid var(--text); filter: none; opacity: 1; box-shadow: 0 0 0 4px color-mix(in srgb, var(--r5) 25%, transparent), 0 0 14px color-mix(in srgb, var(--r5) 70%, transparent);
+    background: radial-gradient(circle, var(--card) 0 2.5px, var(--text) 2.5px 4.5px, transparent 4.5px), linear-gradient(var(--r5) 0 calc(50% - 1px), var(--text) calc(50% - 1px) calc(50% + 1px), #fff calc(50% + 1px)); }
+  .dot.ball::after { content: none; }
+  .dot.next::before { content: ""; position: absolute; inset: -7px; border-radius: 50%; border: 2px solid var(--text); animation: ping 1.8s ease-out infinite; }
+  .dot.game.next::before { border-radius: 3px; }
+  @keyframes ping { 0% { transform: scale(.6); opacity: .9; } 100% { transform: scale(1.6); opacity: 0; } }
+
+  .tl-year { position: relative; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; padding: 18px 4px 12px; }
+  .tl-year .tl .dot { top: 38px; width: 22px; height: 22px; border: 3px solid var(--card); background: conic-gradient(from 200deg, var(--r5), var(--r4), #f5c518, var(--r5)); box-shadow: 0 0 0 2px var(--r5), 0 0 16px color-mix(in srgb, var(--r4) 60%, transparent); filter: none; opacity: 1; }
+  .tl-year .y { font-size: 40px; line-height: 1; font-weight: 800; letter-spacing: -.02em; font-variant-numeric: tabular-nums;
+    background: linear-gradient(100deg, var(--r5), var(--r4) 55%, #f5c518); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .tl-year .ys { color: var(--muted); font-size: 13px; }
+  .tl-year .yp { flex: 1 1 100%; max-width: 320px; height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
+  .tl-year .yp i { display: block; height: 100%; background: linear-gradient(90deg, var(--r5), var(--r4)); border-radius: 2px; }
+  .tl-gap { position: relative; padding: 14px 4px 20px; color: var(--muted); font-size: 13px; }
+  .tl-gap .tl::before { background: repeating-linear-gradient(var(--muted) 0 4px, transparent 4px 9px); opacity: .6; }
+  .tl-gap.done .tl::before { background: repeating-linear-gradient(var(--r5) 0 4px, transparent 4px 9px); opacity: 1; }
+  .tl-gap b { color: var(--text); }
+  @media (prefers-reduced-motion: reduce) { .dot.next::before { animation: none; transform: scale(1.1); } }
+
   @media (max-width: 700px) {
+    #list { --gut: 46px; --rail: 36px; }
+    .tl .mo { font-size: 10px; right: calc(var(--gut) - var(--rail) + 9px); top: 16px; }
+    .dot { top: 24px; }
+    .tl.half::before { background: linear-gradient(var(--r5) 0 24px, var(--line) 24px); }
+    .tl-year .y { font-size: 32px; }
+    .tl-year .tl .dot { top: 34px; width: 18px; height: 18px; }
+    .tl-year:first-child .tl::before { top: 34px; }
+    .tl-item:last-child .tl::before { bottom: calc(100% - 24px); }
     .row { grid-template-columns: 28px minmax(0, 1fr) 84px; }
     .row .num { grid-column: 2; grid-row: 1; display: flex; gap: 8px; align-items: baseline; }
     .row .num b { display: inline; font-size: 14px; }
@@ -169,6 +222,25 @@
   }
   // Game releases and real-world events are timeline context, not something to watch: no ▶ and never "next".
   const watchable = r => r.type === "episode" || r.type === "movie" || r.type === "special";
+  // Broadcast breaks: consecutive episodes more than 45 days apart (e.g. the 1997–98 hiatus). `at` is the row index after the break.
+  const GAPS = [];
+  G.rows.reduce((last, r, i) => {
+    if (r.type !== "episode") return last;
+    if (last) {
+      const days = (new Date(r.date) - new Date(last.date)) / 864e5;
+      if (days > 45) GAPS.push({ at: G.rows.findIndex((x, j) => j > G.rows.indexOf(last) && x.date > last.date), months: Math.round(days / 30.44), from: last.date.slice(0, 7), to: r.date.slice(0, 7) });
+    }
+    return r;
+  }, null);
+  function yearHeader(y, done) {
+    const all = G.rows.map((r, i) => ({ r, i })).filter(x => x.r.date.startsWith(y));
+    const eps = all.filter(x => x.r.type === "episode"), seen = eps.filter(x => isWatched(x.i)).length;
+    const counts = Object.entries(all.reduce((c, x) => (x.r.type !== "episode" && (c[x.r.type] = (c[x.r.type] || 0) + 1), c), {}))
+      .map(([t, n]) => `${n} ${t === "game" ? "款" : t === "event" ? "件" : "部"}${LABEL[t]}`);
+    const sub = eps.length ? [`${eps.length} 集`, ...counts, `已看 ${seen}/${eps.length}`] : ["动画开播前", ...counts];
+    const bar = eps.length ? `<span class="yp"><i style="width:${(seen / eps.length * 100).toFixed(1)}%"></i></span>` : "";
+    return `<div class="tl-year${done}"><div class="tl"><i class="dot"></i></div><span class="y">${y}</span><span class="ys">${sub.join(" · ")}</span>${bar}</div>`;
+  }
   const epLabel = r => `#${r.tencentNo ?? "—"} (EP${String(r.jp).padStart(3, "0")})`;
 
   function render() {
@@ -181,7 +253,21 @@
       return true;
     });
     const nextI = rows.find(r => !isWatched(r.i) && watchable(r))?.i;
-    document.getElementById("list").innerHTML = rows.map(r => {
+    const html = [];
+    rows.forEach((r, k) => {
+      const prev = rows[k - 1], after = rows[k + 1];
+      const y = r.date.slice(0, 4), m = +r.date.slice(5, 7);
+      const doneTo = x => x && isWatched(x.i) ? " done" : "";
+      const gap = GAPS.find(g => prev && prev.i < g.at && g.at <= r.i);
+      if (gap) html.push(`<div class="tl-gap${doneTo(r)}"><div class="tl"></div>⋯ <b>停播 ${gap.months} 个月</b> · ${gap.from} → ${gap.to}</div>`);
+      if (!prev || prev.date.slice(0, 4) !== y) html.push(yearHeader(y, doneTo(r)));
+      const newMonth = !prev || prev.date.slice(0, 7) !== r.date.slice(0, 7);
+      const seg = doneTo(after) || (isWatched(r.i) ? " half" : "");
+      const dotCls = [r.type === "episode" ? (r.rating ? "r" + r.rating : "") : r.type, r.i === progress ? "ball" : "", r.i === nextI ? "next" : ""].join(" ");
+      html.push(`<div class="tl-item"><div class="tl${seg}">${newMonth ? `<span class="mo">${m}月</span>` : ""}<i class="dot ${dotCls}"></i></div>${rowHtml(r)}</div>`);
+    });
+    document.getElementById("list").innerHTML = html.join("");
+    function rowHtml(r) {
       const isEp = r.type === "episode", w = isWatched(r.i);
       const star = r.star
         ? `<div class="star" title="本集明星：${esc(r.star.name)} #${String(r.star.dex).padStart(3, "0")}"><img src="assets/sprites/${r.star.dex}.png" alt="${esc(r.star.name)}" loading="lazy"></div>`
@@ -212,7 +298,7 @@
         ${rating}
         <div class="links">${tx}${imdb}</div>
       </div>`;
-    }).join("");
+    }
     const eps = G.rows.filter(r => r.type === "episode");
     const ahead = G.rows.filter((r, i) => !isWatched(i) && r.type === "episode");
     const top = eps.filter(r => r.rating >= 4), topAhead = ahead.filter(r => r.rating >= 4);
@@ -246,7 +332,7 @@
     setProgress(j);
   });
   document.getElementById("jumpNext").addEventListener("click", () => {
-    const el = document.querySelector(".row.next") || document.querySelector(".row:last-child");
+    const el = document.querySelector(".row.next") || [...document.querySelectorAll(".row")].at(-1);
     el?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
