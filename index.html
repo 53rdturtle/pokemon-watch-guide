@@ -450,6 +450,27 @@
     }
   });
   render();
+
+  // Home-screen web apps on iOS keep serving the HTML they first loaded (and resume without reloading),
+  // so new versions never show up. On launch and whenever the app comes back to the foreground, fetch the
+  // page from the network and reload if its <style> or this script changed. "reload" also refreshes the HTTP cache.
+  let lastCheck = 0;
+  async function checkForUpdate() {
+    if (Date.now() - lastCheck < 60e3) return;
+    lastCheck = Date.now();
+    try {
+      const html = await (await fetch(location.pathname, { cache: "reload" })).text();
+      const doc = new DOMParser().parseFromString(html, "text/html");
+      const code = d => [d.querySelector("style")?.textContent, [...d.querySelectorAll("script:not([src])")].at(-1)?.textContent].join("\n");
+      const fresh = code(doc);
+      if (!fresh.includes("checkForUpdate") || fresh === code(document)) return;
+      if (sessionStorage.getItem("pokemon-guide-reloaded") === String(fresh.length)) return; // don't loop if the reload came back stale
+      sessionStorage.setItem("pokemon-guide-reloaded", String(fresh.length));
+      location.reload();
+    } catch {}
+  }
+  checkForUpdate();
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) checkForUpdate(); });
 </script>
 </body>
 </html>
