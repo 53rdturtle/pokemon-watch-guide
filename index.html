@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pokémon Watch Guide</title>
+<title>宝可梦观看指南</title>
 <style>
   :root {
     --bg: #f7f7f5; --card: #fff; --text: #1d1d1f; --muted: #6e6e73; --line: #e3e3e0;
@@ -72,23 +72,23 @@
 </head>
 <body>
 <header>
-  <h1>Pokémon Watch Guide <small id="seriesTitle"></small></h1>
+  <h1>宝可梦观看指南 <small id="seriesTitle"></small></h1>
   <div class="controls">
     <div class="seg" id="minRating">
-      <button data-v="0" class="on">All</button><button data-v="3">3+</button><button data-v="4">4+ should</button><button data-v="5">5 must</button>
+      <button data-v="0" class="on">全部</button><button data-v="3">3分以上</button><button data-v="4">4分以上 推荐</button><button data-v="5">5分 必看</button>
     </div>
-    <label><input type="checkbox" id="showExtras" checked> Movies, games &amp; events</label>
-    <label><input type="checkbox" id="hideWatched"> Hide watched</label>
-    <button id="jumpNext">Jump to next ↓</button>
-    <input type="search" id="q" placeholder="Search title / summary">
+    <label><input type="checkbox" id="showExtras" checked> 电影、游戏和事件</label>
+    <label><input type="checkbox" id="hideWatched"> 隐藏已看</label>
+    <button id="jumpNext">跳到下一集 ↓</button>
+    <input type="search" id="q" placeholder="搜索标题 / 简介">
   </div>
   <div class="stats" id="stats"></div>
 </header>
 <main>
   <p class="note">
-    <b>Rating:</b> 5 must watch · 4 should watch · 3 maybe · 2 skippable · 1 skip. 4+ episodes have spoiler-free summaries.
-    <b>#</b> is the Tencent episode number, with the original Japanese EP number underneath.
-    Click ▶ on the last row you watched to mark everything up to it as watched (click it again to step back one).
+    <b>评分：</b>5 必看 · 4 推荐 · 3 可看可不看 · 2 可跳过 · 1 跳过。4分以上的集数简介不含剧透。
+    <b>#</b> 为腾讯视频集数，下方是日本原版EP集数。
+    点击最后看完那一行的 ▶，即可把它及之前的所有条目标为已看（再点一次后退一条）。
     <span id="tencentNote"></span>
   </p>
   <div id="list"></div>
@@ -99,10 +99,10 @@
   const PROGRESS_KEY = "pokemon-guide-progress";
   const OLD_WATCH_KEY = "pokemon-guide-watched";
   const state = { min: 0, extras: true, hideWatched: false, q: "" };
-  const LABEL = { game: "Game", movie: "Movie", special: "Special", event: "Event" };
-  const RLABEL = { 5: "must", 4: "should", 3: "maybe", 2: "skippable", 1: "skip" };
+  const LABEL = { game: "游戏", movie: "电影", special: "特别篇", event: "事件" };
+  const RLABEL = { 5: "必看", 4: "推荐", 3: "可看可不看", 2: "可跳过", 1: "跳过" };
 
-  document.getElementById("seriesTitle").textContent = G.series.map(s => `${s.title} · ${s.titleZh}`).join(", ");
+  document.getElementById("seriesTitle").textContent = G.series.map(s => `${s.titleZh} · ${s.title}`).join("，");
   document.getElementById("tencentNote").textContent = G.series.map(s => s.tencentNote).join(" ");
 
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -148,10 +148,10 @@
         : "";
       const tx = r.tencentUrl
         ? `<a href="${r.tencentUrl}" target="_blank" rel="noopener">▶ 腾讯视频</a>`
-        : (isEp || r.type === "movie" || r.type === "special" ? `<span class="na">Not on Tencent</span>` : "");
+        : (isEp || r.type === "movie" || r.type === "special" ? `<span class="na">腾讯暂无</span>` : "");
       const cls = [isEp ? "" : "extra " + r.type, w ? "watched" : "", r.i === progress ? "bookmark" : "", r.i === nextI ? "next" : ""].join(" ");
       return `<div class="row ${cls}" data-i="${r.i}">
-        <button class="mark" title="${r.i === progress ? "Bookmark — click to step back one" : "Watched up to here"}">▶</button>
+        <button class="mark" title="${r.i === progress ? "书签——点击后退一条" : "看到这里"}">▶</button>
         ${num}
         <div class="body">
           <div class="title">${isEp ? "" : `<span class="tag ${r.type}">${LABEL[r.type]}</span>`}${esc(r.titleZh || r.title)}${r.titleZh ? `<span class="en">${esc(r.title)}</span>` : ""}</div>
@@ -167,12 +167,12 @@
     const top = eps.filter(r => r.rating >= 4), topAhead = ahead.filter(r => r.rating >= 4);
     const lastEp = G.rows.slice(0, progress + 1).reverse().find(r => r.type === "episode");
     const parts = [
-      lastEp ? `Watched through ${epLabel(lastEp)}` : "Not started",
-      ahead[0] ? `next: ${epLabel(ahead[0])}` : "all caught up",
-      topAhead[0] && topAhead[0] !== ahead[0] ? `next 4+: ${epLabel(topAhead[0])}` : "",
-      `episodes left ${ahead.length}/${eps.length}`,
-      `4+ left ${topAhead.length}/${top.length}`,
-      `showing ${rows.length} rows`,
+      lastEp ? `已看到 ${epLabel(lastEp)}` : "尚未开始",
+      ahead[0] ? `下一集：${epLabel(ahead[0])}` : "已全部看完",
+      topAhead[0] && topAhead[0] !== ahead[0] ? `下一集4分以上：${epLabel(topAhead[0])}` : "",
+      `剩余 ${ahead.length}/${eps.length} 集`,
+      `4分以上剩余 ${topAhead.length}/${top.length}`,
+      `显示 ${rows.length} 条`,
     ];
     document.getElementById("stats").textContent = parts.filter(Boolean).join(" · ");
   }
