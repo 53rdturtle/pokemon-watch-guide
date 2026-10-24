@@ -167,6 +167,8 @@
     i >= 0 ? localStorage.setItem(PROGRESS_KEY, keyOf(G.rows[i])) : localStorage.removeItem(PROGRESS_KEY);
     render();
   }
+  // Game releases and real-world events are timeline context, not something to watch: no ▶ and never "next".
+  const watchable = r => r.type === "episode" || r.type === "movie" || r.type === "special";
   const epLabel = r => `#${r.tencentNo ?? "—"} (EP${String(r.jp).padStart(3, "0")})`;
 
   function render() {
@@ -178,7 +180,7 @@
       if (q && !`${r.title} ${r.titleZh} ${r.summary} ${r.japanese} ${r.star?.name ?? ""}`.toLowerCase().includes(q)) return false;
       return true;
     });
-    const nextI = rows.find(r => !isWatched(r.i))?.i;
+    const nextI = rows.find(r => !isWatched(r.i) && watchable(r))?.i;
     document.getElementById("list").innerHTML = rows.map(r => {
       const isEp = r.type === "episode", w = isWatched(r.i);
       const star = r.star
@@ -199,7 +201,7 @@
       const bare = !r.rating && !tx && !imdb;
       const cls = [isEp ? "" : "extra " + r.type, bare ? "bare" : "", w ? "watched" : "", r.i === progress ? "bookmark" : "", r.i === nextI ? "next" : ""].join(" ");
       return `<div class="row ${cls}" data-i="${r.i}">
-        <button class="mark" title="${r.i === progress ? "书签——点击后退一条" : "看到这里"}">▶</button>
+        ${watchable(r) ? `<button class="mark" title="${r.i === progress ? "书签——点击后退一条" : "看到这里"}">▶</button>` : `<div></div>`}
         ${star}
         ${num}
         <div class="body">
@@ -238,7 +240,10 @@
   document.getElementById("list").addEventListener("click", e => {
     if (!e.target.classList.contains("mark")) return;
     const i = +e.target.closest(".row").dataset.i;
-    setProgress(i === progress ? i - 1 : i);
+    if (i !== progress) return setProgress(i);
+    let j = i - 1; // step back to the previous watchable row so the bookmark never lands on a game/event
+    while (j >= 0 && !watchable(G.rows[j])) j--;
+    setProgress(j);
   });
   document.getElementById("jumpNext").addEventListener("click", () => {
     const el = document.querySelector(".row.next") || document.querySelector(".row:last-child");
