@@ -1,5 +1,5 @@
 window.GUIDE = {
- "generated": "2026-10-24T07:49:42.836Z",
+ "generated": "2026-10-24T07:50:35.601Z",
  "series": [
   {
    "id": "indigo-league",
@@ -1857,7 +1857,7 @@ window.GUIDE = {
    "title": "Pallet Party Panic",
    "titleZh": "真新镇！新的旅程",
    "japanese": "マサラタウン! あらたなるたびだち!",
-   "rating": 4,
+   "rating": 5,
    "summary": "回到真新镇庆祝联盟之旅，却迎来一个新任务；当年被小智扔石头的那群烈雀，也带着旧怨回来了。比比鸟面临重要的时刻。",
    "star": {
     "dex": 18,
@@ -1917,7 +1917,7 @@ window.GUIDE = {
    "title": "The Lost Lapras",
    "titleZh": "拯救乘龙",
    "japanese": "ラプラスをたすけろ!",
-   "rating": 4,
+   "rating": 5,
    "summary": "坠落在橘子群岛后，小智和小霞遇到一只被欺负、不再信任人类的幼小乘龙，还认识了一位爱画画的神奇宝贝观察家。",
    "star": {
     "dex": 131,
@@ -2217,7 +2217,7 @@ window.GUIDE = {
    "title": "The Mandarin Island Miss Match",
    "titleZh": "四天王科拿，冰之战斗",
    "japanese": "してんのうカンナ! こおりのたたかい!!",
-   "rating": 4,
+   "rating": 3,
    "summary": "一路连胜的小智变得骄傲自大，直到遇见一位深藏不露的训练家。腾讯上没有，因片中迷唇姐的造型而被撤下。",
    "star": {
     "dex": 91,
@@ -2497,7 +2497,7 @@ window.GUIDE = {
    "title": "Hello, Pummelo!",
    "titleZh": "胜利者杯，全员大对决，六VS六",
    "japanese": "ウィナーズカップ! フルバトル6VS6!!",
-   "rating": 5,
+   "rating": 4,
    "summary": "橘子联盟决赛开打：小智对上从未输过的橘子队首领，一场六对六的全面对战。",
    "star": {
     "dex": 94,
@@ -2917,7 +2917,7 @@ window.GUIDE = {
    "title": "Fighting Flyer with Fire",
    "titleZh": "桔梗道馆，空中大战",
    "japanese": "キキョウジム! おおぞらのたたかい!!",
-   "rating": 4,
+   "rating": 5,
    "summary": "城都第一场道馆战：桔梗道馆的阿速擅长飞行系，小智发现光靠蛮力行不通，必须想出真正的战术。",
    "star": {
     "dex": 18,
@@ -3337,7 +3337,7 @@ window.GUIDE = {
    "title": "Hot Matches!",
    "titleZh": "盔甲鸟对抗火球鼠，钢铁之翼",
    "japanese": "エアムードVSヒノアラシ! はがねのつばさ!!",
-   "rating": 4,
+   "rating": 3,
    "summary": "少女训练家的盔甲鸟钢铁之翼所向无敌，小智和火球鼠要经过一番特训才有一战之力。",
    "star": {
     "dex": 227,
@@ -3777,7 +3777,7 @@ window.GUIDE = {
    "title": "Power Play!",
    "titleZh": "月精灵！暗夜的战斗！",
    "japanese": "ブラッキー! やみよのたたかい!!",
-   "rating": 4,
+   "rating": 3,
    "summary": "武藏造出能反击的果然翁机器人，小智不得不和老对手小茂联手。两人久违地并肩作战。",
    "star": {
     "dex": 197,
@@ -3997,7 +3997,7 @@ window.GUIDE = {
    "title": "Houndoom's Special Delivery",
    "titleZh": "黑鲁加与波克比",
    "japanese": "ヘルガーとトゲピー!",
-   "rating": 4,
+   "rating": 3,
    "summary": "和火箭队一番纠缠后波克比不见了，旁边还留下了巨大的脚印。一集出乎意料动人的波克比故事。",
    "star": {
     "dex": 229,
@@ -4057,7 +4057,7 @@ window.GUIDE = {
    "title": "Trouble's Brewing",
    "titleZh": "伊布五姐妹，在茶会作战",
    "japanese": "イーブイ5しまい! おちゃかいでバトル!!",
-   "rating": 4,
+   "rating": 3,
    "summary": "一座日式庭园由五位各擅传统技艺的美丽姐妹打理，她们各自带着一只伊布进化型。小刚乐坏了。",
    "star": {
     "dex": 133,
@@ -4957,7 +4957,7 @@ window.GUIDE = {
    "title": "Bulbasaur... the Ambassador!",
    "titleZh": "再见妙蛙种子！大木家后院大冒险！",
    "japanese": "さよならフシギダネ! オーキドていのぼうけん!!",
-   "rating": 4,
+   "rating": 5,
    "summary": "大木研究所的后院里，各种神奇宝贝起了冲突，只有妙蛙种子能出面调停。小智要面对一个艰难的决定。",
    "star": {
     "dex": 1,
@@ -5097,8 +5097,8 @@ window.GUIDE = {
    "title": "Just Waiting On a Friend",
    "titleZh": "雾中的九尾",
    "japanese": "きりのなかのキュウコン!",
-   "rating": 3,
-   "summary": "雾中的大宅里，小刚迷上了照不出镜像的少女，原来她是九尾为等待主人而制造的幻象。氛围诡异，略带伤感。",
+   "rating": 4,
+   "summary": "雾中的大宅里，小刚迷上了一位神秘少女，可她和这座宅子一样，处处透着说不出的古怪。氛围诡异，略带伤感。",
    "star": {
     "dex": 38,
     "name": "九尾"
@@ -5217,7 +5217,7 @@ window.GUIDE = {
    "title": "Nice Pryce, Baby!",
    "titleZh": "卡吉道馆，冰之战斗",
    "japanese": "チョウジジム! こおりのたたかい!",
-   "rating": 4,
+   "rating": 5,
    "summary": "冰系道馆馆主柳伯的冰之战斗，赛场和寒冷都对小智不利，这场道馆战需要的不只是属性相克。",
    "star": {
     "dex": 87,
@@ -5537,7 +5537,7 @@ window.GUIDE = {
    "title": "Better Eight Than Never",
    "titleZh": "烟墨道馆最后的徽章",
    "japanese": "フスベジム! さいごのバッジ!!",
-   "rating": 4,
+   "rating": 5,
    "summary": "城都地区最后一枚徽章，对手是骄傲的龙系馆主小椿。小智需要拿出全部实力才能取得白银大会的参赛资格。",
    "star": {
     "dex": 230,
@@ -5637,7 +5637,7 @@ window.GUIDE = {
    "title": "Lapras of Luxury",
    "titleZh": "乘龙之歌！",
    "japanese": "ラプラスのうた!",
-   "rating": 4,
+   "rating": 3,
    "summary": "为空木博士护送一颗神奇宝贝蛋时，小智遇到了一群乘龙——其中一只正是他在橘子群岛的老伙伴。",
    "star": {
     "dex": 131,
@@ -5777,7 +5777,7 @@ window.GUIDE = {
    "title": "Mother of All Battles",
    "titleZh": "班吉拉与由基拉",
    "japanese": "バンギラスとヨーギラス!",
-   "rating": 4,
+   "rating": 3,
    "summary": "当年袭击由基拉的偷猎者再度出现，这次他们的目标是它的母亲班吉拉。由基拉篇的完结。",
    "star": {
     "dex": 248,
@@ -5817,7 +5817,7 @@ window.GUIDE = {
    "title": "A Claim to Flame!",
    "titleZh": "白银大会跟小茂再度交手！！",
    "japanese": "シロガネリーグかいまく! シゲルふたたび!",
-   "rating": 4,
+   "rating": 3,
    "summary": "白银大会正式开幕，小智与老对手小茂在会场重逢。城都之旅最后的舞台拉开了帷幕。",
    "star": {
     "dex": 59,
@@ -5857,7 +5857,7 @@ window.GUIDE = {
    "title": "Tie One On!",
    "titleZh": "大菊花对抗妙蛙种子！草系神奇宝贝的志气",
    "japanese": "メガニウムVSフシギダネ! くさタイプのいじ!",
-   "rating": 4,
+   "rating": 3,
    "summary": "预赛的关键一战，对手杰克森的大菊花与小智的月桂叶展开草系对决，晋级与否就看这一场。",
    "star": {
     "dex": 154,
@@ -5877,7 +5877,7 @@ window.GUIDE = {
    "title": "The Ties That Bind",
    "titleZh": "决胜锦标赛！全面作战6VS6！！！",
    "japanese": "けっしょうリーグ! フルバトル6VS6!!",
-   "rating": 5,
+   "rating": 4,
    "summary": "决胜锦标赛首轮，小智对上了他一生的劲敌小茂。熬夜研究对手的6只神奇宝贝，这是两人迄今最重要的一场全面对战。",
    "star": {
     "dex": 9,
@@ -5917,7 +5917,7 @@ window.GUIDE = {
    "title": "Playing with Fire!",
    "titleZh": "再度遭遇火焰鸡！！与叶越的战斗！！",
    "japanese": "バシャーモふたたび! ハヅキとのたたかい!!",
-   "rating": 4,
+   "rating": 5,
    "summary": "白银大会八强战，小智对阵叶越。叶越的王牌来自小智从未见过的地区，两人的最强神奇宝贝终将正面碰撞。",
    "star": {
     "dex": 257,
