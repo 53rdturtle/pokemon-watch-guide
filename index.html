@@ -2,8 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pokémon Watch Guide</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Pokémon">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
 <style>
   :root {
     --bg: #f7f7f5; --card: #fff; --text: #1d1d1f; --muted: #6e6e73; --line: #e3e3e0;
@@ -15,8 +24,8 @@
       --r3: #8f8f95; --r2: #66666b; --r1: #4d4d52; --event: #bbb; }
   }
   * { box-sizing: border-box; }
-  body { margin: 0; font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); }
-  header { position: sticky; top: 0; z-index: 2; background: var(--bg); border-bottom: 1px solid var(--line); padding: 12px 16px 10px; }
+  body { margin: 0; -webkit-text-size-adjust: 100%; font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); }
+  header { position: sticky; top: 0; z-index: 2; background: var(--bg); border-bottom: 1px solid var(--line); padding: calc(12px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 10px calc(16px + env(safe-area-inset-left)); }
   h1 { font-size: 20px; margin: 0 0 8px; }
   h1 small { font-weight: normal; color: var(--muted); font-size: 13px; margin-left: 6px; }
   .controls { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: 14px; }
@@ -27,8 +36,13 @@
   label { cursor: pointer; user-select: none; white-space: nowrap; }
   input[type=search] { font: inherit; padding: 5px 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); min-width: 160px; }
   .stats { color: var(--muted); font-size: 13px; margin-top: 6px; }
-  main { max-width: 1100px; margin: 0 auto; padding: 8px 12px 60px; }
+  main { max-width: 1100px; margin: 0 auto; padding: 8px calc(12px + env(safe-area-inset-right)) calc(60px + env(safe-area-inset-bottom)) calc(12px + env(safe-area-inset-left)); }
   .note { color: var(--muted); font-size: 13px; margin: 8px 4px 12px; }
+  .note summary { cursor: pointer; color: var(--text); }
+  .note p { margin: 6px 0 0; }
+  .backup { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 8px; }
+  .backup button, .backup label.btn { font: inherit; font-size: 13px; color: var(--text); background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+  .backup input[type=file] { display: none; }
   .row { display: grid; grid-template-columns: 26px 64px minmax(0, 1fr) 92px 96px; gap: 4px 12px; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 6px; }
   .row.watched { opacity: .5; }
   .row.extra { border-left: 4px solid var(--event); }
@@ -54,12 +68,20 @@
   .imdb span { color: var(--muted); font-size: 11px; }
   input.w { margin-top: 4px; width: 18px; height: 18px; }
   @media (max-width: 700px) {
-    .row { grid-template-columns: 22px minmax(0, 1fr) 84px; }
+    .row { grid-template-columns: 28px minmax(0, 1fr) 84px; }
     .row .num { grid-column: 2; grid-row: 1; display: flex; gap: 8px; align-items: baseline; }
     .row .num b { display: inline; font-size: 14px; }
     .row .body { grid-column: 1 / 3; grid-row: 2; }
     .row .rating { grid-column: 3; grid-row: 1; }
     .row .links { grid-column: 3; grid-row: 2; }
+    .row.bare .body { grid-column: 1 / -1; }
+    header { position: static; padding-top: calc(10px + env(safe-area-inset-top)); }
+    h1 { font-size: 18px; }
+    h1 small { display: block; margin: 2px 0 0; }
+    input[type=search] { flex: 1 1 100%; font-size: 16px; }
+    .seg button { padding: 7px 11px; }
+    input.w { width: 24px; height: 24px; margin: 0; }
+    .links a { padding: 6px; }
   }
 </style>
 </head>
@@ -77,11 +99,20 @@
   <div class="stats" id="stats"></div>
 </header>
 <main>
-  <p class="note">
-    <b>Rating:</b> 5 must watch · 4 should watch · 3 maybe · 2 skippable · 1 skip. 4+ episodes have spoiler-free summaries.
-    <b>#</b> is the Tencent episode number, with the original Japanese EP number underneath.
-    <span id="tencentNote"></span>
-  </p>
+  <details class="note">
+    <summary>How to read this · back up watched</summary>
+    <p>
+      <b>Rating:</b> 5 must watch · 4 should watch · 3 maybe · 2 skippable · 1 skip. 4+ episodes have spoiler-free summaries.
+      <b>#</b> is the Tencent episode number, with the original Japanese EP number underneath.
+      <span id="tencentNote"></span>
+    </p>
+    <p>Watched ticks are saved in this browser only. On iPhone, use Share → Add to Home Screen so Safari keeps them, and export a backup now and then.</p>
+    <div class="backup">
+      <button type="button" id="exportBtn">Export watched</button>
+      <label class="btn">Import watched<input type="file" id="importFile" accept=".json,application/json"></label>
+      <span id="backupMsg"></span>
+    </div>
+  </details>
   <div id="list"></div>
 </main>
 <script src="data/guide.js"></script>
@@ -122,7 +153,8 @@
       const tx = r.tencentUrl
         ? `<a href="${r.tencentUrl}" target="_blank" rel="noopener">▶ 腾讯视频</a>`
         : (isEp || r.type === "movie" || r.type === "special" ? `<span class="na">Not on Tencent</span>` : "");
-      return `<div class="row ${isEp ? "" : "extra " + r.type} ${watched.has(k) ? "watched" : ""}" data-k="${esc(k)}">
+      const bare = !r.rating && !tx && !imdb;
+      return `<div class="row ${isEp ? "" : "extra " + r.type} ${bare ? "bare" : ""} ${watched.has(k) ? "watched" : ""}" data-k="${esc(k)}">
         <input type="checkbox" class="w" title="Watched" ${watched.has(k) ? "checked" : ""}>
         ${num}
         <div class="body">
@@ -154,8 +186,41 @@
     if (!e.target.classList.contains("w")) return;
     const k = e.target.closest(".row").dataset.k;
     e.target.checked ? watched.add(k) : watched.delete(k);
-    localStorage.setItem(WATCH_KEY, JSON.stringify([...watched]));
+    save();
     render();
+  });
+  const save = () => localStorage.setItem(WATCH_KEY, JSON.stringify([...watched]));
+  const backupMsg = document.getElementById("backupMsg");
+
+  document.getElementById("exportBtn").addEventListener("click", async () => {
+    const name = `pokemon-watched-${new Date().toISOString().slice(0, 10)}.json`;
+    const file = new File([JSON.stringify({ watched: [...watched] }, null, 1)], name, { type: "application/json" });
+    // iOS: the share sheet lets you save to Files / iCloud Drive or AirDrop it.
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      try { await navigator.share({ files: [file] }); backupMsg.textContent = `Exported ${watched.size}.`; } catch {}
+      return;
+    }
+    const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(file), download: name });
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    backupMsg.textContent = `Exported ${watched.size}.`;
+  });
+
+  document.getElementById("importFile").addEventListener("change", async e => {
+    const f = e.target.files[0]; if (!f) return;
+    e.target.value = "";
+    try {
+      const data = JSON.parse(await f.text());
+      const keys = Array.isArray(data) ? data : data.watched;
+      if (!Array.isArray(keys)) throw new Error();
+      const before = watched.size;
+      for (const k of keys) if (typeof k === "string") watched.add(k);
+      save();
+      render();
+      backupMsg.textContent = `Imported: ${watched.size - before} new, ${watched.size} total.`;
+    } catch {
+      backupMsg.textContent = "That file isn't a watched backup.";
+    }
   });
   render();
 </script>
