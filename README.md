@@ -19,7 +19,7 @@
 ## 目录结构
 
 ```
-index.html                 页面（筛选器；“已看”勾选保存在 localStorage）
+index.html                 页面（筛选器；“看到这里”书签保存在 localStorage）
 data/guide.js              自动生成，请勿手动编辑
 editorial/<series>.json    按日本原版集数记录的我的评分和简介，以及额外条目（游戏/电影/事件）
 sources/                   从 IMDb、维基百科和腾讯抓取的原始数据
