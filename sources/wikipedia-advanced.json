@@ -1,0 +1,322 @@
+[
+ {
+  "jp": 1,
+  "en": 274,
+  "title": "Get the Show on the Road!",
+  "romaji": "Aratanaru Daichi! Aratanaru Bōken!!",
+  "japanese": "新たなる大地! 新たなる冒険!!",
+  "date": "2002-11-21"
+ },
+ {
+  "jp": 2,
+  "en": 275,
+  "title": "A Ruin with a View",
+  "romaji": "Kodai Pokémon to Nazo no Gundan!",
+  "japanese": "古代ポケモンと謎の軍団!",
+  "date": "2002-11-28"
+ },
+ {
+  "jp": 3,
+  "en": 276,
+  "title": "There's No Place Like Hoenn",
+  "romaji": "Tōka Jimu! Tai Yarukimono!",
+  "japanese": "トウカジム! VSヤルキモノ!",
+  "date": "2002-12-05"
+ },
+ {
+  "jp": 4,
+  "en": 277,
+  "title": "You Never Can Taillow",
+  "romaji": "Subame ga Ippai, Kiken ga Ippai! Tōka no Mori de Getto da ze!!",
+  "japanese": "スバメがいっぱい 危険がいっぱい! トウカの森でゲットだぜ!!",
+  "date": "2002-12-12"
+ },
+ {
+  "jp": 5,
+  "en": 278,
+  "title": "In the Knicker of Time!",
+  "romaji": "Jigujaguma to Tanpan-kozō! Haruka Hajimete no Batoru!!",
+  "japanese": "ジグザグマと短パン小僧! ハルカはじめてのバトル!!",
+  "date": "2002-12-19"
+ },
+ {
+  "jp": 6,
+  "en": 279,
+  "title": "A Poached Ego!",
+  "romaji": "Roketto-dan! Midare Hikkagi de Sayōnara!!",
+  "japanese": "ロケット団! みだれひっかきでサヨウナラ!!",
+  "date": "2002-12-26"
+ },
+ {
+  "jp": 7,
+  "en": 280,
+  "title": "Tree's a Crowd",
+  "romaji": "Kimori no Mori! Kyodaiju o Mamore!!",
+  "japanese": "キモリの森! 巨大樹を守れ!!",
+  "date": "2003-01-09"
+ },
+ {
+  "jp": 8,
+  "en": 281,
+  "title": "A Tail with a Twist",
+  "romaji": "Habuneku Tai Kimori! Hissatsu no Hataku Kōgeki!!",
+  "japanese": "ハブネークVSキモリ! 必殺のはたく攻撃!!",
+  "date": "2003-01-16"
+ },
+ {
+  "jp": 9,
+  "en": 282,
+  "title": "Taming of the Shroomish",
+  "romaji": "Kaiki! Kinokoko Yashiki no Nazo!",
+  "japanese": "怪奇! キノココ屋敷の謎!",
+  "date": "2003-01-23"
+ },
+ {
+  "jp": 10,
+  "en": 283,
+  "title": "You Said a Mouthful!",
+  "romaji": "Shijō Saikyō no Perippā Arawareru!!",
+  "japanese": "史上最強のペリッパー現る!!",
+  "date": "2003-01-30"
+ },
+ {
+  "jp": 11,
+  "en": 284,
+  "title": "A Bite to Remember",
+  "romaji": "Guraena to Pochiena! Shinka no Shinpi!!",
+  "japanese": "グラエナとポチエナ! 進化の神秘!!",
+  "date": "2003-02-06"
+ },
+ {
+  "jp": 12,
+  "en": 285,
+  "title": "The Lotad Lowdown",
+  "romaji": "Hasubō to Furawā Shoppu no San-Shimai!",
+  "japanese": "ハスボーとフラワーショップの三姉妹!",
+  "date": "2003-02-13"
+ },
+ {
+  "jp": 13,
+  "en": 286,
+  "title": "All Things Bright and Beautifly!",
+  "romaji": "Pokemon Kontesuto! Agehanto no Karei na Batoru!!",
+  "japanese": "ポケモンコンテスト! アゲハントの華麗なバトル!!",
+  "date": "2003-02-20"
+ },
+ {
+  "jp": 14,
+  "en": 287,
+  "title": "All in a Day's Wurmple",
+  "romaji": "Daburu Batoru to Daburu de Kemusso!?",
+  "japanese": "ダブルバトルとダブルでケムッソ!?",
+  "date": "2003-02-27"
+ },
+ {
+  "jp": 15,
+  "en": 288,
+  "title": "Gonna Rule the School!",
+  "romaji": "Benkyō-shimasu! Pokemon Torēnāzu Sukūru!!",
+  "japanese": "勉強します! ポケモントレーナーズスクール!!",
+  "date": "2003-03-06"
+ },
+ {
+  "jp": 16,
+  "en": 289,
+  "title": "The Winner by a Nosepass",
+  "romaji": "Kanazumi Jimu! Nozupasu no Himitsu Heiki!!",
+  "japanese": "カナズミジム! ノズパスの秘密兵器!!",
+  "date": "2003-03-13"
+ },
+ {
+  "jp": 17,
+  "en": 290,
+  "title": "Stairway to Devon",
+  "romaji": "Debon Kōporēshon! Akua-dan no Kage!!",
+  "japanese": "デボンコーポレーション! アクア団の影!!",
+  "date": "2003-03-20"
+ },
+ {
+  "jp": 18,
+  "en": 291,
+  "title": "On a Wingull and a Prayer!",
+  "romaji": "Hagi-rōjin to Kyamome no Pīko-chan!",
+  "japanese": "ハギ老人とキャモメのピーコちゃん!",
+  "date": "2003-03-27"
+ },
+ {
+  "jp": 19,
+  "en": 292,
+  "title": "Sharpedo Attack!",
+  "romaji": "Dasshutsu! Samehadā no Shima!!",
+  "japanese": "脱出! サメハダーの島!!",
+  "date": "2003-04-03"
+ },
+ {
+  "jp": 20,
+  "en": 293,
+  "title": "Brave the Wave",
+  "romaji": "Muro Jimu! Naminori ri Jimu Rīdā, Tōki Tōjō!",
+  "japanese": "ムロジム! 波乗りジムリーダー・トウキ登場!",
+  "date": "2003-04-10"
+ },
+ {
+  "jp": 21,
+  "en": 294,
+  "title": "Which Wurmple's Which?",
+  "romaji": "Kemusso Tai Kemusso! Dotchi ga Dotchi!?",
+  "japanese": "ケムッソVSケムッソ! どっちがどっち!?",
+  "date": "2003-04-17"
+ },
+ {
+  "jp": 22,
+  "en": 295,
+  "title": "A Hole Lotta Trouble",
+  "romaji": "Daigo, Kokodora, Bosugodora!",
+  "japanese": "ダイゴ、ココドラ、ボスゴドラ!",
+  "date": "2003-04-24"
+ },
+ {
+  "jp": 23,
+  "en": 296,
+  "title": "Gone Corphishin'",
+  "romaji": "Umibe no Abare Mono, Heigani Tōjō!",
+  "japanese": "海辺の暴れ者、ヘイガニ登場!",
+  "date": "2003-05-01"
+ },
+ {
+  "jp": 24,
+  "en": 297,
+  "title": "A Corphish Out of Water",
+  "romaji": "Hashire Satoshi! Kibania no Kawa o Koe!",
+  "japanese": "走れサトシ! キバニアの川を越え!",
+  "date": "2003-05-08"
+ },
+ {
+  "jp": 25,
+  "en": 298,
+  "title": "A Mudkip Mission",
+  "romaji": "Himitsu no Ike! Mizugorō Ga Ippai!?",
+  "japanese": "秘密の池! ミズゴロウがいっぱい!?",
+  "date": "2003-05-15"
+ },
+ {
+  "jp": 26,
+  "en": 299,
+  "title": "Turning Over a Nuzleaf",
+  "romaji": "Konohana-zoku no Shūgeki!!",
+  "japanese": "コノハナ族の襲撃!!",
+  "date": "2003-05-22"
+ },
+ {
+  "jp": 27,
+  "en": 300,
+  "title": "A Three Team Scheme!",
+  "romaji": "Maguma-dan Tai Akua-dan! Himitsu Kichi no Tatakai!",
+  "japanese": "マグマ団VSアクア団! ひみつきちの戦い!",
+  "date": "2003-05-29"
+ },
+ {
+  "jp": 28,
+  "en": 301,
+  "title": "Seeing is Believing!",
+  "romaji": "Agehanto to Dokukeiru! Shinka no Hate ni!",
+  "japanese": "アゲハントとドクケイル! 進化の果てに!",
+  "date": "2003-06-05"
+ },
+ {
+  "jp": 29,
+  "en": 302,
+  "title": "Ready, Willing and Sableye",
+  "romaji": "Yamirami de Tokkiri!",
+  "japanese": "ヤミラミでドッキリ!",
+  "date": "2003-06-12"
+ },
+ {
+  "jp": 30,
+  "en": 303,
+  "title": "A Meditite Fight!",
+  "romaji": "Batoru Gāru to Asanan! Arashi no Naka de!",
+  "japanese": "バトルガールとアサナン! 嵐の中で!",
+  "date": "2003-06-19"
+ },
+ {
+  "jp": 31,
+  "en": 304,
+  "title": "Just One of the Geysers",
+  "romaji": "Muro Jimu Saisen! Naminori Batoru Fīrudo!",
+  "japanese": "ムロジム再戦! 波乗りバトルフィールド!",
+  "date": "2003-06-26"
+ },
+ {
+  "jp": 32,
+  "en": 305,
+  "title": "Abandon Ship!",
+  "romaji": "Suterare Fune! Shinobiyoru Kage!!",
+  "japanese": "すてられ船! しのびよる影!!",
+  "date": "2003-07-03"
+ },
+ {
+  "jp": 33,
+  "en": 306,
+  "title": "Now That's Flower Power!",
+  "romaji": "Haruka ni Raibaru! Tokkun Pokemon Kontesuto!!",
+  "japanese": "ハルカにライバル! 特訓ポケモンコンテスト!!",
+  "date": "2003-07-10"
+ },
+ {
+  "jp": 34,
+  "en": 307,
+  "title": "Having a Wailord of a Time",
+  "romaji": "Hajimete no Pokemon de Dai Panikku!!",
+  "japanese": "はじめてのポケモンで大パニック!!",
+  "date": "2003-07-17"
+ },
+ {
+  "jp": 35,
+  "en": 308,
+  "title": "Win, Lose or Drew!",
+  "romaji": "Haruka! Pokemon Kontesuto Hatsu Chōsen!!",
+  "japanese": "ハルカ! ポケモンコンテスト初挑戦!!",
+  "date": "2003-07-24"
+ },
+ {
+  "jp": 36,
+  "en": 309,
+  "title": "The Spheal of Approval",
+  "romaji": "Umi no Hakubutsukan o Mamore! Maguma-dan no Shūgeki!!",
+  "japanese": "海の博物館を守れ! マグマ団の襲撃!!",
+  "date": "2003-07-31"
+ },
+ {
+  "jp": 37,
+  "en": 310,
+  "title": "Jump for Joy!",
+  "romaji": "Bijo to Yajū!? Dātengu to Jōi-san!",
+  "japanese": "美女と野獣!? ダーテングとジョーイさん!",
+  "date": "2003-08-07"
+ },
+ {
+  "jp": 38,
+  "en": 311,
+  "title": "A Different Kind of Misty",
+  "romaji": "Purasuru to Mainan! Yama no Tōdai!!",
+  "japanese": "プラスルとマイナン! 山の灯台!!",
+  "date": "2003-08-14"
+ },
+ {
+  "jp": 39,
+  "en": 312,
+  "title": "A Poké-BLOCK Party",
+  "romaji": "Utau! Pokemon Karakuri Yashiki!!",
+  "japanese": "歌う! ポケモンからくり屋敷!!",
+  "date": "2003-08-21"
+ },
+ {
+  "jp": 40,
+  "en": 313,
+  "title": "Watt's with Wattson",
+  "romaji": "Kinsetsu Jimu! Tessen no Dengeki Batoru!!",
+  "japanese": "キンセツジム! テッセンの電撃バトル!!",
+  "date": "2003-08-28"
+ }
+]

@@ -198,7 +198,7 @@
     <p>
       <b>评分：</b>5 必看 · 4 推荐 · 3 可看可不看 · 2 可跳过 · 1 跳过。4分以上的集数简介不含剧透。
       <span class="mood cute">可爱</span><span class="mood comedy">搞笑</span>标出以可爱宝可梦或搞笑为主的集，不论评分；选“＋可爱搞笑”可在评分筛选之外加上这些集（例如“4分以上”再加上3分以下的可爱/搞笑集），“只看可爱搞笑”则只显示它们。
-      <b>#</b> 为腾讯视频集数，下方是日本原版EP集数。
+      <b>#</b> 为腾讯视频集数（无印和超世代各是一个专辑，各自从1数起），下方是日本原版集数（无印为EP，超世代为AG）。
       点击 ♡ 收藏喜欢的集，勾选“只看收藏”即可只显示它们。
       点击最后看完那一行的 ▶，即可把它及之前的所有条目标为已看（再点一次后退一条）。
       <span id="tencentNote"></span>
@@ -212,7 +212,7 @@
   </details>
   <div id="list"></div>
 </main>
-<script src="data/guide.js?v=ee2dd4f49e"></script>
+<script src="data/guide.js?v=9724ea2711"></script>
 <script>
   const G = window.GUIDE;
   const PROGRESS_KEY = "pokemon-guide-progress";
@@ -223,7 +223,9 @@
   const MOOD = { cute: "可爱", comedy: "搞笑" };
   const RLABEL = { 5: "必看", 4: "推荐", 3: "可看可不看", 2: "可跳过", 1: "跳过" };
 
-  document.getElementById("seriesTitle").textContent = `无印 · ${G.series.map(s => s.short).join(" → ")} · EP${String(G.series[0].from).padStart(3, "0")}–${G.series.at(-1).to}`;
+  // Header: one "<series> <first>–<last>" span per anime series, e.g. "无印 EP001–276 · 超世代 AG001–192".
+  const GROUPS = [...new Set(G.series.map(s => s.group))].map(name => G.series.filter(s => s.group === name));
+  document.getElementById("seriesTitle").textContent = GROUPS.map(g => `${g[0].group} ${g[0].from}–${g.at(-1).to.replace(/^\D+/, "")}`).join(" · ");
   document.getElementById("tencentNote").textContent = G.series.map(s => s.tencentNote).filter(Boolean).join(" ");
 
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -279,9 +281,9 @@
     const seen = eps.filter(x => isWatched(x.i)).length, top = eps.filter(x => x.r.rating >= 4).length;
     const done = isWatched(s.at) ? " done" : "";
     return `<div class="tl-series${done}"><div class="tl${done}"><i class="dot"></i></div><b>${esc(s.titleZh)}</b><span class="en">${esc(s.title)}</span>
-      <div class="ss">EP${String(s.from).padStart(3, "0")}–${String(s.to).padStart(3, "0")} · ${eps.length} 集 · 4分以上 ${top} 集 · 已看 ${seen}/${eps.length}</div></div>`;
+      <div class="ss">${s.from}–${s.to} · ${eps.length} 集 · 4分以上 ${top} 集 · 已看 ${seen}/${eps.length}</div></div>`;
   }
-  const epLabel = r => `#${r.tencentNo ?? "—"} (EP${String(r.jp).padStart(3, "0")})`;
+  const epLabel = r => `#${r.tencentNo ?? "—"} (${r.code})`;
 
   function render() {
     const q = state.q.trim().toLowerCase();
@@ -292,7 +294,7 @@
       if (state.min && (r.rating ?? 0) < state.min && !context && !(state.mood && tagged)) return false;
       if (state.hideWatched && isWatched(r.i)) return false;
       if (state.onlyFav && !favs.has(keyOf(r))) return false;
-      if (q && !`${r.title} ${r.titleZh} ${r.summary} ${r.japanese} ${r.star?.name ?? ""}`.toLowerCase().includes(q)) return false;
+      if (q && !`${r.code ?? ""} ${r.title} ${r.titleZh} ${r.summary} ${r.japanese} ${r.star?.name ?? ""}`.toLowerCase().includes(q)) return false;
       return true;
     });
     const nextI = rows.find(r => !isWatched(r.i) && watchable(r))?.i;
@@ -317,7 +319,7 @@
         ? `<div class="star" title="本集明星：${esc(r.star.name)} #${String(r.star.dex).padStart(3, "0")}"><img src="assets/sprites/${r.star.dex}.png" alt="${esc(r.star.name)}" loading="lazy"></div>`
         : `<div></div>`;
       const num = isEp
-        ? `<div class="num"><b>${r.tencentNo ?? "—"}</b><span>EP${String(r.jp).padStart(3, "0")}</span></div>`
+        ? `<div class="num"><b>${r.tencentNo ?? "—"}</b><span>${r.code}</span></div>`
         : `<div class="num"><span>${r.date.slice(0, 7)}</span></div>`;
       const rating = r.rating
         ? `<div class="rating r${r.rating}">${r.rating}<small>${RLABEL[r.rating]}</small></div>`
