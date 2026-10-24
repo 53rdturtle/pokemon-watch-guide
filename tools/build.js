@@ -131,13 +131,15 @@ const indexPath = path.join(root, "index.html");
 fs.writeFileSync(indexPath, fs.readFileSync(indexPath, "utf8").replace(/src="data\/guide\.js(\?v=\w+)?"/, `src="data/guide.js?v=${hash}"`));
 
 // Rating budget (see README): about 1/3 of all episodes 4+ and about 10% rated 5 across the whole
-// show; each season's 4+ share floats with its quality but stays within 15–50%.
+// show; each season's 4+ share floats with its quality but stays within 15–50%. About half of all
+// episodes are 3+: a 3 is an episode that is a little special, cute or comedic.
 const eps = rows.filter((r) => r.type === "episode");
 const pct = (n, d) => `${Math.round((n / d) * 100)}%`;
 const share = (list) => {
   const top = list.filter((r) => r.rating >= 4).length;
   const five = list.filter((r) => r.rating === 5).length;
-  return { top, five, line: `${list.length} episodes, 4+ ${top} = ${pct(top, list.length)}, 5 ${five} = ${pct(five, list.length)}` };
+  const three = list.filter((r) => r.rating >= 3).length;
+  return { top, five, line: `${list.length} episodes, 3+ ${three} = ${pct(three, list.length)}, 4+ ${top} = ${pct(top, list.length)}, 5 ${five} = ${pct(five, list.length)}` };
 };
 console.log(`${rows.length} rows`);
 for (const id of [...new Set(eps.map((r) => r.series))]) {
@@ -150,7 +152,7 @@ for (const g of groups) {
   const ids = g.seasons.map((s) => s.id);
   console.log(`  ${g.nameZh}: ${share(eps.filter((r) => ids.includes(r.series))).line}`);
 }
-console.log(`  overall: ${share(eps).line} (target ≈33% / ≈10%)`);
+console.log(`  overall: ${share(eps).line} (target 3+ ≈50%, 4+ ≈33%, 5 ≈10%)`);
 for (const t of TAGS) {
   const list = eps.filter((r) => r.tags.includes(t));
   const byRating = [5, 4, 3, 2, 1].map((n) => `${n}:${list.filter((r) => r.rating === n).length}`).join(" ");
