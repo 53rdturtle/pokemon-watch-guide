@@ -18,10 +18,12 @@
     --bg: #f7f7f5; --card: #fff; --text: #1d1d1f; --muted: #6e6e73; --line: #e3e3e0;
     --r5: #d93a2b; --r4: #e98b1a; --r3: #8a8a8a; --r2: #b5b5b5; --r1: #cfcfcf;
     --game: #3b6fd4; --movie: #8e44ad; --event: #444;
+    --cute: #c2357a; --cute-bg: #fde4f0; --comedy: #9a6a00; --comedy-bg: #fdf0c4;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg: #161618; --card: #1f1f22; --text: #ececee; --muted: #9a9aa0; --line: #333338;
-      --r3: #8f8f95; --r2: #66666b; --r1: #4d4d52; --event: #bbb; }
+      --r3: #8f8f95; --r2: #66666b; --r1: #4d4d52; --event: #bbb;
+      --cute: #ff9cc8; --cute-bg: #4a2236; --comedy: #f5cf6a; --comedy-bg: #43391a; }
   }
   * { box-sizing: border-box; }
   body { margin: 0; -webkit-text-size-adjust: 100%; font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); }
@@ -63,6 +65,8 @@
   .title { font-weight: 600; }
   .title .en { font-weight: normal; color: var(--muted); font-size: 13px; margin-left: 6px; }
   .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 1px 6px; border-radius: 5px; color: #fff; margin-right: 6px; vertical-align: 1px; text-transform: uppercase; letter-spacing: .03em; }
+  .mood { display: inline-block; font-size: 11px; font-weight: 600; padding: 1px 6px; border-radius: 5px; margin-right: 6px; vertical-align: 1px; }
+  .mood.cute { background: var(--cute-bg); color: var(--cute); } .mood.comedy { background: var(--comedy-bg); color: var(--comedy); }
   .tag.game { background: var(--game); } .tag.movie, .tag.special { background: var(--movie); } .tag.event { background: var(--event); color: var(--bg); }
   .summary { color: var(--text); font-size: 14px; margin-top: 3px; }
   .meta { color: var(--muted); font-size: 12px; margin-top: 3px; }
@@ -171,6 +175,9 @@
     <div class="seg" id="minRating">
       <button data-v="0" class="on">全部</button><button data-v="3">3分以上</button><button data-v="4">4分以上 推荐</button><button data-v="5">5分 必看</button>
     </div>
+    <div class="seg" id="mood" title="可爱/搞笑的集">
+      <button data-v="" class="on">照常</button><button data-v="add">＋可爱搞笑</button><button data-v="only">只看可爱搞笑</button>
+    </div>
     <label><input type="checkbox" id="showExtras" checked> 电影、游戏和事件</label>
     <label><input type="checkbox" id="hideWatched"> 隐藏已看</label>
     <button id="jumpNext">跳到下一集 ↓</button>
@@ -183,6 +190,7 @@
     <summary>使用说明 · 备份进度</summary>
     <p>
       <b>评分：</b>5 必看 · 4 推荐 · 3 可看可不看 · 2 可跳过 · 1 跳过。4分以上的集数简介不含剧透。
+      <span class="mood cute">可爱</span><span class="mood comedy">搞笑</span>标出以可爱宝可梦或搞笑为主的集，不论评分；选“＋可爱搞笑”可在评分筛选之外加上这些集（例如“4分以上”再加上3分以下的可爱/搞笑集），“只看可爱搞笑”则只显示它们。
       <b>#</b> 为腾讯视频集数，下方是日本原版EP集数。
       点击最后看完那一行的 ▶，即可把它及之前的所有条目标为已看（再点一次后退一条）。
       <span id="tencentNote"></span>
@@ -201,8 +209,9 @@
   const G = window.GUIDE;
   const PROGRESS_KEY = "pokemon-guide-progress";
   const OLD_WATCH_KEY = "pokemon-guide-watched";
-  const state = { min: 0, extras: true, hideWatched: false, q: "" };
+  const state = { min: 0, mood: "", extras: true, hideWatched: false, q: "" };
   const LABEL = { game: "游戏", movie: "电影", special: "特别篇", event: "事件" };
+  const MOOD = { cute: "可爱", comedy: "搞笑" };
   const RLABEL = { 5: "必看", 4: "推荐", 3: "可看可不看", 2: "可跳过", 1: "跳过" };
 
   document.getElementById("seriesTitle").textContent = `无印 · ${G.series.map(s => s.short).join(" → ")} · EP${String(G.series[0].from).padStart(3, "0")}–${G.series.at(-1).to}`;
@@ -261,8 +270,10 @@
   function render() {
     const q = state.q.trim().toLowerCase();
     const rows = G.rows.map((r, i) => ({ ...r, i })).filter(r => {
+      const tagged = r.tags.length > 0, context = r.type !== "episode" && r.rating == null && state.extras;
       if (r.type !== "episode" && !state.extras) return false;
-      if (state.min && (r.rating ?? 0) < state.min && !(r.type !== "episode" && r.rating == null && state.extras)) return false;
+      if (state.mood === "only" && !tagged && !context) return false;
+      if (state.min && (r.rating ?? 0) < state.min && !context && !(state.mood && tagged)) return false;
       if (state.hideWatched && isWatched(r.i)) return false;
       if (q && !`${r.title} ${r.titleZh} ${r.summary} ${r.japanese} ${r.star?.name ?? ""}`.toLowerCase().includes(q)) return false;
       return true;
@@ -307,7 +318,7 @@
         ${star}
         ${num}
         <div class="body">
-          <div class="title">${isEp ? "" : `<span class="tag ${r.type}">${LABEL[r.type]}</span>`}${esc(r.titleZh || r.title)}${r.titleZh ? `<span class="en">${esc(r.title)}</span>` : ""}</div>
+          <div class="title">${isEp ? "" : `<span class="tag ${r.type}">${LABEL[r.type]}</span>`}${r.tags.map(t => `<span class="mood ${t}">${MOOD[t]}</span>`).join("")}${esc(r.titleZh || r.title)}${r.titleZh ? `<span class="en">${esc(r.title)}</span>` : ""}</div>
           <div class="summary">${esc(r.summary)}</div>
           <div class="meta">${r.date}${r.japanese ? " · " + esc(r.japanese) : ""}${r.star ? ` · <span class="starname">★ ${esc(r.star.name)}</span>` : ""}</div>
         </div>
@@ -318,6 +329,7 @@
     const eps = G.rows.filter(r => r.type === "episode");
     const ahead = G.rows.filter((r, i) => !isWatched(i) && r.type === "episode");
     const top = eps.filter(r => r.rating >= 4), topAhead = ahead.filter(r => r.rating >= 4);
+    const moodEps = eps.filter(r => r.tags.length), moodAhead = ahead.filter(r => r.tags.length);
     const lastEp = G.rows.slice(0, progress + 1).reverse().find(r => r.type === "episode");
     const parts = [
       lastEp ? `已看到 ${epLabel(lastEp)}` : "尚未开始",
@@ -325,6 +337,7 @@
       topAhead[0] && topAhead[0] !== ahead[0] ? `下一集4分以上：${epLabel(topAhead[0])}` : "",
       `剩余 ${ahead.length}/${eps.length} 集`,
       `4分以上剩余 ${topAhead.length}/${top.length}`,
+      state.mood ? `可爱/搞笑剩余 ${moodAhead.length}/${moodEps.length}` : "",
       `显示 ${rows.length} 条`,
     ];
     document.getElementById("stats").textContent = parts.filter(Boolean).join(" · ");
@@ -333,6 +346,12 @@
   document.getElementById("minRating").addEventListener("click", e => {
     const b = e.target.closest("button"); if (!b) return;
     state.min = +b.dataset.v;
+    for (const x of e.currentTarget.children) x.classList.toggle("on", x === b);
+    render();
+  });
+  document.getElementById("mood").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    state.mood = b.dataset.v;
     for (const x of e.currentTarget.children) x.classList.toggle("on", x === b);
     render();
   });
