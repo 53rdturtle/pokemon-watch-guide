@@ -1,5 +1,5 @@
 window.GUIDE = {
- "generated": "2026-10-24T07:47:24.733Z",
+ "generated": "2026-10-24T07:49:42.836Z",
  "series": [
   {
    "id": "indigo-league",
@@ -137,8 +137,8 @@ window.GUIDE = {
    "title": "Ash Catches a Pokémon",
    "titleZh": "神奇宝贝 收服！",
    "japanese": "ポケモン ゲットだぜ!",
-   "rating": 3,
-   "summary": "小智在常磐森林收服了第一只神奇宝贝绿毛虫，把小霞吓坏了；为了保护小智不被火箭队伤害，它进化成了铁甲蛹。",
+   "rating": 4,
+   "summary": "小智在常磐森林收服了第一只神奇宝贝绿毛虫，把小霞吓坏了；火箭队来袭时，这只小虫子想证明自己。之后一段重要剧情的起点。",
    "star": {
     "dex": 10,
     "name": "绿毛虫"
@@ -217,8 +217,8 @@ window.GUIDE = {
    "title": "The Water Flowers of Cerulean City",
    "titleZh": "华蓝市的水中花",
    "japanese": "ハナダシティのすいちゅうか",
-   "rating": 3,
-   "summary": "华蓝道馆由小霞的三个姐姐经营。小霞亲自与小智对战，火箭队的搅局让小智拿到了蓝色徽章。",
+   "rating": 4,
+   "summary": "华蓝道馆由小霞的三个姐姐经营。小霞亲自上场与小智对战——一场道馆战，也是了解小霞身世的一集。",
    "star": {
     "dex": 121,
     "name": "宝石海星"
@@ -337,8 +337,8 @@ window.GUIDE = {
    "title": "Mystery at the Lighthouse",
    "titleZh": "正辉的灯塔",
    "japanese": "マサキのとうだい",
-   "rating": 3,
-   "summary": "研究者正辉被困在化石盔的布偶装里，在灯塔中等待一只神秘的巨大神奇宝贝，直到火箭队把它吓跑。",
+   "rating": 4,
+   "summary": "研究者正辉独自住在海边灯塔里，每晚等待一只传说中的巨大神奇宝贝。气氛神秘、带点寂寞的一集。",
    "star": {
     "dex": 149,
     "name": "快龙"
@@ -377,8 +377,8 @@ window.GUIDE = {
    "title": "Battle Aboard the St. Anne",
    "titleZh": "圣安奴号之战！",
    "japanese": "サントアンヌごうのたたかい!",
-   "rating": 3,
-   "summary": "圣安奴号的免费船票原来是火箭队偷取训练家神奇宝贝的骗局。小次郎被骗买下了一条鲤鱼王。",
+   "rating": 4,
+   "summary": "圣安奴号豪华邮轮的免费船票，背后藏着火箭队的阴谋。小次郎被推销员盯上。三集连续剧情的第一集。",
    "star": {
     "dex": 129,
     "name": "鲤鱼王"
@@ -397,8 +397,8 @@ window.GUIDE = {
    "title": "Pokémon Shipwreck",
    "titleZh": "神奇宝贝漂流记",
    "japanese": "ポケモンひょうりゅうき",
-   "rating": 3,
-   "summary": "被困在翻覆的圣安奴号里，小智一行人和火箭队不得不合作逃生；小次郎的鲤鱼王终于派上了用场。",
+   "rating": 4,
+   "summary": "翻覆的圣安奴号沉入海底，小智一行人和火箭队被困在一起，只能想办法合作逃生。三集连续剧情的第二集。",
    "star": {
     "dex": 130,
     "name": "暴鲤龙"
@@ -417,8 +417,8 @@ window.GUIDE = {
    "title": "Island of the Giant Pokémon",
    "titleZh": "巨大神奇宝贝之岛！？",
    "japanese": "きょだいポケモンのしま!?",
-   "rating": 3,
-   "summary": "在一座“巨大神奇宝贝之岛”上走散后，小智和火箭队的神奇宝贝们联手合作。那些巨物其实是火箭队主题乐园里的机器人。",
+   "rating": 4,
+   "summary": "漂流到一座孤岛后，小智和伙伴们走散，岛上似乎住着巨大的神奇宝贝。三集连续剧情的最后一集。",
    "star": {
     "dex": 25,
     "name": "皮卡丘"
@@ -457,8 +457,8 @@ window.GUIDE = {
    "title": "Tentacool & Tentacruel",
    "titleZh": "玛瑙水母与毒刺水母",
    "japanese": "メノクラゲドククラゲ",
-   "rating": 2,
-   "summary": "酒店开发商破坏珊瑚礁后，一只巨大的毒刺水母袭击了海边小镇。环保说教味很重。",
+   "rating": 4,
+   "summary": "酒店开发商破坏珊瑚礁后，一只巨大的毒刺水母带着玛瑙水母大军袭击海边小镇——少见的神奇宝贝向人类反击的一集。",
    "star": {
     "dex": 73,
     "name": "毒刺水母"
@@ -477,7 +477,7 @@ window.GUIDE = {
    "title": "The Ghost of Maiden's Peak",
    "titleZh": "幽灵神奇宝贝和夏日季典",
    "japanese": "ゆうれいポケモンとなつまつり",
-   "rating": 3,
+   "rating": 4,
    "summary": "海边祭典上的鬼故事：一位永远在等待失散恋人的女子，小刚对她一见倾心。气氛十足，略带惊悚。",
    "star": {
     "dex": 92,
@@ -517,8 +517,8 @@ window.GUIDE = {
    "title": "Abra and the Psychic Showdown (Part 1)",
    "titleZh": "凯西！超能力大决斗！",
    "japanese": "ケーシィ! ちょうのうりょくたいけつ!",
-   "rating": 3,
-   "summary": "小智挑战金黄市道馆馆主娜姿——一位冷漠、拥有诡异力量的超能力系馆主，结果惨败。三集连续剧情的第一集。",
+   "rating": 4,
+   "summary": "小智挑战金黄市道馆馆主娜姿——一位冷漠、拥有诡异力量的超能力系馆主。三集连续剧情的第一集。",
    "star": {
     "dex": 64,
     "name": "勇吉拉"
@@ -837,8 +837,8 @@ window.GUIDE = {
    "title": "Electric Soldier Porygon",
    "titleZh": "电脑战士３Ｄ龙",
    "japanese": "でんのうせんしポリゴン",
-   "rating": 3,
-   "summary": "小智被数字化传进神奇宝贝传输系统阻止火箭队。片中的闪光画面引发了1997年的“神奇宝贝风波”，此后再未重播。腾讯上没有；仅作历史了解，注意光敏性癫痫风险。",
+   "rating": 4,
+   "summary": "小智一行人被数字化传进神奇宝贝传输系统阻止火箭队。片中的闪光画面引发了1997年的“神奇宝贝风波”，此后再未重播。腾讯上没有；值得了解的历史一集，注意光敏性癫痫风险。",
    "star": {
     "dex": 137,
     "name": "3D龙"
@@ -1097,7 +1097,7 @@ window.GUIDE = {
    "title": "Who Gets to Keep Togepi?",
    "titleZh": "波克比是谁的呢！？",
    "japanese": "トゲピーはだれのもの!?",
-   "rating": 3,
+   "rating": 4,
    "summary": "小智捡到的蛋孵出了波克比；小智和小霞争着要养，火箭队则想把它偷走。",
    "star": {
     "dex": 175,
@@ -1537,7 +1537,7 @@ window.GUIDE = {
    "title": "Showdown at the Po-ké Corral",
    "titleZh": "宿敌大决斗！大木研究所",
    "japanese": "ライバルたいけつ! オーキドけんきゅうじょ",
-   "rating": 4,
+   "rating": 3,
    "summary": "回到真新镇，小智发现小茂正在等他，大木博士在联盟大赛前有话要对他们两人说。",
    "star": {
     "dex": 89,
@@ -1757,7 +1757,7 @@ window.GUIDE = {
    "title": "Fire and Ice",
    "titleZh": "冰之场地！火焰之战！",
    "japanese": "こおりのフィールド! ほのおのたたかい!",
-   "rating": 3,
+   "rating": 4,
    "summary": "联盟大赛第二、三轮，分别在岩石场地和冰之场地进行。",
    "star": {
     "dex": 7,
@@ -1797,7 +1797,7 @@ window.GUIDE = {
    "title": "A Friend in Deed",
    "titleZh": "劲敌登场！",
    "japanese": "ライバルとうじょう!",
-   "rating": 4,
+   "rating": 3,
    "summary": "小智遇到阿弘，一位和他非常相像的训练家——连皮卡丘也有。",
    "star": {
     "dex": 25,
