@@ -1,0 +1,522 @@
+[
+ {
+  "jp": 212,
+  "en": 210,
+  "title": "Around the Whirlpool",
+  "romaji": "Uzumaki Rettō! Aratanaru Chōsen!!",
+  "japanese": "うずまきれっとう! あらたなるちょうせん!!",
+  "date": "2001-08-09"
+ },
+ {
+  "jp": 213,
+  "en": 211,
+  "title": "Fly Me to the Moon",
+  "romaji": "Poppo to Deka Poppo! Mada Minu Sora e!!",
+  "japanese": "ポッポとデカポッポ! まだみぬそらへ!!",
+  "date": "2001-08-16"
+ },
+ {
+  "jp": 214,
+  "en": 212,
+  "title": "Takin' It on the Chinchou!",
+  "romaji": "Tabidate Umi e! Chonchī Gyōretsu!!",
+  "japanese": "たびだてうみへ! チョンチーぎょうれつ!!",
+  "date": "2001-08-23"
+ },
+ {
+  "jp": 215,
+  "en": 213,
+  "title": "A Corsola Caper!",
+  "romaji": "Sanīgo de Amīgo! Ō Gantō no Taiketsu!!",
+  "japanese": "サニーゴでアミーゴ! おうがんとうのたいけつ!!",
+  "date": "2001-08-30"
+ },
+ {
+  "jp": 216,
+  "en": 214,
+  "title": "Mantine Overboard!",
+  "romaji": "Mantain to Chinbotsusen!! Nazo no Pokemon no Himitsu!",
+  "japanese": "マンタインとちんぼつせん!! なぞのポケモンのひみつ!",
+  "date": "2001-09-06"
+ },
+ {
+  "jp": 217,
+  "en": 215,
+  "title": "Octillery the Outcast",
+  "romaji": "Okutan to Teppouo! Uzumaki Kappu Yosen!!",
+  "japanese": "オクタンとテッポウオ! うずまきカップよせん!!",
+  "date": "2001-09-13"
+ },
+ {
+  "jp": 218,
+  "en": 216,
+  "title": "Dueling Heroes",
+  "romaji": "Uzumaki Kappu! Mizu no Koroshiamu de Daibatoru!!",
+  "japanese": "うずまきカップ! みずのコロシアムでだいバトル!!",
+  "date": "2001-09-20"
+ },
+ {
+  "jp": 219,
+  "en": 217,
+  "title": "The Perfect Match!",
+  "romaji": "Satoshi Tai Kasumi! Uzumaki Kappu Saigo no Tatakai!!",
+  "japanese": "サトシVSカスミ! うずまきカップさいごのたたかい!!",
+  "date": "2001-09-27"
+ },
+ {
+  "jp": 220,
+  "en": 218,
+  "title": "Plant It Now... Diglett Later",
+  "romaji": "Diguda no Mura o Mamore! Otoshiana Daisakusen!?",
+  "japanese": "ディグダのむらをまもれ! おとしあなだいさくせん!?",
+  "date": "2001-10-04"
+ },
+ {
+  "jp": 221,
+  "en": 219,
+  "title": "Hi Ho Silver... Away!",
+  "romaji": "Gin'iro no Hane no Densetsu! Gin Gantō no Tatakai!!",
+  "japanese": "ぎんいろのはねのでんせつ! ぎんがんとうのたたかい!!",
+  "date": "2001-10-11"
+ },
+ {
+  "jp": 222,
+  "en": 220,
+  "title": "The Mystery Is History",
+  "romaji": "Nazono Pokemon X!!",
+  "japanese": "なぞのポケモンX!!",
+  "date": "2001-10-18"
+ },
+ {
+  "jp": 223,
+  "en": 221,
+  "title": "A Parent Trapped!",
+  "romaji": "Torawareno Rugia",
+  "japanese": "とらわれのルギア",
+  "date": "2001-10-25"
+ },
+ {
+  "jp": 224,
+  "en": 222,
+  "title": "A Promise is a Promise",
+  "romaji": "Rugia to no Yakusoku!",
+  "japanese": "ルギアとのやくそく!",
+  "date": "2001-11-01"
+ },
+ {
+  "jp": 225,
+  "en": 223,
+  "title": "Throwing in the Noctowl",
+  "romaji": "Tobe Hōhō-gō! Asagi o Mezashi!!",
+  "japanese": "とべホーホーごう! アサギをめざし!!",
+  "date": "2001-11-08"
+ },
+ {
+  "jp": 226,
+  "en": 224,
+  "title": "Nerves of Steelix!",
+  "romaji": "Asagi Jimu! Tai Haganēru!!",
+  "japanese": "アサギジム! VSハガネール!!",
+  "date": "2001-11-15"
+ },
+ {
+  "jp": 227,
+  "en": 225,
+  "title": "Bulbasaur... the Ambassador!",
+  "romaji": "Sayonara Fushigidane! Ōkido-tei no Bōken",
+  "japanese": "さよならフシギダネ! オーキドていのぼうけん!!",
+  "date": "2001-11-22"
+ },
+ {
+  "jp": 228,
+  "en": 226,
+  "title": "Espeon, Not Included",
+  "romaji": "Ēfi to Sakura! Enju Shitei Futatabi!!",
+  "japanese": "エーフィとサクラ! エンジュシティふたたび!!",
+  "date": "2001-11-29"
+ },
+ {
+  "jp": 229,
+  "en": 227,
+  "title": "For Ho-Oh the Bells Toll!",
+  "romaji": "Suikun to Minaki! Hōō no Densetsu!!",
+  "japanese": "スイクンとミナキ! ホウオウのでんせつ!!",
+  "date": "2001-12-06"
+ },
+ {
+  "jp": 230,
+  "en": 228,
+  "title": "Extreme Pokémon!",
+  "romaji": "Pokemon Raido de Tsuppashire!!",
+  "japanese": "ポケモンライドでつっぱしれ!!",
+  "date": "2001-12-13"
+ },
+ {
+  "jp": 231,
+  "en": 229,
+  "title": "An EGG-sighting Adventure!",
+  "romaji": "Meitantei Junsā! Kieta Tamago no Nazo!!",
+  "japanese": "めいたんていジュンサー! きえたタマゴのなぞ!!",
+  "date": "2001-12-20"
+ },
+ {
+  "jp": 232,
+  "en": 230,
+  "title": "Hatching a Plan",
+  "romaji": "Tamago, Kaeru",
+  "japanese": "タマゴ、かえる",
+  "date": "2001-12-27"
+ },
+ {
+  "jp": 233,
+  "en": 231,
+  "title": "Dues and Don'ts",
+  "romaji": "Roketto-dan to Deribādo!",
+  "japanese": "ロケットだんとデリバード!",
+  "date": "2002-01-10"
+ },
+ {
+  "jp": 234,
+  "en": 232,
+  "title": "Just Waiting On a Friend",
+  "romaji": "Kiri no Naka no Kyūkon!",
+  "japanese": "きりのなかのキュウコン!",
+  "date": "2002-01-17"
+ },
+ {
+  "jp": 235,
+  "en": 233,
+  "title": "A Tyrogue Full of Trouble",
+  "romaji": "Barukī to Karateō Nobuhiko!",
+  "japanese": "バルキーとからておうノブヒコ!",
+  "date": "2002-01-24"
+ },
+ {
+  "jp": 236,
+  "en": 234,
+  "title": "Xatu the Future",
+  "romaji": "Neitio no Daiyogen!",
+  "japanese": "ネイティオのだいよげん!",
+  "date": "2002-01-31"
+ },
+ {
+  "jp": 237,
+  "en": 235,
+  "title": "Talkin' 'Bout an Evolution",
+  "romaji": "Wataru to Akai Gyaradosu!",
+  "japanese": "ワタルとあかいギャラドス!",
+  "date": "2002-02-07"
+ },
+ {
+  "jp": 238,
+  "en": 236,
+  "title": "Rage of Innocence",
+  "romaji": "Akai Gyaradosu no Ikari!",
+  "japanese": "あかいギャラドスのいかり!",
+  "date": "2002-02-14"
+ },
+ {
+  "jp": 239,
+  "en": 237,
+  "title": "As Cold as Pryce",
+  "romaji": "Inomū to Fuyu no Yanagi!",
+  "japanese": "イノムーとふゆのヤナギ!",
+  "date": "2002-02-21"
+ },
+ {
+  "jp": 240,
+  "en": 238,
+  "title": "Nice Pryce, Baby!",
+  "romaji": "Chōji Jimu! Kōri no Tatakai!",
+  "japanese": "チョウジジム! こおりのたたかい!",
+  "date": "2002-02-28"
+ },
+ {
+  "jp": 241,
+  "en": 239,
+  "title": "Whichever Way the Wind Blows",
+  "romaji": "Kireihana to Rafureshia! Sōgen no Heiwa!",
+  "japanese": "キレイハナとラフレシア! そうげんのへいわ!",
+  "date": "2002-03-07"
+ },
+ {
+  "jp": 242,
+  "en": 240,
+  "title": "Some Like It Hot",
+  "romaji": "Magukarugo! Atsui Kokoro de Getto da ze!!",
+  "japanese": "マグカルゴ! あついこころでゲットだぜ!!",
+  "date": "2002-03-14"
+ },
+ {
+  "jp": 243,
+  "en": 241,
+  "title": "Hocus Pokémon",
+  "romaji": "Pokemon Mahō de Daihenshin!?",
+  "japanese": "ポケモンまほうでだいへんしん!?",
+  "date": "2002-03-21"
+ },
+ {
+  "jp": 244,
+  "en": 242,
+  "title": "As Clear as Crystal",
+  "romaji": "Sandā to Kurisutaru! Mizuumi no Himitsu!",
+  "japanese": "サンダーとクリスタル! みずうみのひみつ!",
+  "date": "2002-03-28"
+ },
+ {
+  "jp": 245,
+  "en": 243,
+  "title": "Same Old Song and Dance",
+  "romaji": "Futago no Pupurin Tai Purin! Utau Pokemon Konsāto!",
+  "japanese": "ふたごのププリンVSプリン! うたうポケモンコンサート!",
+  "date": "2002-04-11"
+ },
+ {
+  "jp": 246,
+  "en": 244,
+  "title": "Enlighten Up!",
+  "romaji": "Yadon no Satori! Satoshi no Satori!",
+  "japanese": "ヤドンのさとり! サトシのさとり!",
+  "date": "2002-04-18"
+ },
+ {
+  "jp": 247,
+  "en": 245,
+  "title": "Will the Real Oak Please Stand Up?",
+  "romaji": "Nise Ōkido!? Pokemon Senryū Taiketsu!!",
+  "japanese": "にせオーキド!? ポケモンせんりゅうたいけつ!!",
+  "date": "2002-04-25"
+ },
+ {
+  "jp": 248,
+  "en": 246,
+  "title": "Wish Upon a Star Shape",
+  "romaji": "Pī to Pippi to Nagareboshi!",
+  "japanese": "ピィとピッピとながれぼし!",
+  "date": "2002-05-02"
+ },
+ {
+  "jp": 249,
+  "en": 247,
+  "title": "Outrageous Fortunes",
+  "romaji": "Nyorozo no Shinka!",
+  "japanese": "ニョロゾのしんか!",
+  "date": "2002-05-09"
+ },
+ {
+  "jp": 250,
+  "en": 248,
+  "title": "One Trick Phony!",
+  "romaji": "Batoru Pāku! Tai Kamekkusu, Rizādon, Fushigibana!",
+  "japanese": "バトルパーク! VSカメックス・リザードン・フシギバナ!",
+  "date": "2002-05-16"
+ },
+ {
+  "jp": 251,
+  "en": 249,
+  "title": "I Politoed Ya So!",
+  "romaji": "Nyorotono no Chiarīdeingu!",
+  "japanese": "ニョロトノのチアリーディング!",
+  "date": "2002-05-23"
+ },
+ {
+  "jp": 252,
+  "en": null,
+  "title": "Ice Cave!",
+  "romaji": "Kōri no Dōkutsu!",
+  "japanese": "こおりのどうくつ!",
+  "date": "2002-05-30"
+ },
+ {
+  "jp": 253,
+  "en": 250,
+  "title": "Beauty Is Skin Deep",
+  "romaji": "Ibuki to Miniryū!",
+  "japanese": "イブキとミニリュウ!",
+  "date": "2002-06-06"
+ },
+ {
+  "jp": 254,
+  "en": 251,
+  "title": "Fangs for Nothin'",
+  "romaji": "Fusube Jimu no Ryū no Kiba!",
+  "japanese": "フスベジムのりゅうのきば!",
+  "date": "2002-06-13"
+ },
+ {
+  "jp": 255,
+  "en": 252,
+  "title": "Great Bowls of Fire!",
+  "romaji": "Kairyū! Gekirin Hatsudō!",
+  "japanese": "カイリュー! げきりんはつどう!",
+  "date": "2002-06-20"
+ },
+ {
+  "jp": 256,
+  "en": 253,
+  "title": "Better Eight Than Never",
+  "romaji": "Fusube Jimu! Saigo no Bajji!!",
+  "japanese": "フスベジム! さいごのバッジ!!",
+  "date": "2002-06-27"
+ },
+ {
+  "jp": 257,
+  "en": 254,
+  "title": "Why? Wynaut!",
+  "romaji": "Sōnano!? Jimu Bajji to Sōnansu!!",
+  "japanese": "ソーナノ!? ジムバッジとソーナンス!!",
+  "date": "2002-07-04"
+ },
+ {
+  "jp": 258,
+  "en": 255,
+  "title": "Just Add Water",
+  "romaji": "Ryūgū Jimu! Mizu no Nakade Batoru da ze!",
+  "japanese": "リュウグウジム! みずのなかでバトルだぜ!",
+  "date": "2002-07-11"
+ },
+ {
+  "jp": 259,
+  "en": 256,
+  "title": "Lapras of Luxury",
+  "romaji": "Rapurasu no Uta!",
+  "japanese": "ラプラスのうた!",
+  "date": "2002-07-18"
+ },
+ {
+  "jp": 260,
+  "en": 257,
+  "title": "Hatch Me If You Can",
+  "romaji": "Tamago o Mamore! Arashi no Naka de Umareta Inochi!",
+  "japanese": "タマゴをまもれ! あらしのなかでうまれたいのち!",
+  "date": "2002-07-25"
+ },
+ {
+  "jp": 261,
+  "en": 258,
+  "title": "Entei at Your Own Risk",
+  "romaji": "Entei to Onsen no Nakama-tachi!",
+  "japanese": "エンテイとおんせんのなかまたち!",
+  "date": "2002-08-01"
+ },
+ {
+  "jp": 262,
+  "en": 259,
+  "title": "A Crowning Achievement",
+  "romaji": "Yadokingu! Ōja no Shirushi!",
+  "japanese": "ヤドキング! おうじゃのしるし!",
+  "date": "2002-08-08"
+ },
+ {
+  "jp": 263,
+  "en": 260,
+  "title": "Here's Lookin' at You, Elekid",
+  "romaji": "Nanako to Erekiddo!",
+  "japanese": "ナナコとエレキッド!",
+  "date": "2002-08-15"
+ },
+ {
+  "jp": 264,
+  "en": 261,
+  "title": "You're a Star, Larvitar!",
+  "romaji": "Yōgirasu Ganbaru!",
+  "japanese": "ヨーギラスがんばる!",
+  "date": "2002-08-22"
+ },
+ {
+  "jp": 265,
+  "en": 262,
+  "title": "Address Unown!",
+  "romaji": "Fushigi no Kuni no Annōn",
+  "japanese": "ふしぎのくにのアンノーン",
+  "date": "2002-08-29"
+ },
+ {
+  "jp": 266,
+  "en": 263,
+  "title": "Mother of All Battles",
+  "romaji": "Bangirasu to Yōgirasu!",
+  "japanese": "バンギラスとヨーギラス!",
+  "date": "2002-09-05"
+ },
+ {
+  "jp": 267,
+  "en": 264,
+  "title": "Pop Goes the Sneasel",
+  "romaji": "Nyūra to Seinaru Honō!",
+  "japanese": "ニューラとせいなるほのお!",
+  "date": "2002-09-12"
+ },
+ {
+  "jp": 268,
+  "en": 265,
+  "title": "A Claim to Flame!",
+  "romaji": "Shirogane Rīgu Kaimaku! Shigeru Futatabi!",
+  "japanese": "シロガネリーグかいまく! シゲルふたたび!",
+  "date": "2002-09-19"
+ },
+ {
+  "jp": 269,
+  "en": 266,
+  "title": "Love, Pokémon Style",
+  "romaji": "Yosen Rīgu! Magumarashi Honō no Batoru!!",
+  "japanese": "よせんリーグ! マグマラシほのおのバトル!!",
+  "date": "2002-09-26"
+ },
+ {
+  "jp": 270,
+  "en": 267,
+  "title": "Tie One On!",
+  "romaji": "Meganiumu Tai Fushigidane! Kusa Taipu no Iji!",
+  "japanese": "メガニウムVSフシギダネ! くさタイプのいじ!",
+  "date": "2002-10-03"
+ },
+ {
+  "jp": 271,
+  "en": 268,
+  "title": "The Ties That Bind",
+  "romaji": "Kesshō Rīgu! Furu Batoru Roku Tai Roku!!",
+  "japanese": "けっしょうリーグ! フルバトル6VS6!!",
+  "date": "2002-10-10"
+ },
+ {
+  "jp": 272,
+  "en": 269,
+  "title": "Can't Beat the Heat!",
+  "romaji": "Raibaru Taiketsu! Kamekkusu Tai Rizādon!!",
+  "japanese": "ライバルたいけつ! カメックスVSリザードン!!",
+  "date": "2002-10-17"
+ },
+ {
+  "jp": 273,
+  "en": 270,
+  "title": "Playing with Fire!",
+  "romaji": "Bashāmo Futatabi! Hazuki to no Tatakai!!",
+  "japanese": "バシャーモふたたび! ハヅキとのたたかい!!",
+  "date": "2002-10-24"
+ },
+ {
+  "jp": 274,
+  "en": 271,
+  "title": "Johto Photo Finish",
+  "romaji": "Furu Batoru no Hate ni! Sorezore no Michi!!",
+  "japanese": "フルバトルのはてに! それぞれのみち!!",
+  "date": "2002-10-31"
+ },
+ {
+  "jp": 275,
+  "en": 272,
+  "title": "Gotta Catch Ya Later!",
+  "romaji": "Sayonara... Soshite, Tabidachi!",
+  "japanese": "サヨナラ…そして、たびだち!",
+  "date": "2002-11-07"
+ },
+ {
+  "jp": 276,
+  "en": 273,
+  "title": "Hoenn Alone!",
+  "romaji": "Pikachū to no Wakare...!",
+  "japanese": "ピカチュウとのわかれ!",
+  "date": "2002-11-14"
+ }
+]

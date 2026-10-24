@@ -1,6 +1,6 @@
 # 宝可梦观看指南
 
-宝可梦动画的静态单页观看指南：每一集都有我的 1–5 分评分、IMDb 评分、简介（4 分以上不含剧透）和腾讯视频链接。游戏发售、剧场版、特别篇和重要事件也作为条目排在同一条时间线上。
+宝可梦动画无印篇（1997–2002，EP001–276：关都、橘子群岛、城都）的静态单页观看指南：每一集都有我的 1–5 分评分、IMDb 评分、简介（4 分以上不含剧透）和腾讯视频链接。游戏发售、剧场版、特别篇和重要事件也作为条目排在同一条时间线上。
 
 用浏览器直接打开 `index.html` 即可，无需服务器或构建步骤。
 
@@ -35,9 +35,9 @@ index.html                 页面（筛选器；“看到这里”书签保存�
 manifest.webmanifest       添加到主屏幕用的 App 信息
 icons/                     由 tools/make-icons.js 生成
 data/guide.js              自动生成，请勿手动编辑
-editorial/<series>.json    按日本原版集数记录的 [评分, 简介, 本集明星宝可梦的全国图鉴编号]，以及额外条目（游戏/电影/事件，可选 star 字段）
+editorial/<series>.json    每一季一个文件（关都、橘子群岛、城都之旅、城都联盟冠军、大师之旅），按日本原版集数记录的 [评分, 简介, 本集明星宝可梦的全国图鉴编号]，以及额外条目（游戏/电影/事件，可选 star 字段）
 assets/sprites/<编号>.png  本集明星宝可梦的像素图（火红/叶绿版精灵图，来自 PokeAPI/sprites）
-sources/                   从 IMDb、维基百科和腾讯抓取的原始数据
+sources/                   从 IMDb、维基百科和腾讯抓取的原始数据（wikipedia-<series>.json 每季一个）
 tools/build.js             将 sources 和 editorial 合并生成 data/guide.js
 tools/fetch-tencent-episodes.js   列出腾讯某个专辑（cover）的分集 vid
 ```
@@ -51,13 +51,13 @@ node tools/build.js
 ## 数据来源
 
 - **IMDb 评分**：IMDb 官方非商业数据集（https://datasets.imdbws.com 上的 `title.episode.tsv.gz`、`title.ratings.tsv.gz`）。IMDb 网站本身会拦截脚本请求。剧集 id 为 `tt0168366`；IMDb 第 N 季第 M 集采用日本原版集数顺序。
-- **英文标题、播出日期、日文标题**：英文维基百科各季页面（如 "Pokémon: Indigo League"）。
+- **英文标题、播出日期、日文标题**：英文维基百科各季页面（"Pokémon: Indigo League"、"Adventures in the Orange Islands"、"The Johto Journeys"、"Johto League Champions"、"Master Quest"）。IMDb 第2–5季分别对应这四季之后的部分，同样按日本原版顺序。
 - **中文标题**：中文维基百科“寶可夢 (1997年—2002年動畫)”页面（台湾译名），用 opencc 转为简体。
 - **本集明星宝可梦像素图**：PokeAPI/sprites 仓库中的《火红/叶绿》精灵图（`sprites/pokemon/versions/generation-iii/firered-leafgreen/<编号>.png`），已下载到 `assets/sprites/`，中文名在 `sources/pokemon-names-zh.json`。新增明星宝可梦时需同时补上图片和名字，否则构建会报错。
 - **腾讯链接**：`精灵宝可梦 第1季`（cid `tyeqdw6rof7t5ow`，271 集，台湾配音）和 `精灵宝可梦 剧场版合集`（cid `ejr0xfirssdm33y`）。
 
 ### 腾讯集数编号
 
-腾讯按自己的顺序编号，跳过了台湾未播出的日本原版集数。关都篇跳过的是 EP038（3D龙）和 EP065（迷唇姐的圣诞节）。我通过比对腾讯封面画面与剧情核实了这一偏移。被跳过的集数记录在每个 editorial 文件的 `tencentMissingJp` 中。加入橘子群岛篇和城都篇时，还需要用同样的方法找出另外三集被跳过的集数（日本原版 276 集，腾讯 271 集）。
+腾讯按自己的顺序编号，跳过了台湾未播出的日本原版集数。日本原版 276 集，腾讯 271 集，共跳过 5 集：EP038（3D龙）、EP065（迷唇姐的圣诞节）、EP092、EP101 和 EP252——后四集都因迷唇姐的造型被撤下。我通过比对腾讯封面画面（带台配字幕）与剧情核实了每一处偏移；腾讯第271集正是最终话 EP276。被跳过的集数记录在各 editorial 文件的 `tencentMissingJp` 中，构建时会检查腾讯集数是否刚好用完。
 
 腾讯视频有地区限制：在中国大陆以外（或未使用 VPN）时，播放器会显示“您所在区域暂无此内容版权”。
