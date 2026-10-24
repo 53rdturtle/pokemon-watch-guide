@@ -1,6 +1,6 @@
 {
-  "name": "Pokémon Watch Guide",
-  "short_name": "Pokémon",
+  "name": "宝可梦观看指南",
+  "short_name": "宝可梦",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
