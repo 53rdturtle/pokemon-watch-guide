@@ -126,6 +126,12 @@
   .tl-gap .tl::before { background: repeating-linear-gradient(var(--muted) 0 4px, transparent 4px 9px); opacity: .6; }
   .tl-gap.done .tl::before { background: repeating-linear-gradient(var(--r5) 0 4px, transparent 4px 9px); opacity: 1; }
   .tl-gap b { color: var(--text); }
+  .tl-series { position: relative; margin: 10px 0 14px; padding: 12px 14px; border-radius: 10px; background: linear-gradient(100deg, color-mix(in srgb, var(--r4) 16%, var(--card)), var(--card) 70%); border: 1px solid var(--line); }
+  .tl-series .tl { top: -10px; bottom: -14px; }
+  .tl-series .tl .dot { top: 50%; width: 16px; height: 16px; border-radius: 4px; border: 0; transform: translate(-50%, -50%) rotate(45deg); background: linear-gradient(135deg, var(--r5), var(--r4)); box-shadow: 0 0 0 3px color-mix(in srgb, var(--r4) 25%, transparent); filter: none; opacity: 1; }
+  .tl-series b { font-size: 17px; }
+  .tl-series .en { color: var(--muted); font-size: 13px; margin-left: 6px; }
+  .tl-series .ss { color: var(--muted); font-size: 13px; margin-top: 2px; }
   @media (prefers-reduced-motion: reduce) { .dot.next::before { animation: none; transform: scale(1.1); } }
 
   @media (max-width: 700px) {
@@ -199,8 +205,8 @@
   const LABEL = { game: "游戏", movie: "电影", special: "特别篇", event: "事件" };
   const RLABEL = { 5: "必看", 4: "推荐", 3: "可看可不看", 2: "可跳过", 1: "跳过" };
 
-  document.getElementById("seriesTitle").textContent = G.series.map(s => `${s.titleZh} · ${s.title}`).join("，");
-  document.getElementById("tencentNote").textContent = G.series.map(s => s.tencentNote).join(" ");
+  document.getElementById("seriesTitle").textContent = `无印 · ${G.series.map(s => s.short).join(" → ")} · EP${String(G.series[0].from).padStart(3, "0")}–${G.series.at(-1).to}`;
+  document.getElementById("tencentNote").textContent = G.series.map(s => s.tencentNote).filter(Boolean).join(" ");
 
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const keyOf = r => r.type === "episode" ? `${r.series}:${r.jp}` : `${r.type}:${r.date}:${r.title}`;
@@ -241,6 +247,15 @@
     const bar = eps.length ? `<span class="yp"><i style="width:${(seen / eps.length * 100).toFixed(1)}%"></i></span>` : "";
     return `<div class="tl-year${done}"><div class="tl"><i class="dot"></i></div><span class="y">${y}</span><span class="ys">${sub.join(" · ")}</span>${bar}</div>`;
   }
+  // Season banners: shown above the first episode of each season (`at` is that row's index).
+  const SEASONS = G.series.map(s => ({ ...s, at: G.rows.findIndex(r => r.type === "episode" && r.series === s.id) }));
+  function seasonBanner(s) {
+    const eps = G.rows.map((r, i) => ({ r, i })).filter(x => x.r.type === "episode" && x.r.series === s.id);
+    const seen = eps.filter(x => isWatched(x.i)).length, top = eps.filter(x => x.r.rating >= 4).length;
+    const done = isWatched(s.at) ? " done" : "";
+    return `<div class="tl-series${done}"><div class="tl${done}"><i class="dot"></i></div><b>${esc(s.titleZh)}</b><span class="en">${esc(s.title)}</span>
+      <div class="ss">EP${String(s.from).padStart(3, "0")}–${String(s.to).padStart(3, "0")} · ${eps.length} 集 · 4分以上 ${top} 集 · 已看 ${seen}/${eps.length}</div></div>`;
+  }
   const epLabel = r => `#${r.tencentNo ?? "—"} (EP${String(r.jp).padStart(3, "0")})`;
 
   function render() {
@@ -261,6 +276,7 @@
       const gap = GAPS.find(g => prev && prev.i < g.at && g.at <= r.i);
       if (gap) html.push(`<div class="tl-gap${doneTo(r)}"><div class="tl"></div>⋯ <b>停播 ${gap.months} 个月</b> · ${gap.from} → ${gap.to}</div>`);
       if (!prev || prev.date.slice(0, 4) !== y) html.push(yearHeader(y, doneTo(r)));
+      for (const s of SEASONS) if ((prev ? prev.i : -1) < s.at && s.at <= r.i && G.series.length > 1) html.push(seasonBanner(s));
       const newMonth = !prev || prev.date.slice(0, 7) !== r.date.slice(0, 7);
       const seg = doneTo(after) || (isWatched(r.i) ? " half" : "");
       const dotCls = [r.type === "episode" ? (r.rating ? "r" + r.rating : "") : r.type, r.i === progress ? "ball" : "", r.i === nextI ? "next" : ""].join(" ");

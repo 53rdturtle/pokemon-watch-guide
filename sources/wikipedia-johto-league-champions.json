@@ -1,0 +1,418 @@
+[
+ {
+  "jp": 160,
+  "en": 158,
+  "title": "A Goldenrod Opportunity",
+  "romaji": "Kogane Jimu! Supīdo ando Pawā!?",
+  "japanese": "コガネジム! スピード&パワー!?",
+  "date": "2000-08-03"
+ },
+ {
+  "jp": 161,
+  "en": 159,
+  "title": "A Dairy Tale Ending",
+  "romaji": "Mirutanku! Ribenji Batoru!!",
+  "japanese": "ミルタンク! リベンジバトル!!",
+  "date": "2000-08-10"
+ },
+ {
+  "jp": 162,
+  "en": 160,
+  "title": "Air Time!",
+  "romaji": "Rajiotō no Tatakai! Jikū o Koete!!",
+  "japanese": "ラジオとうのたたかい! じくうをこえて!!",
+  "date": "2000-08-17"
+ },
+ {
+  "jp": 163,
+  "en": 161,
+  "title": "The Bug Stops Here",
+  "romaji": "Mushitori Taikai! Shizen Kōen de Getto da ze!!",
+  "japanese": "むしとりたいかい! しぜんこうえんでゲットだぜ!!",
+  "date": "2000-08-24"
+ },
+ {
+  "jp": 164,
+  "en": 162,
+  "title": "Type Casting",
+  "romaji": "Usokkī wa Doko ni Iru!?",
+  "japanese": "ウソッキーはどこにいる!?",
+  "date": "2000-08-31"
+ },
+ {
+  "jp": 165,
+  "en": 163,
+  "title": "Fossil Fools",
+  "romaji": "Kodai Pokemon Pāku! Arufu no Iseki!!",
+  "japanese": "こだいポケモンパーク! アルフのいせき!!",
+  "date": "2000-09-07"
+ },
+ {
+  "jp": 166,
+  "en": 164,
+  "title": "Carrying On",
+  "romaji": "Poppo ya no Densho Poppo!",
+  "japanese": "ポッポやのでんしょポッポ!",
+  "date": "2000-09-14"
+ },
+ {
+  "jp": 167,
+  "en": 165,
+  "title": "Hassle in the Castle",
+  "romaji": "Zubatto no Yakata! Kiken na Meiro!!",
+  "japanese": "ズバットのやかた! きけんなめいろ!!",
+  "date": "2000-09-21"
+ },
+ {
+  "jp": 168,
+  "en": 166,
+  "title": "Two Hits and a Miss",
+  "romaji": "Kapoerā Tai Fushigidane! Kakutō Taiketsu!!",
+  "japanese": "カポエラーVSフシギダネ! かくとうたいけつ!!",
+  "date": "2000-09-28"
+ },
+ {
+  "jp": 169,
+  "en": 167,
+  "title": "A Hot Water Battle",
+  "romaji": "Janguru no San Biki! Onsen Batoru!!",
+  "japanese": "ジャングルのさんびき! おんせんバトル!!",
+  "date": "2000-10-05"
+ },
+ {
+  "jp": 170,
+  "en": 168,
+  "title": "Hook, Line, and Stinker",
+  "romaji": "Azumaō! Fisshingu Batoru!!",
+  "japanese": "アズマオウ! フィッシングバトル!!",
+  "date": "2000-10-12"
+ },
+ {
+  "jp": 171,
+  "en": 169,
+  "title": "Beauty and the Breeder",
+  "romaji": "Sayonara Rokon! Pokemon Byūtī Kontesuto!!",
+  "japanese": "さよならロコン! ポケモンビューティーコンテスト!!",
+  "date": "2000-10-19"
+ },
+ {
+  "jp": 172,
+  "en": 170,
+  "title": "A Better Pill to Swallow",
+  "romaji": "Tsubotsubo Tai Madatsubomi",
+  "japanese": "ツボツボVSマダツボミ",
+  "date": "2000-10-26"
+ },
+ {
+  "jp": 173,
+  "en": 171,
+  "title": "Power Play!",
+  "romaji": "Burakkī! Yamiyo no Tatakai!!",
+  "japanese": "ブラッキー! やみよのたたかい!!",
+  "date": "2000-11-02"
+ },
+ {
+  "jp": 174,
+  "en": 172,
+  "title": "Mountain Time",
+  "romaji": "Redian! Kaze no Tani o Koete!!",
+  "japanese": "レディアン! かぜのたにをこえて!!",
+  "date": "2000-11-09"
+ },
+ {
+  "jp": 175,
+  "en": 173,
+  "title": "Wobbu-Palooza",
+  "romaji": "Sōnansu no Mura!?",
+  "japanese": "ソーナンスのむら!?",
+  "date": "2000-11-16"
+ },
+ {
+  "jp": 176,
+  "en": 174,
+  "title": "Imitation Confrontation",
+  "romaji": "Mezase Metamon Masutā! Imite Futatabi!!",
+  "japanese": "めざせメタモンマスター! イミテふたたび!!",
+  "date": "2000-11-23"
+ },
+ {
+  "jp": 177,
+  "en": 175,
+  "title": "The Trouble with Snubbull",
+  "romaji": "Nyāsu to Burū to Guranburu!?",
+  "japanese": "ニャースとブルーとグランブル!?",
+  "date": "2000-11-30"
+ },
+ {
+  "jp": 178,
+  "en": 176,
+  "title": "Ariados, Amigos",
+  "romaji": "Ariadosu! Ninpō Batoru!!",
+  "japanese": "アリアドス! にんぽうバトル!!",
+  "date": "2000-12-07"
+ },
+ {
+  "jp": 179,
+  "en": 177,
+  "title": "Wings 'N' Things",
+  "romaji": "Habatake Yanyanma! Ashita no Sora e!!",
+  "japanese": "はばたけヤンヤンマ! あしたのそらへ!!",
+  "date": "2000-12-14"
+ },
+ {
+  "jp": 180,
+  "en": 178,
+  "title": "The Grass Route",
+  "romaji": "Popokko! Kusa Pokemon Batoru!!",
+  "japanese": "ポポッコ! くさポケモンバトル!!",
+  "date": "2000-12-21"
+ },
+ {
+  "jp": 181,
+  "en": 179,
+  "title": "The Apple Corp",
+  "romaji": "Pikachū to Pichū!",
+  "japanese": "ピカチュウとピチュー!",
+  "date": "2001-01-04"
+ },
+ {
+  "jp": 182,
+  "en": 180,
+  "title": "Houndoom's Special Delivery",
+  "romaji": "Herugā to Togepī!",
+  "japanese": "ヘルガーとトゲピー!",
+  "date": "2001-01-11"
+ },
+ {
+  "jp": 183,
+  "en": 181,
+  "title": "A Ghost of a Chance",
+  "romaji": "Yaketa Tō! Matsuba Tōjō!!",
+  "japanese": "やけたとう! マツバとうじょう!!",
+  "date": "2001-01-18"
+ },
+ {
+  "jp": 184,
+  "en": 182,
+  "title": "From Ghost to Ghost",
+  "romaji": "Enju Jimu! Gōsuto Batoru!!",
+  "japanese": "エンジュジム! ゴーストバトル!!",
+  "date": "2001-01-25"
+ },
+ {
+  "jp": 185,
+  "en": 183,
+  "title": "Trouble's Brewing",
+  "romaji": "Ībui Go-Shimai! Ochakai de Batoru!!",
+  "japanese": "イーブイ5しまい! おちゃかいでバトル!!",
+  "date": "2001-02-01"
+ },
+ {
+  "jp": 186,
+  "en": 184,
+  "title": "All That Glitters!",
+  "romaji": "Yamikarasu! Ubawareta Bajji!!",
+  "japanese": "ヤミカラス! うばわれたバッジ!!",
+  "date": "2001-02-08"
+ },
+ {
+  "jp": 187,
+  "en": 185,
+  "title": "The Light Fantastic",
+  "romaji": "Teppouo no Sora!",
+  "japanese": "テッポウオのそら!",
+  "date": "2001-02-15"
+ },
+ {
+  "jp": 188,
+  "en": 186,
+  "title": "UnBEARable",
+  "romaji": "Himeguma no Himitsu!",
+  "japanese": "ヒメグマのひみつ!",
+  "date": "2001-02-22"
+ },
+ {
+  "jp": 189,
+  "en": 187,
+  "title": "Moving Pictures",
+  "romaji": "Kōtta Himanattsu no Nazo!!",
+  "japanese": "こおったヒマナッツのなぞ!!",
+  "date": "2001-03-01"
+ },
+ {
+  "jp": 190,
+  "en": 188,
+  "title": "Spring Fever",
+  "romaji": "Koko Hore Urimū! Onsen o Sagase!!",
+  "japanese": "ここほれウリムー! おんせんをさがせ!!",
+  "date": "2001-03-08"
+ },
+ {
+  "jp": 191,
+  "en": 189,
+  "title": "Freeze Frame",
+  "romaji": "Furīzā Tai Purin! Fubuki no Naka de!!",
+  "japanese": "フリーザーVSプリン! ふぶきのなかで!!",
+  "date": "2001-03-15"
+ },
+ {
+  "jp": 192,
+  "en": 190,
+  "title": "The Stolen Stones!",
+  "romaji": "Uindi to Honō no Ishi!",
+  "japanese": "ウインディとほのおのいし!",
+  "date": "2001-03-22"
+ },
+ {
+  "jp": 193,
+  "en": 191,
+  "title": "The Dunsparce Deception",
+  "romaji": "Nokotchi wa no Kotchinai!?",
+  "japanese": "ノコッチはのこっちない!?",
+  "date": "2001-03-29"
+ },
+ {
+  "jp": 194,
+  "en": 192,
+  "title": "The Wayward Wobbuffet",
+  "romaji": "Sōnansu! Sō nan su?",
+  "japanese": "ソーナンス! そうなんす?",
+  "date": "2001-04-05"
+ },
+ {
+  "jp": 195,
+  "en": 193,
+  "title": "Sick Daze",
+  "romaji": "Takeshi Taoreru! Abunai Kyanpu!!",
+  "japanese": "タケシたおれる! あぶないキャンプ!!",
+  "date": "2001-04-12"
+ },
+ {
+  "jp": 196,
+  "en": 194,
+  "title": "Ring Masters",
+  "romaji": "Ōdairu Tai Kamekkusu! Sumō Batoru!!",
+  "japanese": "オーダイルVSカメックス! すもうバトル!!",
+  "date": "2001-04-19"
+ },
+ {
+  "jp": 197,
+  "en": 195,
+  "title": "The Poké-Spokesman",
+  "romaji": "Pokemon to Hanasemasu!? Pokemon no Kotoba Pokemon no Kimochi!",
+  "japanese": "ポケモンとはなせます!? ポケモンのことばポケモンのきもち!",
+  "date": "2001-04-26"
+ },
+ {
+  "jp": 198,
+  "en": 196,
+  "title": "Control Freak!",
+  "romaji": "Gorubatto Tai Kamen no Joō Musashi! Iseki no Tatakai!!",
+  "japanese": "ゴルバットVSかめんのじょおうムサシ! いせきのたたかい!!",
+  "date": "2001-05-03"
+ },
+ {
+  "jp": 199,
+  "en": 197,
+  "title": "The Art of Pokémon",
+  "romaji": "Dōburu no Kiseki!! Asahi no Naka de Kagayaite!",
+  "japanese": "ドーブルのきせき!! あさひのなかでかがやいて!",
+  "date": "2001-05-10"
+ },
+ {
+  "jp": 200,
+  "en": 198,
+  "title": "The Heartbreak of Brock",
+  "romaji": "Nidorīno Nidorīna! Takeshi no Barairo no Hibi!?",
+  "japanese": "ニドリーノニドリーナ! タケシばらいろのひび!?",
+  "date": "2001-05-17"
+ },
+ {
+  "jp": 201,
+  "en": 199,
+  "title": "Current Events",
+  "romaji": "Sayonara Chikorita!? Denki no Rabirinsu!",
+  "japanese": "さよならチコリータ!? でんきのラビリンス!",
+  "date": "2001-05-24"
+ },
+ {
+  "jp": 202,
+  "en": 200,
+  "title": "Turning Over a New Bayleef",
+  "romaji": "Beirīfu wa Doko ni Itta!? Hābu Batake de Tsukamaete!",
+  "japanese": "ベイリーフはどこへいった!? ハーブばたけでつかまえて!",
+  "date": "2001-05-31"
+ },
+ {
+  "jp": 203,
+  "en": 201,
+  "title": "Doin' What Comes Natu-rally",
+  "romaji": "Neiti Uranai! Mirai Yochi no Shinpi!!",
+  "japanese": "ネイティうらない! みらいよちのしんぴ!!",
+  "date": "2001-06-07"
+ },
+ {
+  "jp": 204,
+  "en": 202,
+  "title": "The Big Balloon Blow-Up",
+  "romaji": "Pokemon Kikyū Dai Rēsu! Arashi o Koete!!",
+  "japanese": "ポケモンききゅうだいレース! あらしをこえて!!",
+  "date": "2001-06-14"
+ },
+ {
+  "jp": 205,
+  "en": 203,
+  "title": "The Screen Actor's Guilt",
+  "romaji": "Muchūru ni Mō Muchū!! Sūpāsutā wa Pokemon ga Osuki?",
+  "japanese": "ムチュールにもうむちゅう!! スーパースターはポケモンがおすき?",
+  "date": "2001-06-21"
+ },
+ {
+  "jp": 206,
+  "en": 204,
+  "title": "Right On, Rhydon!",
+  "romaji": "Naminori Saidon o Oe!? Mizuumi no Tatakai!",
+  "japanese": "なみのりサイドンをおえ!? みずうみのたたかい!",
+  "date": "2001-06-28"
+ },
+ {
+  "jp": 207,
+  "en": 205,
+  "title": "The Kecleon Caper",
+  "romaji": "Kakureon wa Doko ni Iru!? Mienai Pokemon ni Daikonran!",
+  "japanese": "カクレオンはどこにいる!? みえないポケモンにだいこんらん!",
+  "date": "2001-07-05"
+ },
+ {
+  "jp": 208,
+  "en": 206,
+  "title": "The Joy of Water Pokémon",
+  "romaji": "Mizu Pokemon-Girai no Joī-san!? Kasumi no Ikari!",
+  "japanese": "みずポケモンぎらいのジョーイさん!? カスミのいかり!",
+  "date": "2001-07-12"
+ },
+ {
+  "jp": 209,
+  "en": 207,
+  "title": "Got Miltank?",
+  "romaji": "Seibo Mirutanku! Sabaku no Himitsu!",
+  "japanese": "せいぼミルタンク! さばくのひみつ!",
+  "date": "2001-07-19"
+ },
+ {
+  "jp": 210,
+  "en": 208,
+  "title": "Fight for the Light",
+  "romaji": "Kagayaki no Tōdai! Asagi Shiti no Tatakai!!",
+  "japanese": "かがやきのとうだい! アサギシティのたたかい!!",
+  "date": "2001-07-26"
+ },
+ {
+  "jp": 211,
+  "en": 209,
+  "title": "Machoke, Machoke Man!",
+  "romaji": "Tanba Jimu! Makkō Shōbu Kakutō Taiketsu!!",
+  "japanese": "タンバジム! まっこうしょうぶかくとうたいけつ!!",
+  "date": "2001-08-02"
+ }
+]
