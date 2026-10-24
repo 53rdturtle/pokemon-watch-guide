@@ -282,7 +282,7 @@
         ? `<a class="imdb" href="${r.imdbUrl}" target="_blank" rel="noopener">IMDb <b>${r.imdbRating ?? "?"}</b> <span>${r.imdbVotes ? (r.imdbVotes >= 1000 ? (r.imdbVotes / 1000).toFixed(1) + "k" : r.imdbVotes) : ""}</span></a>`
         : "";
       const tx = r.tencentUrl
-        ? `<a href="${r.tencentUrl}" target="_blank" rel="noopener">▶ 腾讯视频</a>`
+        ? `<a class="tx" href="${r.tencentUrl}" target="_blank" rel="noopener">▶ 腾讯视频</a>`
         : (isEp || r.type === "movie" || r.type === "special" ? `<span class="na">腾讯暂无</span>` : "");
       const bare = !r.rating && !tx && !imdb;
       const cls = [isEp ? "" : "extra " + r.type, bare ? "bare" : "", w ? "watched" : "", r.i === progress ? "bookmark" : "", r.i === nextI ? "next" : ""].join(" ");
@@ -323,7 +323,23 @@
   document.getElementById("showExtras").addEventListener("change", e => { state.extras = e.target.checked; render(); });
   document.getElementById("hideWatched").addEventListener("change", e => { state.hideWatched = e.target.checked; render(); });
   document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+  // iPhone/iPad: Tencent's universal links don't cover /x/cover/ pages, so open the app via its own
+  // URL scheme and fall back to the web page if nothing took over (app not installed).
+  const IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+  function openTencentApp(url) {
+    const m = url.match(/\/x\/cover\/([^/]+)\/([^/.]+)\.html/);
+    if (!m) return false;
+    const fallback = setTimeout(() => { location.href = url; }, 1500);
+    const cancel = () => { if (document.hidden) clearTimeout(fallback); };
+    document.addEventListener("visibilitychange", cancel, { once: true });
+    window.addEventListener("pagehide", () => clearTimeout(fallback), { once: true });
+    window.addEventListener("blur", () => clearTimeout(fallback), { once: true }); // Safari's "Open in 腾讯视频?" prompt
+    location.href = `tenvideo2://?action=1&cover_id=${m[1]}&video_id=${m[2]}`;
+    return true;
+  }
   document.getElementById("list").addEventListener("click", e => {
+    const tx = e.target.closest("a.tx");
+    if (tx) { if (IOS && openTencentApp(tx.href)) e.preventDefault(); return; }
     if (!e.target.classList.contains("mark")) return;
     const i = +e.target.closest(".row").dataset.i;
     if (i !== progress) return setProgress(i);
