@@ -6,7 +6,7 @@ Open `index.html` in a browser. No server or build step is needed to view it.
 
 ### On iPhone
 
-Live at https://53rdturtle.github.io/pokemon-watch-guide/ (GitHub Pages serves `main`; `git push origin main` republishes within a minute). Open it, in Safari, then Share → Add to Home Screen. It opens full-screen like an app, and Safari won't clear the watched ticks (it may wipe site storage after 7 days without a visit for pages that are only opened in a tab). Watched ticks live on that one device; use "Export watched" / "Import watched" under "How to read this" to back them up or move them.
+Live at https://53rdturtle.github.io/pokemon-watch-guide/ (GitHub Pages serves `main`; `git push origin main` republishes within a minute). Open it in Safari, then Share → Add to Home Screen. It opens full-screen like an app, and Safari won't clear the watched ticks (it may wipe site storage after 7 days without a visit for pages that are only opened in a tab). Watched ticks live on that one device; use "Export watched" / "Import watched" under "How to read this" to back them up or move them.
 
 ## Ratings
 
