@@ -1,0 +1,8 @@
+#!/bin/sh
+# Install as .git/hooks/post-merge and .git/hooks/post-commit:
+#   cp tools/git-hooks/push-main .git/hooks/post-merge
+#   cp tools/git-hooks/push-main .git/hooks/post-commit
+# Whenever main changes locally, push it so GitHub Pages republishes the site.
+[ "$(git symbolic-ref --short -q HEAD)" = "main" ] || exit 0
+git push --quiet origin main || echo "push-main hook: git push origin main failed" >&2
+exit 0

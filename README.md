@@ -6,7 +6,7 @@
 
 ### 在 iPhone 上使用
 
-网址：https://53rdturtle.github.io/pokemon-watch-guide/ （GitHub Pages 发布 `main` 分支；`git push origin main` 后约一分钟更新）。用 Safari 打开，然后“分享 → 添加到主屏幕”。这样它会像 App 一样全屏打开，Safari 也不会清除观看进度（只在标签页中打开的网站，7 天未访问时存储可能被清除）。进度只保存在这台设备上；可在“使用说明 · 备份进度”里用“导出进度 / 导入进度”备份或迁移。
+网址：https://53rdturtle.github.io/pokemon-watch-guide/ （GitHub Pages 发布 `main` 分支；`git push origin main` 后约一分钟更新；把 `tools/git-hooks/push-main` 复制为 `.git/hooks/post-merge` 和 `.git/hooks/post-commit` 后，每次合并或提交到 `main` 都会自动推送）。用 Safari 打开，然后“分享 → 添加到主屏幕”。这样它会像 App 一样全屏打开，Safari 也不会清除观看进度（只在标签页中打开的网站，7 天未访问时存储可能被清除）。进度只保存在这台设备上；可在“使用说明 · 备份进度”里用“导出进度 / 导入进度”备份或迁移。
 
 ## 评分
 
