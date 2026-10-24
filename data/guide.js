@@ -1,5 +1,5 @@
 window.GUIDE = {
- "generated": "2026-10-24T07:15:25.446Z",
+ "generated": "2026-10-24T07:34:44.586Z",
  "series": [
   {
    "id": "indigo-league",
@@ -98,8 +98,8 @@ window.GUIDE = {
    "title": "Ash Catches a Pokémon",
    "titleZh": "神奇宝贝 收服！",
    "japanese": "ポケモン ゲットだぜ!",
-   "rating": 3,
-   "summary": "小智在常磐森林收服了第一只神奇宝贝绿毛虫，把小霞吓坏了；为了保护小智不被火箭队伤害，它进化成了铁甲蛹。",
+   "rating": 4,
+   "summary": "小智在常磐森林收服了第一只神奇宝贝绿毛虫，把小霞吓坏了；火箭队来袭时，这只小虫子想证明自己。之后一段重要剧情的起点。",
    "star": {
     "dex": 10,
     "name": "绿毛虫"
@@ -478,8 +478,8 @@ window.GUIDE = {
    "title": "Abra and the Psychic Showdown (Part 1)",
    "titleZh": "凯西！超能力大决斗！",
    "japanese": "ケーシィ! ちょうのうりょくたいけつ!",
-   "rating": 3,
-   "summary": "小智挑战金黄市道馆馆主娜姿——一位冷漠、拥有诡异力量的超能力系馆主，结果惨败。三集连续剧情的第一集。",
+   "rating": 4,
+   "summary": "小智挑战金黄市道馆馆主娜姿——一位冷漠、拥有诡异力量的超能力系馆主。三集连续剧情的第一集。",
    "star": {
     "dex": 64,
     "name": "勇吉拉"
@@ -958,7 +958,7 @@ window.GUIDE = {
    "title": "The Song of Jigglypuff",
    "titleZh": "唱歌吧！胖丁！",
    "japanese": "うたって! プリン!",
-   "rating": 4,
+   "rating": 3,
    "summary": "胖丁登场：一位郁闷的歌手，观众总是听着听着就睡着了。由此开启了一个延续多年的经典笑点。",
    "star": {
     "dex": 39,
@@ -1498,7 +1498,7 @@ window.GUIDE = {
    "title": "Showdown at the Po-ké Corral",
    "titleZh": "宿敌大决斗！大木研究所",
    "japanese": "ライバルたいけつ! オーキドけんきゅうじょ",
-   "rating": 4,
+   "rating": 3,
    "summary": "回到真新镇，小智发现小茂正在等他，大木博士在联盟大赛前有话要对他们两人说。",
    "star": {
     "dex": 89,
@@ -1718,7 +1718,7 @@ window.GUIDE = {
    "title": "Fire and Ice",
    "titleZh": "冰之场地！火焰之战！",
    "japanese": "こおりのフィールド! ほのおのたたかい!",
-   "rating": 3,
+   "rating": 4,
    "summary": "联盟大赛第二、三轮，分别在岩石场地和冰之场地进行。",
    "star": {
     "dex": 7,
@@ -1758,7 +1758,7 @@ window.GUIDE = {
    "title": "A Friend in Deed",
    "titleZh": "劲敌登场！",
    "japanese": "ライバルとうじょう!",
-   "rating": 4,
+   "rating": 3,
    "summary": "小智遇到阿弘，一位和他非常相像的训练家——连皮卡丘也有。",
    "star": {
     "dex": 25,
