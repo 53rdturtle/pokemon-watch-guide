@@ -407,10 +407,11 @@
     while (j >= 0 && !watchable(G.rows[j])) j--;
     setProgress(j);
   });
-  document.getElementById("jumpNext").addEventListener("click", () => {
+  const jumpNext = behavior => {
     const el = document.querySelector(".row.next") || [...document.querySelectorAll(".row")].at(-1);
-    el?.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
+    el?.scrollIntoView({ behavior, block: "start" });
+  };
+  document.getElementById("jumpNext").addEventListener("click", () => jumpNext("smooth"));
 
   const backupMsg = document.getElementById("backupMsg");
   document.getElementById("exportBtn").addEventListener("click", async () => {
@@ -450,6 +451,9 @@
     }
   });
   render();
+  // Opening the page lands on the next episode to watch (once there's progress to pick up from).
+  history.scrollRestoration = "manual";
+  if (progress >= 0) jumpNext("instant");
 
   // Home-screen web apps on iOS keep serving the HTML they first loaded (and resume without reloading),
   // so new versions never show up. On launch and whenever the app comes back to the foreground, fetch the
