@@ -107,7 +107,13 @@ const guide = {
   })),
   rows,
 };
-fs.writeFileSync(path.join(root, "data/guide.js"), `window.GUIDE = ${JSON.stringify(guide, null, 1)};\n`);
+const guideJs = `window.GUIDE = ${JSON.stringify(guide, null, 1)};\n`;
+fs.writeFileSync(path.join(root, "data/guide.js"), guideJs);
+// Stamp index.html's <script> with a content hash: browsers (iOS Safari especially) otherwise keep a
+// cached guide.js from an older build next to a newer index.html, and the page renders empty.
+const hash = require("crypto").createHash("sha1").update(JSON.stringify({ ...guide, generated: "" })).digest("hex").slice(0, 10);
+const indexPath = path.join(root, "index.html");
+fs.writeFileSync(indexPath, fs.readFileSync(indexPath, "utf8").replace(/src="data\/guide\.js(\?v=\w+)?"/, `src="data/guide.js?v=${hash}"`));
 
 // Rating budget (see README): about 1/3 of all episodes 4+ and about 10% rated 5 across the whole
 // show; each season's 4+ share floats with its quality but stays within 15–50%.
