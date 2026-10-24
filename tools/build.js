@@ -26,6 +26,12 @@ const starOf = (dex) => {
   if (!fs.existsSync(path.join(root, `assets/sprites/${dex}.png`))) throw new Error(`Missing sprite assets/sprites/${dex}.png`);
   return { dex, name: pokemonZh[dex] };
 };
+// Optional 4th editorial field: mood tags for picking episodes by taste regardless of rating.
+const TAGS = ["cute", "comedy"];
+const tagsOf = (tags, where) => {
+  for (const t of tags || []) if (!TAGS.includes(t)) throw new Error(`Unknown tag "${t}" on ${where} (allowed: ${TAGS.join(", ")})`);
+  return tags || [];
+};
 
 // Tencent's one 271-episode album spans all seasons and skips some Japanese episodes; walk both lists in order.
 const missing = new Set(seasons.flatMap((s) => s.editorial.tencentMissingJp || []));
@@ -57,6 +63,7 @@ for (const { id, wiki, editorial } of seasons) {
       rating: ed[0],
       summary: ed[1],
       star: starOf(ed[2]),
+      tags: tagsOf(ed[3], `EP${ep.jp}`),
       imdbRating: im ? im.rating : null,
       imdbVotes: im ? im.votes : null,
       imdbUrl: im ? imdbUrl(im.id) : null,
@@ -80,6 +87,7 @@ for (const { id, wiki, editorial } of seasons) {
       rating: x.rating,
       summary: x.summary,
       star: starOf(x.star),
+      tags: tagsOf(x.tags, x.title),
       imdbRating: im ? im.rating : null,
       imdbVotes: im ? im.votes : null,
       imdbUrl: x.imdb ? imdbUrl(x.imdb) : null,
@@ -118,3 +126,8 @@ for (const id of [...new Set(eps.map((r) => r.series))]) {
   console.log(`  ${id}: ${share(list).line}${out}`);
 }
 console.log(`  overall: ${share(eps).line} (target ≈33% / ≈10%)`);
+for (const t of TAGS) {
+  const list = eps.filter((r) => r.tags.includes(t));
+  const byRating = [5, 4, 3, 2, 1].map((n) => `${n}:${list.filter((r) => r.rating === n).length}`).join(" ");
+  console.log(`  ${t}: ${list.length} episodes (${byRating})`);
+}

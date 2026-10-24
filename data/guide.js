@@ -1,5 +1,5 @@
 window.GUIDE = {
- "generated": "2026-10-24T07:50:35.601Z",
+ "generated": "2026-10-24T07:55:31.376Z",
  "series": [
   {
    "id": "indigo-league",
@@ -63,6 +63,7 @@ window.GUIDE = {
     "dex": 6,
     "name": "喷火龙"
    },
+   "tags": [],
    "imdbRating": null,
    "imdbVotes": null,
    "imdbUrl": null,
@@ -83,6 +84,7 @@ window.GUIDE = {
     "dex": 9,
     "name": "水箭龟"
    },
+   "tags": [],
    "imdbRating": null,
    "imdbVotes": null,
    "imdbUrl": null,
@@ -103,6 +105,7 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [],
    "imdbRating": 8.5,
    "imdbVotes": 2667,
    "imdbUrl": "https://www.imdb.com/title/tt0761123/",
@@ -123,6 +126,7 @@ window.GUIDE = {
     "dex": 52,
     "name": "喵喵"
    },
+   "tags": [],
    "imdbRating": 7.5,
    "imdbVotes": 1722,
    "imdbUrl": "https://www.imdb.com/title/tt0761117/",
@@ -143,6 +147,7 @@ window.GUIDE = {
     "dex": 10,
     "name": "绿毛虫"
    },
+   "tags": [],
    "imdbRating": 7.7,
    "imdbVotes": 1607,
    "imdbUrl": "https://www.imdb.com/title/tt0761054/",
@@ -163,6 +168,7 @@ window.GUIDE = {
     "dex": 11,
     "name": "铁甲蛹"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 1460,
    "imdbUrl": "https://www.imdb.com/title/tt0761064/",
@@ -183,6 +189,7 @@ window.GUIDE = {
     "dex": 95,
     "name": "大岩蛇"
    },
+   "tags": [],
    "imdbRating": 7.7,
    "imdbVotes": 1438,
    "imdbUrl": "https://www.imdb.com/title/tt0761132/",
@@ -203,6 +210,9 @@ window.GUIDE = {
     "dex": 35,
     "name": "皮皮"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7,
    "imdbVotes": 1300,
    "imdbUrl": "https://www.imdb.com/title/tt0761070/",
@@ -223,6 +233,7 @@ window.GUIDE = {
     "dex": 121,
     "name": "宝石海星"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 1256,
    "imdbUrl": "https://www.imdb.com/title/tt0761183/",
@@ -243,6 +254,7 @@ window.GUIDE = {
     "dex": 27,
     "name": "穿山鼠"
    },
+   "tags": [],
    "imdbRating": 7.2,
    "imdbVotes": 1197,
    "imdbUrl": "https://www.imdb.com/title/tt0761165/",
@@ -263,6 +275,7 @@ window.GUIDE = {
     "dex": 104,
     "name": "卡拉卡拉"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 1158,
    "imdbUrl": "https://www.imdb.com/title/tt0761174/",
@@ -283,6 +296,9 @@ window.GUIDE = {
     "dex": 1,
     "name": "妙蛙种子"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7.7,
    "imdbVotes": 1210,
    "imdbUrl": "https://www.imdb.com/title/tt0761060/",
@@ -303,6 +319,7 @@ window.GUIDE = {
     "dex": 4,
     "name": "小火龙"
    },
+   "tags": [],
    "imdbRating": 8.4,
    "imdbVotes": 1363,
    "imdbUrl": "https://www.imdb.com/title/tt0761067/",
@@ -323,6 +340,9 @@ window.GUIDE = {
     "dex": 7,
     "name": "杰尼龟"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.9,
    "imdbVotes": 1184,
    "imdbUrl": "https://www.imdb.com/title/tt0761092/",
@@ -343,6 +363,7 @@ window.GUIDE = {
     "dex": 149,
     "name": "快龙"
    },
+   "tags": [],
    "imdbRating": 7.2,
    "imdbVotes": 1108,
    "imdbUrl": "https://www.imdb.com/title/tt0761108/",
@@ -363,6 +384,7 @@ window.GUIDE = {
     "dex": 26,
     "name": "雷丘"
    },
+   "tags": [],
    "imdbRating": 8.1,
    "imdbVotes": 1190,
    "imdbUrl": "https://www.imdb.com/title/tt0761072/",
@@ -383,6 +405,7 @@ window.GUIDE = {
     "dex": 129,
     "name": "鲤鱼王"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 1059,
    "imdbUrl": "https://www.imdb.com/title/tt0761056/",
@@ -403,6 +426,7 @@ window.GUIDE = {
     "dex": 130,
     "name": "暴鲤龙"
    },
+   "tags": [],
    "imdbRating": 7.6,
    "imdbVotes": 1054,
    "imdbUrl": "https://www.imdb.com/title/tt0761122/",
@@ -423,6 +447,7 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [],
    "imdbRating": 7.8,
    "imdbVotes": 1114,
    "imdbUrl": "https://www.imdb.com/title/tt0761100/",
@@ -443,6 +468,9 @@ window.GUIDE = {
     "dex": 120,
     "name": "海星星"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.6,
    "imdbVotes": 830,
    "imdbUrl": "https://www.imdb.com/title/tt0761058/",
@@ -463,6 +491,7 @@ window.GUIDE = {
     "dex": 73,
     "name": "毒刺水母"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 970,
    "imdbUrl": "https://www.imdb.com/title/tt0761142/",
@@ -483,6 +512,7 @@ window.GUIDE = {
     "dex": 92,
     "name": "鬼斯"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 1007,
    "imdbUrl": "https://www.imdb.com/title/tt0761156/",
@@ -503,6 +533,7 @@ window.GUIDE = {
     "dex": 12,
     "name": "巴大蝴"
    },
+   "tags": [],
    "imdbRating": 8.2,
    "imdbVotes": 1223,
    "imdbUrl": "https://www.imdb.com/title/tt0761062/",
@@ -523,6 +554,7 @@ window.GUIDE = {
     "dex": 64,
     "name": "勇吉拉"
    },
+   "tags": [],
    "imdbRating": 7.8,
    "imdbVotes": 1005,
    "imdbUrl": "https://www.imdb.com/title/tt0761052/",
@@ -543,6 +575,7 @@ window.GUIDE = {
     "dex": 94,
     "name": "耿鬼"
    },
+   "tags": [],
    "imdbRating": 8,
    "imdbVotes": 1037,
    "imdbUrl": "https://www.imdb.com/title/tt0761179/",
@@ -563,6 +596,9 @@ window.GUIDE = {
     "dex": 93,
     "name": "鬼斯通"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.5,
    "imdbVotes": 968,
    "imdbUrl": "https://www.imdb.com/title/tt0761090/",
@@ -583,6 +619,9 @@ window.GUIDE = {
     "dex": 57,
     "name": "火爆猴"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.3,
    "imdbVotes": 893,
    "imdbUrl": "https://www.imdb.com/title/tt0761124/",
@@ -603,6 +642,7 @@ window.GUIDE = {
     "dex": 44,
     "name": "臭臭花"
    },
+   "tags": [],
    "imdbRating": 7.2,
    "imdbVotes": 872,
    "imdbUrl": "https://www.imdb.com/title/tt0761121/",
@@ -623,6 +663,9 @@ window.GUIDE = {
     "dex": 97,
     "name": "素利柏"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.9,
    "imdbVotes": 844,
    "imdbUrl": "https://www.imdb.com/title/tt0761096/",
@@ -643,6 +686,7 @@ window.GUIDE = {
     "dex": 37,
     "name": "六尾"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 832,
    "imdbUrl": "https://www.imdb.com/title/tt0761118/",
@@ -663,6 +707,7 @@ window.GUIDE = {
     "dex": 106,
     "name": "飞腿郎"
    },
+   "tags": [],
    "imdbRating": 7.2,
    "imdbVotes": 827,
    "imdbUrl": "https://www.imdb.com/title/tt0761171/",
@@ -683,6 +728,7 @@ window.GUIDE = {
     "dex": 81,
     "name": "小磁怪"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 822,
    "imdbUrl": "https://www.imdb.com/title/tt0761137/",
@@ -703,6 +749,7 @@ window.GUIDE = {
     "dex": 50,
     "name": "地鼠"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 822,
    "imdbUrl": "https://www.imdb.com/title/tt0761071/",
@@ -723,6 +770,7 @@ window.GUIDE = {
     "dex": 49,
     "name": "摩鲁蛾"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 832,
    "imdbUrl": "https://www.imdb.com/title/tt0761164/",
@@ -743,6 +791,7 @@ window.GUIDE = {
     "dex": 77,
     "name": "小火马"
    },
+   "tags": [],
    "imdbRating": 7.5,
    "imdbVotes": 820,
    "imdbUrl": "https://www.imdb.com/title/tt0761153/",
@@ -763,6 +812,7 @@ window.GUIDE = {
     "dex": 115,
     "name": "袋龙"
    },
+   "tags": [],
    "imdbRating": 6.4,
    "imdbVotes": 809,
    "imdbUrl": "https://www.imdb.com/title/tt0890562/",
@@ -783,6 +833,7 @@ window.GUIDE = {
     "dex": 147,
     "name": "迷你龙"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 492,
    "imdbUrl": "https://www.imdb.com/title/tt1287238/",
@@ -803,6 +854,7 @@ window.GUIDE = {
     "dex": 109,
     "name": "瓦斯弹"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 769,
    "imdbUrl": "https://www.imdb.com/title/tt0761147/",
@@ -823,6 +875,9 @@ window.GUIDE = {
     "dex": 132,
     "name": "百变怪"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.6,
    "imdbVotes": 794,
    "imdbUrl": "https://www.imdb.com/title/tt0890560/",
@@ -843,6 +898,7 @@ window.GUIDE = {
     "dex": 137,
     "name": "3D龙"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 616,
    "imdbUrl": "https://www.imdb.com/title/tt0761073/",
@@ -863,6 +919,7 @@ window.GUIDE = {
     "dex": 137,
     "name": "3D龙"
    },
+   "tags": [],
    "imdbRating": null,
    "imdbVotes": null,
    "imdbUrl": null,
@@ -883,6 +940,9 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 8,
    "imdbVotes": 905,
    "imdbUrl": "https://www.imdb.com/title/tt1290299/",
@@ -903,6 +963,9 @@ window.GUIDE = {
     "dex": 133,
     "name": "伊布"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7.5,
    "imdbVotes": 780,
    "imdbUrl": "https://www.imdb.com/title/tt0676196/",
@@ -923,6 +986,9 @@ window.GUIDE = {
     "dex": 143,
     "name": "卡比兽"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.3,
    "imdbVotes": 746,
    "imdbUrl": "https://www.imdb.com/title/tt0761191/",
@@ -943,6 +1009,7 @@ window.GUIDE = {
     "dex": 123,
     "name": "飞天螳螂"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 732,
    "imdbUrl": "https://www.imdb.com/title/tt0761130/",
@@ -963,6 +1030,7 @@ window.GUIDE = {
     "dex": 103,
     "name": "椰蛋树"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 725,
    "imdbUrl": "https://www.imdb.com/title/tt0761161/",
@@ -983,6 +1051,7 @@ window.GUIDE = {
     "dex": 46,
     "name": "派拉斯"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 714,
    "imdbUrl": "https://www.imdb.com/title/tt0761169/",
@@ -1003,6 +1072,10 @@ window.GUIDE = {
     "dex": 39,
     "name": "胖丁"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 7.5,
    "imdbVotes": 735,
    "imdbUrl": "https://www.imdb.com/title/tt0761175/",
@@ -1023,6 +1096,7 @@ window.GUIDE = {
     "dex": 142,
     "name": "化石翼龙"
    },
+   "tags": [],
    "imdbRating": 8.1,
    "imdbVotes": 816,
    "imdbUrl": "https://www.imdb.com/title/tt0761055/",
@@ -1043,6 +1117,7 @@ window.GUIDE = {
     "dex": 113,
     "name": "吉利蛋"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 701,
    "imdbUrl": "https://www.imdb.com/title/tt0761043/",
@@ -1063,6 +1138,9 @@ window.GUIDE = {
     "dex": 58,
     "name": "卡蒂狗"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.6,
    "imdbVotes": 763,
    "imdbUrl": "https://www.imdb.com/title/tt0676198/",
@@ -1083,6 +1161,7 @@ window.GUIDE = {
     "dex": 83,
     "name": "大葱鸭"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 697,
    "imdbUrl": "https://www.imdb.com/title/tt0761136/",
@@ -1103,6 +1182,10 @@ window.GUIDE = {
     "dex": 175,
     "name": "波克比"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 7.5,
    "imdbVotes": 722,
    "imdbUrl": "https://www.imdb.com/title/tt0761193/",
@@ -1123,6 +1206,7 @@ window.GUIDE = {
     "dex": 3,
     "name": "妙蛙花"
    },
+   "tags": [],
    "imdbRating": 7.8,
    "imdbVotes": 706,
    "imdbUrl": "https://www.imdb.com/title/tt0761061/",
@@ -1143,6 +1227,9 @@ window.GUIDE = {
     "dex": 108,
     "name": "大舌头"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.3,
    "imdbVotes": 632,
    "imdbUrl": "https://www.imdb.com/title/tt0761125/",
@@ -1163,6 +1250,9 @@ window.GUIDE = {
     "dex": 52,
     "name": "喵喵"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.8,
    "imdbVotes": 600,
    "imdbUrl": "https://www.imdb.com/title/tt0761172/",
@@ -1183,6 +1273,7 @@ window.GUIDE = {
     "dex": 58,
     "name": "卡蒂狗"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 641,
    "imdbUrl": "https://www.imdb.com/title/tt0761148/",
@@ -1203,6 +1294,7 @@ window.GUIDE = {
     "dex": 150,
     "name": "超梦"
    },
+   "tags": [],
    "imdbRating": 6.4,
    "imdbVotes": 51056,
    "imdbUrl": "https://www.imdb.com/title/tt0190641/",
@@ -1223,6 +1315,10 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 6.2,
    "imdbVotes": 998,
    "imdbUrl": "https://www.imdb.com/title/tt0210233/",
@@ -1243,6 +1339,7 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 641,
    "imdbUrl": "https://www.imdb.com/title/tt0761120/",
@@ -1263,6 +1360,7 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [],
    "imdbRating": 7.6,
    "imdbVotes": 668,
    "imdbUrl": "https://www.imdb.com/title/tt0761180/",
@@ -1283,6 +1381,7 @@ window.GUIDE = {
     "dex": 143,
     "name": "卡比兽"
    },
+   "tags": [],
    "imdbRating": null,
    "imdbVotes": null,
    "imdbUrl": null,
@@ -1303,6 +1402,7 @@ window.GUIDE = {
     "dex": 54,
     "name": "可达鸭"
    },
+   "tags": [],
    "imdbRating": 7.2,
    "imdbVotes": 651,
    "imdbUrl": "https://www.imdb.com/title/tt0761146/",
@@ -1323,6 +1423,7 @@ window.GUIDE = {
     "dex": 38,
     "name": "九尾"
    },
+   "tags": [],
    "imdbRating": 7.6,
    "imdbVotes": 633,
    "imdbUrl": "https://www.imdb.com/title/tt0761126/",
@@ -1343,6 +1444,7 @@ window.GUIDE = {
     "dex": 126,
     "name": "鸭嘴火龙"
    },
+   "tags": [],
    "imdbRating": 8.3,
    "imdbVotes": 746,
    "imdbUrl": "https://www.imdb.com/title/tt0761190/",
@@ -1363,6 +1465,7 @@ window.GUIDE = {
     "dex": 9,
     "name": "水箭龟"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 566,
    "imdbUrl": "https://www.imdb.com/title/tt0761057/",
@@ -1383,6 +1486,7 @@ window.GUIDE = {
     "dex": 87,
     "name": "白海狮"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 572,
    "imdbUrl": "https://www.imdb.com/title/tt0761162/",
@@ -1403,6 +1507,10 @@ window.GUIDE = {
     "dex": 35,
     "name": "皮皮"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 6.4,
    "imdbVotes": 569,
    "imdbUrl": "https://www.imdb.com/title/tt0761069/",
@@ -1423,6 +1531,7 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [],
    "imdbRating": null,
    "imdbVotes": null,
    "imdbUrl": null,
@@ -1443,6 +1552,7 @@ window.GUIDE = {
     "dex": 111,
     "name": "独角犀牛"
    },
+   "tags": [],
    "imdbRating": 7.9,
    "imdbVotes": 619,
    "imdbUrl": "https://www.imdb.com/title/tt0761144/",
@@ -1463,6 +1573,9 @@ window.GUIDE = {
     "dex": 122,
     "name": "吸盘魔偶"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.9,
    "imdbVotes": 561,
    "imdbUrl": "https://www.imdb.com/title/tt0761101/",
@@ -1483,6 +1596,7 @@ window.GUIDE = {
     "dex": 3,
     "name": "妙蛙花"
    },
+   "tags": [],
    "imdbRating": null,
    "imdbVotes": null,
    "imdbUrl": null,
@@ -1503,6 +1617,9 @@ window.GUIDE = {
     "dex": 124,
     "name": "迷唇姐"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.8,
    "imdbVotes": 521,
    "imdbUrl": "https://www.imdb.com/title/tt0761093/",
@@ -1523,6 +1640,7 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [],
    "imdbRating": 7.7,
    "imdbVotes": 456,
    "imdbUrl": "https://www.imdb.com/title/tt1789472/",
@@ -1543,6 +1661,7 @@ window.GUIDE = {
     "dex": 89,
     "name": "臭臭泥"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 547,
    "imdbUrl": "https://www.imdb.com/title/tt0761131/",
@@ -1563,6 +1682,9 @@ window.GUIDE = {
     "dex": 80,
     "name": "呆河马"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7,
    "imdbVotes": 550,
    "imdbUrl": "https://www.imdb.com/title/tt0761151/",
@@ -1583,6 +1705,9 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7.1,
    "imdbVotes": 558,
    "imdbUrl": "https://www.imdb.com/title/tt0761166/",
@@ -1603,6 +1728,7 @@ window.GUIDE = {
     "dex": 44,
     "name": "臭臭花"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 537,
    "imdbUrl": "https://www.imdb.com/title/tt0761104/",
@@ -1623,6 +1749,9 @@ window.GUIDE = {
     "dex": 40,
     "name": "胖可丁"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.6,
    "imdbVotes": 543,
    "imdbUrl": "https://www.imdb.com/title/tt0761102/",
@@ -1643,6 +1772,7 @@ window.GUIDE = {
     "dex": 52,
     "name": "喵喵"
    },
+   "tags": [],
    "imdbRating": 7.8,
    "imdbVotes": 651,
    "imdbUrl": "https://www.imdb.com/title/tt0757623/",
@@ -1663,6 +1793,7 @@ window.GUIDE = {
     "dex": 95,
     "name": "大岩蛇"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 539,
    "imdbUrl": "https://www.imdb.com/title/tt0761185/",
@@ -1683,6 +1814,7 @@ window.GUIDE = {
     "dex": 65,
     "name": "胡地"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 544,
    "imdbUrl": "https://www.imdb.com/title/tt0761143/",
@@ -1703,6 +1835,7 @@ window.GUIDE = {
     "dex": 105,
     "name": "嘎啦嘎啦"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 525,
    "imdbUrl": "https://www.imdb.com/title/tt0890559/",
@@ -1723,6 +1856,7 @@ window.GUIDE = {
     "dex": 146,
     "name": "火焰鸟"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 550,
    "imdbUrl": "https://www.imdb.com/title/tt0761053/",
@@ -1743,6 +1877,7 @@ window.GUIDE = {
     "dex": 98,
     "name": "大钳蟹"
    },
+   "tags": [],
    "imdbRating": 7.9,
    "imdbVotes": 586,
    "imdbUrl": "https://www.imdb.com/title/tt0761128/",
@@ -1763,6 +1898,7 @@ window.GUIDE = {
     "dex": 7,
     "name": "杰尼龟"
    },
+   "tags": [],
    "imdbRating": 7.6,
    "imdbVotes": 418,
    "imdbUrl": "https://www.imdb.com/title/tt1789468/",
@@ -1783,6 +1919,7 @@ window.GUIDE = {
     "dex": 69,
     "name": "喇叭芽"
    },
+   "tags": [],
    "imdbRating": 7.9,
    "imdbVotes": 581,
    "imdbUrl": "https://www.imdb.com/title/tt0761155/",
@@ -1803,6 +1940,7 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [],
    "imdbRating": 7.2,
    "imdbVotes": 549,
    "imdbUrl": "https://www.imdb.com/title/tt0761045/",
@@ -1823,6 +1961,7 @@ window.GUIDE = {
     "dex": 6,
     "name": "喷火龙"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 567,
    "imdbUrl": "https://www.imdb.com/title/tt0761083/",
@@ -1843,6 +1982,7 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 577,
    "imdbUrl": "https://www.imdb.com/title/tt0761084/",
@@ -1863,6 +2003,7 @@ window.GUIDE = {
     "dex": 18,
     "name": "比雕"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 527,
    "imdbUrl": "https://www.imdb.com/title/tt0761112/",
@@ -1883,6 +2024,9 @@ window.GUIDE = {
     "dex": 175,
     "name": "波克比"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7,
    "imdbVotes": 475,
    "imdbUrl": "https://www.imdb.com/title/tt0761047/",
@@ -1903,6 +2047,7 @@ window.GUIDE = {
     "dex": 39,
     "name": "胖丁"
    },
+   "tags": [],
    "imdbRating": 7.2,
    "imdbVotes": 477,
    "imdbUrl": "https://www.imdb.com/title/tt0761115/",
@@ -1923,6 +2068,7 @@ window.GUIDE = {
     "dex": 131,
     "name": "乘龙"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 470,
    "imdbUrl": "https://www.imdb.com/title/tt0761159/",
@@ -1943,6 +2089,7 @@ window.GUIDE = {
     "dex": 9,
     "name": "水箭龟"
    },
+   "tags": [],
    "imdbRating": 7.5,
    "imdbVotes": 470,
    "imdbUrl": "https://www.imdb.com/title/tt0761077/",
@@ -1963,6 +2110,7 @@ window.GUIDE = {
     "dex": 96,
     "name": "素利普"
    },
+   "tags": [],
    "imdbRating": 7.8,
    "imdbVotes": 486,
    "imdbUrl": "https://www.imdb.com/title/tt0761113/",
@@ -1983,6 +2131,7 @@ window.GUIDE = {
     "dex": 95,
     "name": "大岩蛇"
    },
+   "tags": [],
    "imdbRating": 7.2,
    "imdbVotes": 449,
    "imdbUrl": "https://www.imdb.com/title/tt0676199/",
@@ -2003,6 +2152,9 @@ window.GUIDE = {
     "dex": 111,
     "name": "独角犀牛"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7,
    "imdbVotes": 434,
    "imdbUrl": "https://www.imdb.com/title/tt0761099/",
@@ -2023,6 +2175,7 @@ window.GUIDE = {
     "dex": 140,
     "name": "化石盔"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 438,
    "imdbUrl": "https://www.imdb.com/title/tt0761129/",
@@ -2043,6 +2196,7 @@ window.GUIDE = {
     "dex": 124,
     "name": "迷唇姐"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 402,
    "imdbUrl": "https://www.imdb.com/title/tt0761140/",
@@ -2063,6 +2217,9 @@ window.GUIDE = {
     "dex": 55,
     "name": "哥达鸭"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.6,
    "imdbVotes": 441,
    "imdbUrl": "https://www.imdb.com/title/tt0761063/",
@@ -2083,6 +2240,7 @@ window.GUIDE = {
     "dex": 113,
     "name": "吉利蛋"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 425,
    "imdbUrl": "https://www.imdb.com/title/tt0761157/",
@@ -2103,6 +2261,7 @@ window.GUIDE = {
     "dex": 31,
     "name": "尼多后"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 426,
    "imdbUrl": "https://www.imdb.com/title/tt0761109/",
@@ -2123,6 +2282,9 @@ window.GUIDE = {
     "dex": 143,
     "name": "卡比兽"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.3,
    "imdbVotes": 459,
    "imdbUrl": "https://www.imdb.com/title/tt0761133/",
@@ -2143,6 +2305,7 @@ window.GUIDE = {
     "dex": 93,
     "name": "鬼斯通"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 404,
    "imdbUrl": "https://www.imdb.com/title/tt0761049/",
@@ -2163,6 +2326,9 @@ window.GUIDE = {
     "dex": 52,
     "name": "喵喵"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.8,
    "imdbVotes": 416,
    "imdbUrl": "https://www.imdb.com/title/tt0761105/",
@@ -2183,6 +2349,7 @@ window.GUIDE = {
     "dex": 123,
     "name": "飞天螳螂"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 402,
    "imdbUrl": "https://www.imdb.com/title/tt0761186/",
@@ -2203,6 +2370,9 @@ window.GUIDE = {
     "dex": 7,
     "name": "杰尼龟"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.9,
    "imdbVotes": 395,
    "imdbUrl": "https://www.imdb.com/title/tt0761051/",
@@ -2223,6 +2393,7 @@ window.GUIDE = {
     "dex": 91,
     "name": "刺甲贝"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 377,
    "imdbUrl": "https://www.imdb.com/title/tt0761160/",
@@ -2243,6 +2414,9 @@ window.GUIDE = {
     "dex": 32,
     "name": "尼多朗"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.6,
    "imdbVotes": 394,
    "imdbUrl": "https://www.imdb.com/title/tt0761192/",
@@ -2263,6 +2437,7 @@ window.GUIDE = {
     "dex": 81,
     "name": "小磁怪"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 386,
    "imdbUrl": "https://www.imdb.com/title/tt0761085/",
@@ -2283,6 +2458,7 @@ window.GUIDE = {
     "dex": 89,
     "name": "臭臭泥"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 379,
    "imdbUrl": "https://www.imdb.com/title/tt0761163/",
@@ -2303,6 +2479,7 @@ window.GUIDE = {
     "dex": 125,
     "name": "电击兽"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 398,
    "imdbUrl": "https://www.imdb.com/title/tt0761107/",
@@ -2323,6 +2500,10 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 7.3,
    "imdbVotes": 388,
    "imdbUrl": "https://www.imdb.com/title/tt0761059/",
@@ -2343,6 +2524,7 @@ window.GUIDE = {
     "dex": 249,
     "name": "洛奇亚"
    },
+   "tags": [],
    "imdbRating": 6.1,
    "imdbVotes": 26469,
    "imdbUrl": "https://www.imdb.com/title/tt0210234/",
@@ -2363,6 +2545,9 @@ window.GUIDE = {
     "dex": 175,
     "name": "波克比"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 5.8,
    "imdbVotes": 542,
    "imdbUrl": "https://www.imdb.com/title/tt0210235/",
@@ -2383,6 +2568,7 @@ window.GUIDE = {
     "dex": 6,
     "name": "喷火龙"
    },
+   "tags": [],
    "imdbRating": 8.1,
    "imdbVotes": 486,
    "imdbUrl": "https://www.imdb.com/title/tt0761065/",
@@ -2403,6 +2589,9 @@ window.GUIDE = {
     "dex": 8,
     "name": "卡咪龟"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7.3,
    "imdbVotes": 378,
    "imdbUrl": "https://www.imdb.com/title/tt0761167/",
@@ -2423,6 +2612,9 @@ window.GUIDE = {
     "dex": 143,
     "name": "卡比兽"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7,
    "imdbVotes": 371,
    "imdbUrl": "https://www.imdb.com/title/tt0761119/",
@@ -2443,6 +2635,7 @@ window.GUIDE = {
     "dex": 105,
     "name": "嘎啦嘎啦"
    },
+   "tags": [],
    "imdbRating": 7.5,
    "imdbVotes": 397,
    "imdbUrl": "https://www.imdb.com/title/tt0761116/",
@@ -2463,6 +2656,7 @@ window.GUIDE = {
     "dex": 129,
     "name": "鲤鱼王"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 368,
    "imdbUrl": "https://www.imdb.com/title/tt0761182/",
@@ -2483,6 +2677,7 @@ window.GUIDE = {
     "dex": 60,
     "name": "蚊香蝌蚪"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 369,
    "imdbUrl": "https://www.imdb.com/title/tt0761176/",
@@ -2503,6 +2698,7 @@ window.GUIDE = {
     "dex": 94,
     "name": "耿鬼"
    },
+   "tags": [],
    "imdbRating": 8.1,
    "imdbVotes": 454,
    "imdbUrl": "https://www.imdb.com/title/tt0761091/",
@@ -2523,6 +2719,7 @@ window.GUIDE = {
     "dex": 149,
     "name": "快龙"
    },
+   "tags": [],
    "imdbRating": 8.5,
    "imdbVotes": 505,
    "imdbUrl": "https://www.imdb.com/title/tt0761074/",
@@ -2543,6 +2740,7 @@ window.GUIDE = {
     "dex": 131,
     "name": "乘龙"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 389,
    "imdbUrl": "https://www.imdb.com/title/tt0761189/",
@@ -2563,6 +2761,7 @@ window.GUIDE = {
     "dex": 101,
     "name": "顽皮弹"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 360,
    "imdbUrl": "https://www.imdb.com/title/tt0761181/",
@@ -2583,6 +2782,7 @@ window.GUIDE = {
     "dex": 74,
     "name": "小拳石"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 379,
    "imdbUrl": "https://www.imdb.com/title/tt0761050/",
@@ -2603,6 +2803,7 @@ window.GUIDE = {
     "dex": 133,
     "name": "伊布"
    },
+   "tags": [],
    "imdbRating": 7.5,
    "imdbVotes": 404,
    "imdbUrl": "https://www.imdb.com/title/tt0761173/",
@@ -2623,6 +2824,7 @@ window.GUIDE = {
     "dex": 158,
     "name": "小锯鳄"
    },
+   "tags": [],
    "imdbRating": 7.2,
    "imdbVotes": 389,
    "imdbUrl": "https://www.imdb.com/title/tt0779539/",
@@ -2643,6 +2845,7 @@ window.GUIDE = {
     "dex": 6,
     "name": "喷火龙"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 395,
    "imdbUrl": "https://www.imdb.com/title/tt0761150/",
@@ -2663,6 +2866,7 @@ window.GUIDE = {
     "dex": 214,
     "name": "赫拉克罗斯"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 355,
    "imdbUrl": "https://www.imdb.com/title/tt0761046/",
@@ -2683,6 +2887,7 @@ window.GUIDE = {
     "dex": 232,
     "name": "顿甲"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 338,
    "imdbUrl": "https://www.imdb.com/title/tt0761127/",
@@ -2703,6 +2908,7 @@ window.GUIDE = {
     "dex": 163,
     "name": "咕咕"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 339,
    "imdbUrl": "https://www.imdb.com/title/tt0761098/",
@@ -2723,6 +2929,7 @@ window.GUIDE = {
     "dex": 182,
     "name": "美丽花"
    },
+   "tags": [],
    "imdbRating": 6.4,
    "imdbVotes": 323,
    "imdbUrl": "https://www.imdb.com/title/tt0761078/",
@@ -2743,6 +2950,7 @@ window.GUIDE = {
     "dex": 250,
     "name": "凤王"
    },
+   "tags": [],
    "imdbRating": null,
    "imdbVotes": null,
    "imdbUrl": null,
@@ -2763,6 +2971,7 @@ window.GUIDE = {
     "dex": 167,
     "name": "线球"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 320,
    "imdbUrl": "https://www.imdb.com/title/tt0761139/",
@@ -2783,6 +2992,9 @@ window.GUIDE = {
     "dex": 209,
     "name": "布卢"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.5,
    "imdbVotes": 324,
    "imdbUrl": "https://www.imdb.com/title/tt0761135/",
@@ -2803,6 +3015,7 @@ window.GUIDE = {
     "dex": 234,
     "name": "惊角鹿"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 317,
    "imdbUrl": "https://www.imdb.com/title/tt0761158/",
@@ -2823,6 +3036,7 @@ window.GUIDE = {
     "dex": 152,
     "name": "菊草叶"
    },
+   "tags": [],
    "imdbRating": 7.6,
    "imdbVotes": 351,
    "imdbUrl": "https://www.imdb.com/title/tt0761149/",
@@ -2843,6 +3057,7 @@ window.GUIDE = {
     "dex": 195,
     "name": "沼王"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 323,
    "imdbUrl": "https://www.imdb.com/title/tt0761111/",
@@ -2863,6 +3078,7 @@ window.GUIDE = {
     "dex": 165,
     "name": "芭瓢虫"
    },
+   "tags": [],
    "imdbRating": 6.4,
    "imdbVotes": 308,
    "imdbUrl": "https://www.imdb.com/title/tt0761184/",
@@ -2883,6 +3099,7 @@ window.GUIDE = {
     "dex": 242,
     "name": "幸福蛋"
    },
+   "tags": [],
    "imdbRating": 7.6,
    "imdbVotes": 335,
    "imdbUrl": "https://www.imdb.com/title/tt0761097/",
@@ -2903,6 +3120,7 @@ window.GUIDE = {
     "dex": 69,
     "name": "喇叭芽"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 308,
    "imdbUrl": "https://www.imdb.com/title/tt0676195/",
@@ -2923,6 +3141,7 @@ window.GUIDE = {
     "dex": 18,
     "name": "比雕"
    },
+   "tags": [],
    "imdbRating": 7.7,
    "imdbVotes": 337,
    "imdbUrl": "https://www.imdb.com/title/tt0761075/",
@@ -2943,6 +3162,9 @@ window.GUIDE = {
     "dex": 183,
     "name": "玛力露"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.7,
    "imdbVotes": 312,
    "imdbUrl": "https://www.imdb.com/title/tt0761079/",
@@ -2963,6 +3185,10 @@ window.GUIDE = {
     "dex": 161,
     "name": "尾立"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 6.8,
    "imdbVotes": 315,
    "imdbUrl": "https://www.imdb.com/title/tt0761141/",
@@ -2983,6 +3209,7 @@ window.GUIDE = {
     "dex": 6,
     "name": "喷火龙"
    },
+   "tags": [],
    "imdbRating": 8.1,
    "imdbVotes": 399,
    "imdbUrl": "https://www.imdb.com/title/tt0761066/",
@@ -3003,6 +3230,7 @@ window.GUIDE = {
     "dex": 192,
     "name": "向日花怪"
    },
+   "tags": [],
    "imdbRating": 6.5,
    "imdbVotes": 308,
    "imdbUrl": "https://www.imdb.com/title/tt0761089/",
@@ -3023,6 +3251,10 @@ window.GUIDE = {
     "dex": 152,
     "name": "菊草叶"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 7,
    "imdbVotes": 313,
    "imdbUrl": "https://www.imdb.com/title/tt0761068/",
@@ -3043,6 +3275,9 @@ window.GUIDE = {
     "dex": 187,
     "name": "毽子草"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.8,
    "imdbVotes": 305,
    "imdbUrl": "https://www.imdb.com/title/tt0761081/",
@@ -3063,6 +3298,9 @@ window.GUIDE = {
     "dex": 207,
     "name": "天蝎"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.8,
    "imdbVotes": 302,
    "imdbUrl": "https://www.imdb.com/title/tt0761177/",
@@ -3083,6 +3321,7 @@ window.GUIDE = {
     "dex": 179,
     "name": "咩利羊"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 298,
    "imdbUrl": "https://www.imdb.com/title/tt0761106/",
@@ -3103,6 +3342,7 @@ window.GUIDE = {
     "dex": 212,
     "name": "巨钳螳螂"
    },
+   "tags": [],
    "imdbRating": 7.6,
    "imdbVotes": 312,
    "imdbUrl": "https://www.imdb.com/title/tt0761194/",
@@ -3123,6 +3363,7 @@ window.GUIDE = {
     "dex": 155,
     "name": "火球鼠"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 314,
    "imdbUrl": "https://www.imdb.com/title/tt0761088/",
@@ -3143,6 +3384,7 @@ window.GUIDE = {
     "dex": 79,
     "name": "呆呆兽"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 297,
    "imdbUrl": "https://www.imdb.com/title/tt0761048/",
@@ -3163,6 +3405,7 @@ window.GUIDE = {
     "dex": 204,
     "name": "榛果球"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 309,
    "imdbUrl": "https://www.imdb.com/title/tt0761087/",
@@ -3183,6 +3426,7 @@ window.GUIDE = {
     "dex": 123,
     "name": "飞天螳螂"
    },
+   "tags": [],
    "imdbRating": 7.6,
    "imdbVotes": 312,
    "imdbUrl": "https://www.imdb.com/title/tt0761086/",
@@ -3203,6 +3447,7 @@ window.GUIDE = {
     "dex": 83,
     "name": "大葱鸭"
    },
+   "tags": [],
    "imdbRating": 6.4,
    "imdbVotes": 299,
    "imdbUrl": "https://www.imdb.com/title/tt0761044/",
@@ -3223,6 +3468,9 @@ window.GUIDE = {
     "dex": 202,
     "name": "果然翁"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.2,
    "imdbVotes": 307,
    "imdbUrl": "https://www.imdb.com/title/tt0761187/",
@@ -3243,6 +3491,7 @@ window.GUIDE = {
     "dex": 7,
     "name": "杰尼龟"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 313,
    "imdbUrl": "https://www.imdb.com/title/tt0761152/",
@@ -3263,6 +3512,10 @@ window.GUIDE = {
     "dex": 194,
     "name": "乌波"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 6.5,
    "imdbVotes": 294,
    "imdbUrl": "https://www.imdb.com/title/tt0761110/",
@@ -3283,6 +3536,10 @@ window.GUIDE = {
     "dex": 39,
     "name": "胖丁"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 6.6,
    "imdbVotes": 289,
    "imdbUrl": "https://www.imdb.com/title/tt0761188/",
@@ -3303,6 +3560,7 @@ window.GUIDE = {
     "dex": 228,
     "name": "戴鲁比"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 291,
    "imdbUrl": "https://www.imdb.com/title/tt0761095/",
@@ -3323,6 +3581,7 @@ window.GUIDE = {
     "dex": 158,
     "name": "小锯鳄"
    },
+   "tags": [],
    "imdbRating": 7.8,
    "imdbVotes": 304,
    "imdbUrl": "https://www.imdb.com/title/tt0761178/",
@@ -3343,6 +3602,7 @@ window.GUIDE = {
     "dex": 227,
     "name": "盔甲鸟"
    },
+   "tags": [],
    "imdbRating": 7.2,
    "imdbVotes": 286,
    "imdbUrl": "https://www.imdb.com/title/tt0761094/",
@@ -3363,6 +3623,10 @@ window.GUIDE = {
     "dex": 184,
     "name": "玛力露丽"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 6.8,
    "imdbVotes": 289,
    "imdbUrl": "https://www.imdb.com/title/tt0761103/",
@@ -3383,6 +3647,7 @@ window.GUIDE = {
     "dex": 164,
     "name": "猫头夜鹰"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 293,
    "imdbUrl": "https://www.imdb.com/title/tt0761082/",
@@ -3403,6 +3668,9 @@ window.GUIDE = {
     "dex": 217,
     "name": "圈圈熊"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.3,
    "imdbVotes": 289,
    "imdbUrl": "https://www.imdb.com/title/tt0761080/",
@@ -3423,6 +3691,7 @@ window.GUIDE = {
     "dex": 244,
     "name": "炎帝"
    },
+   "tags": [],
    "imdbRating": 5.9,
    "imdbVotes": 17080,
    "imdbUrl": "https://www.imdb.com/title/tt0235679/",
@@ -3443,6 +3712,9 @@ window.GUIDE = {
     "dex": 172,
     "name": "皮丘"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.1,
    "imdbVotes": 478,
    "imdbUrl": "https://www.imdb.com/title/tt0235680/",
@@ -3463,6 +3735,7 @@ window.GUIDE = {
     "dex": 203,
     "name": "麒麟奇"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 281,
    "imdbUrl": "https://www.imdb.com/title/tt0761170/",
@@ -3483,6 +3756,7 @@ window.GUIDE = {
     "dex": 52,
     "name": "喵喵"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 297,
    "imdbUrl": "https://www.imdb.com/title/tt0761154/",
@@ -3503,6 +3777,7 @@ window.GUIDE = {
     "dex": 241,
     "name": "大奶罐"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 306,
    "imdbUrl": "https://www.imdb.com/title/tt0890557/",
@@ -3523,6 +3798,7 @@ window.GUIDE = {
     "dex": 158,
     "name": "小锯鳄"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 291,
    "imdbUrl": "https://www.imdb.com/title/tt0890556/",
@@ -3543,6 +3819,7 @@ window.GUIDE = {
     "dex": 52,
     "name": "喵喵"
    },
+   "tags": [],
    "imdbRating": 6.6,
    "imdbVotes": 278,
    "imdbUrl": "https://www.imdb.com/title/tt0890558/",
@@ -3563,6 +3840,7 @@ window.GUIDE = {
     "dex": 15,
     "name": "大针蜂"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 271,
    "imdbUrl": "https://www.imdb.com/title/tt0890561/",
@@ -3583,6 +3861,7 @@ window.GUIDE = {
     "dex": 185,
     "name": "胡说树"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 273,
    "imdbUrl": "https://www.imdb.com/title/tt0890563/",
@@ -3603,6 +3882,7 @@ window.GUIDE = {
     "dex": 138,
     "name": "菊石兽"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 270,
    "imdbUrl": "https://www.imdb.com/title/tt0902118/",
@@ -3623,6 +3903,7 @@ window.GUIDE = {
     "dex": 16,
     "name": "波波"
    },
+   "tags": [],
    "imdbRating": 6.6,
    "imdbVotes": 267,
    "imdbUrl": "https://www.imdb.com/title/tt0902117/",
@@ -3643,6 +3924,7 @@ window.GUIDE = {
     "dex": 41,
     "name": "超音蝠"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 268,
    "imdbUrl": "https://www.imdb.com/title/tt0902119/",
@@ -3663,6 +3945,7 @@ window.GUIDE = {
     "dex": 237,
     "name": "柯波朗"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 269,
    "imdbUrl": "https://www.imdb.com/title/tt0902120/",
@@ -3683,6 +3966,9 @@ window.GUIDE = {
     "dex": 155,
     "name": "火球鼠"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7,
    "imdbVotes": 275,
    "imdbUrl": "https://www.imdb.com/title/tt0910415/",
@@ -3703,6 +3989,7 @@ window.GUIDE = {
     "dex": 119,
     "name": "金鱼王"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 265,
    "imdbUrl": "https://www.imdb.com/title/tt0910426/",
@@ -3723,6 +4010,7 @@ window.GUIDE = {
     "dex": 249,
     "name": "洛奇亚"
    },
+   "tags": [],
    "imdbRating": null,
    "imdbVotes": null,
    "imdbUrl": null,
@@ -3743,6 +4031,9 @@ window.GUIDE = {
     "dex": 37,
     "name": "六尾"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.5,
    "imdbVotes": 264,
    "imdbUrl": "https://www.imdb.com/title/tt0910418/",
@@ -3763,6 +4054,7 @@ window.GUIDE = {
     "dex": 213,
     "name": "壶壶"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 255,
    "imdbUrl": "https://www.imdb.com/title/tt0910413/",
@@ -3783,6 +4075,7 @@ window.GUIDE = {
     "dex": 197,
     "name": "月精灵"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 278,
    "imdbUrl": "https://www.imdb.com/title/tt0910432/",
@@ -3803,6 +4096,7 @@ window.GUIDE = {
     "dex": 165,
     "name": "芭瓢虫"
    },
+   "tags": [],
    "imdbRating": 6.5,
    "imdbVotes": 252,
    "imdbUrl": "https://www.imdb.com/title/tt0910430/",
@@ -3823,6 +4117,9 @@ window.GUIDE = {
     "dex": 202,
     "name": "果然翁"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7,
    "imdbVotes": 251,
    "imdbUrl": "https://www.imdb.com/title/tt0910455/",
@@ -3843,6 +4140,9 @@ window.GUIDE = {
     "dex": 132,
     "name": "百变怪"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.1,
    "imdbVotes": 256,
    "imdbUrl": "https://www.imdb.com/title/tt0910428/",
@@ -3863,6 +4163,10 @@ window.GUIDE = {
     "dex": 209,
     "name": "布卢"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 6.5,
    "imdbVotes": 250,
    "imdbUrl": "https://www.imdb.com/title/tt0910449/",
@@ -3883,6 +4187,7 @@ window.GUIDE = {
     "dex": 168,
     "name": "阿利多斯"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 253,
    "imdbUrl": "https://www.imdb.com/title/tt0910417/",
@@ -3903,6 +4208,7 @@ window.GUIDE = {
     "dex": 193,
     "name": "阳阳玛"
    },
+   "tags": [],
    "imdbRating": 6.4,
    "imdbVotes": 251,
    "imdbUrl": "https://www.imdb.com/title/tt0910454/",
@@ -3923,6 +4229,7 @@ window.GUIDE = {
     "dex": 245,
     "name": "水君"
    },
+   "tags": [],
    "imdbRating": null,
    "imdbVotes": null,
    "imdbUrl": null,
@@ -3943,6 +4250,7 @@ window.GUIDE = {
     "dex": 188,
     "name": "毽子花"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 249,
    "imdbUrl": "https://www.imdb.com/title/tt0910441/",
@@ -3963,6 +4271,7 @@ window.GUIDE = {
     "dex": 150,
     "name": "超梦"
    },
+   "tags": [],
    "imdbRating": 6.4,
    "imdbVotes": 4618,
    "imdbUrl": "https://www.imdb.com/title/tt0304564/",
@@ -3983,6 +4292,9 @@ window.GUIDE = {
     "dex": 172,
     "name": "皮丘"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7,
    "imdbVotes": 257,
    "imdbUrl": "https://www.imdb.com/title/tt0910437/",
@@ -4003,6 +4315,9 @@ window.GUIDE = {
     "dex": 229,
     "name": "黑鲁加"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7.1,
    "imdbVotes": 261,
    "imdbUrl": "https://www.imdb.com/title/tt0910427/",
@@ -4023,6 +4338,7 @@ window.GUIDE = {
     "dex": 92,
     "name": "鬼斯"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 256,
    "imdbUrl": "https://www.imdb.com/title/tt0910414/",
@@ -4043,6 +4359,7 @@ window.GUIDE = {
     "dex": 164,
     "name": "猫头夜鹰"
    },
+   "tags": [],
    "imdbRating": 7.7,
    "imdbVotes": 256,
    "imdbUrl": "https://www.imdb.com/title/tt0910424/",
@@ -4063,6 +4380,7 @@ window.GUIDE = {
     "dex": 133,
     "name": "伊布"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 250,
    "imdbUrl": "https://www.imdb.com/title/tt0910451/",
@@ -4083,6 +4401,7 @@ window.GUIDE = {
     "dex": 198,
     "name": "黑暗鸦"
    },
+   "tags": [],
    "imdbRating": 6.5,
    "imdbVotes": 241,
    "imdbUrl": "https://www.imdb.com/title/tt0910416/",
@@ -4103,6 +4422,7 @@ window.GUIDE = {
     "dex": 223,
     "name": "铁炮鱼"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 239,
    "imdbUrl": "https://www.imdb.com/title/tt0910445/",
@@ -4123,6 +4443,9 @@ window.GUIDE = {
     "dex": 216,
     "name": "熊宝宝"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.8,
    "imdbVotes": 244,
    "imdbUrl": "https://www.imdb.com/title/tt0910453/",
@@ -4143,6 +4466,7 @@ window.GUIDE = {
     "dex": 191,
     "name": "向日种子"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 246,
    "imdbUrl": "https://www.imdb.com/title/tt0910431/",
@@ -4163,6 +4487,9 @@ window.GUIDE = {
     "dex": 220,
     "name": "小山猪"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.7,
    "imdbVotes": 244,
    "imdbUrl": "https://www.imdb.com/title/tt0910436/",
@@ -4183,6 +4510,7 @@ window.GUIDE = {
     "dex": 144,
     "name": "急冻鸟"
    },
+   "tags": [],
    "imdbRating": 7.6,
    "imdbVotes": 253,
    "imdbUrl": "https://www.imdb.com/title/tt0910423/",
@@ -4203,6 +4531,7 @@ window.GUIDE = {
     "dex": 59,
     "name": "风速狗"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 235,
    "imdbUrl": "https://www.imdb.com/title/tt0910448/",
@@ -4223,6 +4552,7 @@ window.GUIDE = {
     "dex": 206,
     "name": "土龙弟弟"
    },
+   "tags": [],
    "imdbRating": 6.1,
    "imdbVotes": 236,
    "imdbUrl": "https://www.imdb.com/title/tt0910440/",
@@ -4243,6 +4573,10 @@ window.GUIDE = {
     "dex": 202,
     "name": "果然翁"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 6.8,
    "imdbVotes": 236,
    "imdbUrl": "https://www.imdb.com/title/tt0910450/",
@@ -4263,6 +4597,9 @@ window.GUIDE = {
     "dex": 95,
     "name": "大岩蛇"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7,
    "imdbVotes": 186,
    "imdbUrl": "https://www.imdb.com/title/tt1791145/",
@@ -4283,6 +4620,9 @@ window.GUIDE = {
     "dex": 143,
     "name": "卡比兽"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.3,
    "imdbVotes": 246,
    "imdbUrl": "https://www.imdb.com/title/tt0910434/",
@@ -4303,6 +4643,9 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.8,
    "imdbVotes": 237,
    "imdbUrl": "https://www.imdb.com/title/tt0910446/",
@@ -4323,6 +4666,7 @@ window.GUIDE = {
     "dex": 42,
     "name": "大嘴蝠"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 235,
    "imdbUrl": "https://www.imdb.com/title/tt0910419/",
@@ -4343,6 +4687,7 @@ window.GUIDE = {
     "dex": 235,
     "name": "图图犬"
    },
+   "tags": [],
    "imdbRating": 6.3,
    "imdbVotes": 229,
    "imdbUrl": "https://www.imdb.com/title/tt0910438/",
@@ -4363,6 +4708,9 @@ window.GUIDE = {
     "dex": 33,
     "name": "尼多力诺"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7,
    "imdbVotes": 244,
    "imdbUrl": "https://www.imdb.com/title/tt0910442/",
@@ -4383,6 +4731,7 @@ window.GUIDE = {
     "dex": 152,
     "name": "菊草叶"
    },
+   "tags": [],
    "imdbRating": 7.2,
    "imdbVotes": 243,
    "imdbUrl": "https://www.imdb.com/title/tt0910420/",
@@ -4403,6 +4752,9 @@ window.GUIDE = {
     "dex": 153,
     "name": "月桂叶"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.8,
    "imdbVotes": 233,
    "imdbUrl": "https://www.imdb.com/title/tt0910452/",
@@ -4423,6 +4775,7 @@ window.GUIDE = {
     "dex": 177,
     "name": "天然雀"
    },
+   "tags": [],
    "imdbRating": 6.4,
    "imdbVotes": 227,
    "imdbUrl": "https://www.imdb.com/title/tt0910421/",
@@ -4443,6 +4796,7 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [],
    "imdbRating": 6.6,
    "imdbVotes": 233,
    "imdbUrl": "https://www.imdb.com/title/tt0910439/",
@@ -4463,6 +4817,9 @@ window.GUIDE = {
     "dex": 238,
     "name": "迷唇娃"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.6,
    "imdbVotes": 223,
    "imdbUrl": "https://www.imdb.com/title/tt0910447/",
@@ -4483,6 +4840,7 @@ window.GUIDE = {
     "dex": 112,
     "name": "铁甲暴龙"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 227,
    "imdbUrl": "https://www.imdb.com/title/tt0910433/",
@@ -4503,6 +4861,9 @@ window.GUIDE = {
     "dex": 352,
     "name": "变隐龙"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.5,
    "imdbVotes": 226,
    "imdbUrl": "https://www.imdb.com/title/tt0910444/",
@@ -4523,6 +4884,7 @@ window.GUIDE = {
     "dex": 251,
     "name": "雪拉比"
    },
+   "tags": [],
    "imdbRating": 5.8,
    "imdbVotes": 10677,
    "imdbUrl": "https://www.imdb.com/title/tt0287635/",
@@ -4543,6 +4905,10 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 6.2,
    "imdbVotes": 166,
    "imdbUrl": "https://www.imdb.com/title/tt0304562/",
@@ -4563,6 +4929,7 @@ window.GUIDE = {
     "dex": 54,
     "name": "可达鸭"
    },
+   "tags": [],
    "imdbRating": 6.6,
    "imdbVotes": 228,
    "imdbUrl": "https://www.imdb.com/title/tt0910443/",
@@ -4583,6 +4950,7 @@ window.GUIDE = {
     "dex": 241,
     "name": "大奶罐"
    },
+   "tags": [],
    "imdbRating": 6.6,
    "imdbVotes": 225,
    "imdbUrl": "https://www.imdb.com/title/tt0910425/",
@@ -4603,6 +4971,7 @@ window.GUIDE = {
     "dex": 181,
     "name": "电龙"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 226,
    "imdbUrl": "https://www.imdb.com/title/tt0910422/",
@@ -4623,6 +4992,7 @@ window.GUIDE = {
     "dex": 67,
     "name": "豪力"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 239,
    "imdbUrl": "https://www.imdb.com/title/tt0910429/",
@@ -4643,6 +5013,7 @@ window.GUIDE = {
     "dex": 223,
     "name": "铁炮鱼"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 236,
    "imdbUrl": "https://www.imdb.com/title/tt0913069/",
@@ -4663,6 +5034,9 @@ window.GUIDE = {
     "dex": 16,
     "name": "波波"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7,
    "imdbVotes": 231,
    "imdbUrl": "https://www.imdb.com/title/tt0913084/",
@@ -4683,6 +5057,9 @@ window.GUIDE = {
     "dex": 170,
     "name": "灯笼鱼"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.6,
    "imdbVotes": 219,
    "imdbUrl": "https://www.imdb.com/title/tt0913126/",
@@ -4703,6 +5080,7 @@ window.GUIDE = {
     "dex": 222,
     "name": "太阳珊瑚"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 224,
    "imdbUrl": "https://www.imdb.com/title/tt0913050/",
@@ -4723,6 +5101,7 @@ window.GUIDE = {
     "dex": 226,
     "name": "巨翅飞鱼"
    },
+   "tags": [],
    "imdbRating": 6.6,
    "imdbVotes": 220,
    "imdbUrl": "https://www.imdb.com/title/tt0913107/",
@@ -4743,6 +5122,7 @@ window.GUIDE = {
     "dex": 224,
     "name": "章鱼桶"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 217,
    "imdbUrl": "https://www.imdb.com/title/tt0913112/",
@@ -4763,6 +5143,7 @@ window.GUIDE = {
     "dex": 99,
     "name": "巨钳蟹"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 226,
    "imdbUrl": "https://www.imdb.com/title/tt0913077/",
@@ -4783,6 +5164,7 @@ window.GUIDE = {
     "dex": 61,
     "name": "蚊香蛙"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 225,
    "imdbUrl": "https://www.imdb.com/title/tt0913131/",
@@ -4803,6 +5185,7 @@ window.GUIDE = {
     "dex": 243,
     "name": "雷公"
    },
+   "tags": [],
    "imdbRating": null,
    "imdbVotes": null,
    "imdbUrl": null,
@@ -4823,6 +5206,7 @@ window.GUIDE = {
     "dex": 50,
     "name": "地鼠"
    },
+   "tags": [],
    "imdbRating": 6.5,
    "imdbVotes": 215,
    "imdbUrl": "https://www.imdb.com/title/tt0913116/",
@@ -4843,6 +5227,7 @@ window.GUIDE = {
     "dex": 249,
     "name": "洛奇亚"
    },
+   "tags": [],
    "imdbRating": 6.6,
    "imdbVotes": 218,
    "imdbUrl": "https://www.imdb.com/title/tt0913095/",
@@ -4863,6 +5248,7 @@ window.GUIDE = {
     "dex": 171,
     "name": "电灯怪"
    },
+   "tags": [],
    "imdbRating": 7.5,
    "imdbVotes": 252,
    "imdbUrl": "https://www.imdb.com/title/tt0913130/",
@@ -4883,6 +5269,7 @@ window.GUIDE = {
     "dex": 249,
     "name": "洛奇亚"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 247,
    "imdbUrl": "https://www.imdb.com/title/tt0913056/",
@@ -4903,6 +5290,7 @@ window.GUIDE = {
     "dex": 249,
     "name": "洛奇亚"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 244,
    "imdbUrl": "https://www.imdb.com/title/tt0913059/",
@@ -4923,6 +5311,7 @@ window.GUIDE = {
     "dex": 164,
     "name": "猫头夜鹰"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 222,
    "imdbUrl": "https://www.imdb.com/title/tt0913135/",
@@ -4943,6 +5332,7 @@ window.GUIDE = {
     "dex": 208,
     "name": "大钢蛇"
    },
+   "tags": [],
    "imdbRating": 7.6,
    "imdbVotes": 241,
    "imdbUrl": "https://www.imdb.com/title/tt0913109/",
@@ -4963,6 +5353,9 @@ window.GUIDE = {
     "dex": 1,
     "name": "妙蛙种子"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7.6,
    "imdbVotes": 232,
    "imdbUrl": "https://www.imdb.com/title/tt0913075/",
@@ -4983,6 +5376,7 @@ window.GUIDE = {
     "dex": 196,
     "name": "太阳精灵"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 216,
    "imdbUrl": "https://www.imdb.com/title/tt0913081/",
@@ -5003,6 +5397,7 @@ window.GUIDE = {
     "dex": 250,
     "name": "凤王"
    },
+   "tags": [],
    "imdbRating": 7.6,
    "imdbVotes": 220,
    "imdbUrl": "https://www.imdb.com/title/tt0913085/",
@@ -5023,6 +5418,7 @@ window.GUIDE = {
     "dex": 153,
     "name": "月桂叶"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 215,
    "imdbUrl": "https://www.imdb.com/title/tt0913082/",
@@ -5043,6 +5439,7 @@ window.GUIDE = {
     "dex": 58,
     "name": "卡蒂狗"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 211,
    "imdbUrl": "https://www.imdb.com/title/tt0913068/",
@@ -5063,6 +5460,9 @@ window.GUIDE = {
     "dex": 231,
     "name": "小小象"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7.1,
    "imdbVotes": 213,
    "imdbUrl": "https://www.imdb.com/title/tt0913092/",
@@ -5083,6 +5483,9 @@ window.GUIDE = {
     "dex": 225,
     "name": "信使鸟"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 7.1,
    "imdbVotes": 219,
    "imdbUrl": "https://www.imdb.com/title/tt0913078/",
@@ -5103,6 +5506,7 @@ window.GUIDE = {
     "dex": 38,
     "name": "九尾"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 227,
    "imdbUrl": "https://www.imdb.com/title/tt0913104/",
@@ -5123,6 +5527,7 @@ window.GUIDE = {
     "dex": 236,
     "name": "巴尔郎"
    },
+   "tags": [],
    "imdbRating": 6.5,
    "imdbVotes": 206,
    "imdbUrl": "https://www.imdb.com/title/tt0913063/",
@@ -5143,6 +5548,7 @@ window.GUIDE = {
     "dex": 178,
     "name": "天然鸟"
    },
+   "tags": [],
    "imdbRating": 6.3,
    "imdbVotes": 205,
    "imdbUrl": "https://www.imdb.com/title/tt0913147/",
@@ -5163,6 +5569,7 @@ window.GUIDE = {
     "dex": 129,
     "name": "鲤鱼王"
    },
+   "tags": [],
    "imdbRating": 7.1,
    "imdbVotes": 211,
    "imdbUrl": "https://www.imdb.com/title/tt0913127/",
@@ -5183,6 +5590,7 @@ window.GUIDE = {
     "dex": 130,
     "name": "暴鲤龙"
    },
+   "tags": [],
    "imdbRating": 7.5,
    "imdbVotes": 217,
    "imdbUrl": "https://www.imdb.com/title/tt0913119/",
@@ -5203,6 +5611,7 @@ window.GUIDE = {
     "dex": 221,
     "name": "长毛猪"
    },
+   "tags": [],
    "imdbRating": 7.2,
    "imdbVotes": 214,
    "imdbUrl": "https://www.imdb.com/title/tt0913071/",
@@ -5223,6 +5632,7 @@ window.GUIDE = {
     "dex": 87,
     "name": "白海狮"
    },
+   "tags": [],
    "imdbRating": 7.4,
    "imdbVotes": 218,
    "imdbUrl": "https://www.imdb.com/title/tt0913110/",
@@ -5243,6 +5653,7 @@ window.GUIDE = {
     "dex": 182,
     "name": "美丽花"
    },
+   "tags": [],
    "imdbRating": 6.3,
    "imdbVotes": 203,
    "imdbUrl": "https://www.imdb.com/title/tt0913141/",
@@ -5263,6 +5674,7 @@ window.GUIDE = {
     "dex": 219,
     "name": "熔岩蜗牛"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 204,
    "imdbUrl": "https://www.imdb.com/title/tt0913124/",
@@ -5283,6 +5695,9 @@ window.GUIDE = {
     "dex": 190,
     "name": "长尾怪手"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.4,
    "imdbVotes": 203,
    "imdbUrl": "https://www.imdb.com/title/tt0913096/",
@@ -5303,6 +5718,7 @@ window.GUIDE = {
     "dex": 145,
     "name": "闪电鸟"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 209,
    "imdbUrl": "https://www.imdb.com/title/tt0913070/",
@@ -5323,6 +5739,10 @@ window.GUIDE = {
     "dex": 174,
     "name": "宝宝丁"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 6.1,
    "imdbVotes": 203,
    "imdbUrl": "https://www.imdb.com/title/tt0913121/",
@@ -5343,6 +5763,10 @@ window.GUIDE = {
     "dex": 79,
     "name": "呆呆兽"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 6.4,
    "imdbVotes": 196,
    "imdbUrl": "https://www.imdb.com/title/tt0913079/",
@@ -5363,6 +5787,9 @@ window.GUIDE = {
     "dex": 202,
     "name": "果然翁"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.3,
    "imdbVotes": 200,
    "imdbUrl": "https://www.imdb.com/title/tt0913143/",
@@ -5383,6 +5810,10 @@ window.GUIDE = {
     "dex": 173,
     "name": "皮宝宝"
    },
+   "tags": [
+    "cute",
+    "comedy"
+   ],
    "imdbRating": 6.3,
    "imdbVotes": 197,
    "imdbUrl": "https://www.imdb.com/title/tt0676197/",
@@ -5403,6 +5834,9 @@ window.GUIDE = {
     "dex": 186,
     "name": "牛蛙君"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.7,
    "imdbVotes": 198,
    "imdbUrl": "https://www.imdb.com/title/tt0913115/",
@@ -5423,6 +5857,7 @@ window.GUIDE = {
     "dex": 3,
     "name": "妙蛙花"
    },
+   "tags": [],
    "imdbRating": 7,
    "imdbVotes": 198,
    "imdbUrl": "https://www.imdb.com/title/tt0913114/",
@@ -5443,6 +5878,9 @@ window.GUIDE = {
     "dex": 186,
     "name": "牛蛙君"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.3,
    "imdbVotes": 194,
    "imdbUrl": "https://www.imdb.com/title/tt0913098/",
@@ -5463,6 +5901,7 @@ window.GUIDE = {
     "dex": 124,
     "name": "迷唇姐"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 140,
    "imdbUrl": "https://www.imdb.com/title/tt1791890/",
@@ -5483,6 +5922,7 @@ window.GUIDE = {
     "dex": 147,
     "name": "迷你龙"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 204,
    "imdbUrl": "https://www.imdb.com/title/tt0913072/",
@@ -5503,6 +5943,7 @@ window.GUIDE = {
     "dex": 148,
     "name": "哈克龙"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 206,
    "imdbUrl": "https://www.imdb.com/title/tt0913083/",
@@ -5523,6 +5964,7 @@ window.GUIDE = {
     "dex": 149,
     "name": "快龙"
    },
+   "tags": [],
    "imdbRating": 7.9,
    "imdbVotes": 224,
    "imdbUrl": "https://www.imdb.com/title/tt0913090/",
@@ -5543,6 +5985,7 @@ window.GUIDE = {
     "dex": 230,
     "name": "刺龙王"
    },
+   "tags": [],
    "imdbRating": 8.1,
    "imdbVotes": 260,
    "imdbUrl": "https://www.imdb.com/title/tt0913073/",
@@ -5563,6 +6006,9 @@ window.GUIDE = {
     "dex": 360,
     "name": "小果然"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.7,
    "imdbVotes": 192,
    "imdbUrl": "https://www.imdb.com/title/tt0913142/",
@@ -5583,6 +6029,7 @@ window.GUIDE = {
     "dex": 158,
     "name": "小锯鳄"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 200,
    "imdbUrl": "https://www.imdb.com/title/tt0913102/",
@@ -5603,6 +6050,7 @@ window.GUIDE = {
     "dex": 380,
     "name": "拉帝亚斯"
    },
+   "tags": [],
    "imdbRating": 6.1,
    "imdbVotes": 7905,
    "imdbUrl": "https://www.imdb.com/title/tt0347791/",
@@ -5623,6 +6071,9 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 5.9,
    "imdbVotes": 156,
    "imdbUrl": "https://www.imdb.com/title/tt3427954/",
@@ -5643,6 +6094,7 @@ window.GUIDE = {
     "dex": 131,
     "name": "乘龙"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 198,
    "imdbUrl": "https://www.imdb.com/title/tt0913105/",
@@ -5663,6 +6115,9 @@ window.GUIDE = {
     "dex": 246,
     "name": "由基拉"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 7,
    "imdbVotes": 197,
    "imdbUrl": "https://www.imdb.com/title/tt0913091/",
@@ -5683,6 +6138,7 @@ window.GUIDE = {
     "dex": 244,
     "name": "炎帝"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 205,
    "imdbUrl": "https://www.imdb.com/title/tt0913080/",
@@ -5703,6 +6159,9 @@ window.GUIDE = {
     "dex": 199,
     "name": "河马王"
    },
+   "tags": [
+    "comedy"
+   ],
    "imdbRating": 6.5,
    "imdbVotes": 190,
    "imdbUrl": "https://www.imdb.com/title/tt0913051/",
@@ -5723,6 +6182,7 @@ window.GUIDE = {
     "dex": 239,
     "name": "电击怪"
    },
+   "tags": [],
    "imdbRating": 6.7,
    "imdbVotes": 193,
    "imdbUrl": "https://www.imdb.com/title/tt0913094/",
@@ -5743,6 +6203,9 @@ window.GUIDE = {
     "dex": 246,
     "name": "由基拉"
    },
+   "tags": [
+    "cute"
+   ],
    "imdbRating": 6.8,
    "imdbVotes": 194,
    "imdbUrl": "https://www.imdb.com/title/tt0913150/",
@@ -5763,6 +6226,7 @@ window.GUIDE = {
     "dex": 201,
     "name": "未知图腾"
    },
+   "tags": [],
    "imdbRating": 6.9,
    "imdbVotes": 211,
    "imdbUrl": "https://www.imdb.com/title/tt0913065/",
@@ -5783,6 +6247,7 @@ window.GUIDE = {
     "dex": 248,
     "name": "班吉拉"
    },
+   "tags": [],
    "imdbRating": 6.8,
    "imdbVotes": 202,
    "imdbUrl": "https://www.imdb.com/title/tt0913108/",
@@ -5803,6 +6268,7 @@ window.GUIDE = {
     "dex": 215,
     "name": "狃拉"
    },
+   "tags": [],
    "imdbRating": 6.6,
    "imdbVotes": 202,
    "imdbUrl": "https://www.imdb.com/title/tt0913118/",
@@ -5823,6 +6289,7 @@ window.GUIDE = {
     "dex": 59,
     "name": "风速狗"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 211,
    "imdbUrl": "https://www.imdb.com/title/tt0913048/",
@@ -5843,6 +6310,7 @@ window.GUIDE = {
     "dex": 156,
     "name": "火岩鼠"
    },
+   "tags": [],
    "imdbRating": 7.5,
    "imdbVotes": 227,
    "imdbUrl": "https://www.imdb.com/title/tt0913106/",
@@ -5863,6 +6331,7 @@ window.GUIDE = {
     "dex": 154,
     "name": "大菊花"
    },
+   "tags": [],
    "imdbRating": 7.8,
    "imdbVotes": 228,
    "imdbUrl": "https://www.imdb.com/title/tt0913136/",
@@ -5883,6 +6352,7 @@ window.GUIDE = {
     "dex": 9,
     "name": "水箭龟"
    },
+   "tags": [],
    "imdbRating": 8.1,
    "imdbVotes": 272,
    "imdbUrl": "https://www.imdb.com/title/tt0913133/",
@@ -5903,6 +6373,7 @@ window.GUIDE = {
     "dex": 6,
     "name": "喷火龙"
    },
+   "tags": [],
    "imdbRating": 8.6,
    "imdbVotes": 307,
    "imdbUrl": "https://www.imdb.com/title/tt0913076/",
@@ -5923,6 +6394,7 @@ window.GUIDE = {
     "dex": 257,
     "name": "火焰鸡"
    },
+   "tags": [],
    "imdbRating": 8,
    "imdbVotes": 270,
    "imdbUrl": "https://www.imdb.com/title/tt0913117/",
@@ -5943,6 +6415,7 @@ window.GUIDE = {
     "dex": 229,
     "name": "黑鲁加"
    },
+   "tags": [],
    "imdbRating": 7.7,
    "imdbVotes": 241,
    "imdbUrl": "https://www.imdb.com/title/tt0913100/",
@@ -5963,6 +6436,7 @@ window.GUIDE = {
     "dex": 175,
     "name": "波克比"
    },
+   "tags": [],
    "imdbRating": 8.6,
    "imdbVotes": 347,
    "imdbUrl": "https://www.imdb.com/title/tt0913089/",
@@ -5983,6 +6457,7 @@ window.GUIDE = {
     "dex": 25,
     "name": "皮卡丘"
    },
+   "tags": [],
    "imdbRating": 7.3,
    "imdbVotes": 227,
    "imdbUrl": "https://www.imdb.com/title/tt0913097/",
@@ -6003,6 +6478,7 @@ window.GUIDE = {
     "dex": 255,
     "name": "火稚鸡"
    },
+   "tags": [],
    "imdbRating": null,
    "imdbVotes": null,
    "imdbUrl": null,
