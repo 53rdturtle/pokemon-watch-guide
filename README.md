@@ -1,47 +1,47 @@
-# Pokémon Watch Guide
+# 宝可梦观看指南
 
-A static, single-page watch guide for the Pokémon anime: my 1–5 rating, IMDb rating, a summary (spoiler-free for 4+), and a Tencent Video link for every episode. Game launches, movies, specials and notable events are rows on the same timeline.
+宝可梦动画的静态单页观看指南：每一集都有我的 1–5 分评分、IMDb 评分、简介（4 分以上不含剧透）和腾讯视频链接。游戏发售、剧场版、特别篇和重要事件也作为条目排在同一条时间线上。
 
-Open `index.html` in a browser. No server or build step is needed to view it.
+用浏览器直接打开 `index.html` 即可，无需服务器或构建步骤。
 
-## Ratings
+## 评分
 
-| Rating | Meaning |
+| 评分 | 含义 |
 |---|---|
-| 5 | must watch |
-| 4 | should watch |
-| 3 | maybe |
-| 2 | skippable |
-| 1 | skip |
+| 5 | 必看 |
+| 4 | 推荐 |
+| 3 | 可看可不看 |
+| 2 | 可跳过 |
+| 1 | 跳过 |
 
-About one third of each series' episodes are rated 4+.
+每一季大约三分之一的集数评为 4 分以上。
 
-## Layout
+## 目录结构
 
 ```
-index.html                 the page (filters, watched checkboxes stored in localStorage)
-data/guide.js              generated; do not edit by hand
-editorial/<series>.json    my ratings + summaries per Japanese episode number, plus extra rows (games/movies/events)
-sources/                   raw data pulled from IMDb, Wikipedia and Tencent
-tools/build.js             merges sources + editorial into data/guide.js
-tools/fetch-tencent-episodes.js   lists a Tencent cover's episode vids
+index.html                 页面（筛选器；“已看”勾选保存在 localStorage）
+data/guide.js              自动生成，请勿手动编辑
+editorial/<series>.json    按日本原版集数记录的我的评分和简介，以及额外条目（游戏/电影/事件）
+sources/                   从 IMDb、维基百科和腾讯抓取的原始数据
+tools/build.js             将 sources 和 editorial 合并生成 data/guide.js
+tools/fetch-tencent-episodes.js   列出腾讯某个专辑（cover）的分集 vid
 ```
 
-Rebuild after editing anything in `editorial/` or `sources/`:
+修改 `editorial/` 或 `sources/` 后需要重新构建：
 
 ```bash
 node tools/build.js
 ```
 
-## Where the data comes from
+## 数据来源
 
-- **IMDb ratings**: IMDb's official non-commercial datasets (`title.episode.tsv.gz`, `title.ratings.tsv.gz` from https://datasets.imdbws.com). The website itself blocks scripted requests. The series id is `tt0168366`; IMDb season N, episode M uses Japanese episode order.
-- **English titles, air dates, Japanese titles**: English Wikipedia season pages (e.g. "Pokémon: Indigo League").
-- **Chinese titles**: Chinese Wikipedia's 寶可夢 (1997年—2002年動畫) page (Taiwan titles), converted to Simplified with opencc.
-- **Tencent links**: `精灵宝可梦 第1季` (cid `tyeqdw6rof7t5ow`, 271 episodes, Taiwan dub) and `精灵宝可梦 剧场版合集` (cid `ejr0xfirssdm33y`).
+- **IMDb 评分**：IMDb 官方非商业数据集（https://datasets.imdbws.com 上的 `title.episode.tsv.gz`、`title.ratings.tsv.gz`）。IMDb 网站本身会拦截脚本请求。剧集 id 为 `tt0168366`；IMDb 第 N 季第 M 集采用日本原版集数顺序。
+- **英文标题、播出日期、日文标题**：英文维基百科各季页面（如 "Pokémon: Indigo League"）。
+- **中文标题**：中文维基百科“寶可夢 (1997年—2002年動畫)”页面（台湾译名），用 opencc 转为简体。
+- **腾讯链接**：`精灵宝可梦 第1季`（cid `tyeqdw6rof7t5ow`，271 集，台湾配音）和 `精灵宝可梦 剧场版合集`（cid `ejr0xfirssdm33y`）。
 
-### Tencent numbering
+### 腾讯集数编号
 
-Tencent numbers episodes in its own order, which skips Japanese episodes that never aired in Taiwan. For the Indigo League these are EP038 (Porygon) and EP065 (Holiday Hi-Jynx). I verified the offset by comparing Tencent cover frames with episode plots. The skipped episodes are listed in `tencentMissingJp` in each editorial file. When adding the Orange Islands and Johto, three more skipped episodes need to be located the same way (276 Japanese vs 271 Tencent).
+腾讯按自己的顺序编号，跳过了台湾未播出的日本原版集数。关都篇跳过的是 EP038（3D龙）和 EP065（迷唇姐的圣诞节）。我通过比对腾讯封面画面与剧情核实了这一偏移。被跳过的集数记录在每个 editorial 文件的 `tencentMissingJp` 中。加入橘子群岛篇和城都篇时，还需要用同样的方法找出另外三集被跳过的集数（日本原版 276 集，腾讯 271 集）。
 
-Tencent streams are region-locked: outside mainland China (or behind a VPN) the player shows 您所在区域暂无此内容版权.
+腾讯视频有地区限制：在中国大陆以外（或未使用 VPN）时，播放器会显示“您所在区域暂无此内容版权”。
