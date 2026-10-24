@@ -4,6 +4,10 @@
 
 用浏览器直接打开 `index.html` 即可，无需服务器或构建步骤。
 
+### 在 iPhone 上使用
+
+网址：https://53rdturtle.github.io/pokemon-watch-guide/ （GitHub Pages 发布 `main` 分支；`git push origin main` 后约一分钟更新）。用 Safari 打开，然后“分享 → 添加到主屏幕”。这样它会像 App 一样全屏打开，Safari 也不会清除观看进度（只在标签页中打开的网站，7 天未访问时存储可能被清除）。进度只保存在这台设备上；可在“使用说明 · 备份进度”里用“导出进度 / 导入进度”备份或迁移。
+
 ## 评分
 
 | 评分 | 含义 |
@@ -19,7 +23,9 @@
 ## 目录结构
 
 ```
-index.html                 页面（筛选器；“看到这里”书签保存在 localStorage）
+index.html                 页面（筛选器；“看到这里”书签保存在 localStorage；可导出/导入）
+manifest.webmanifest       添加到主屏幕用的 App 信息
+icons/                     由 tools/make-icons.js 生成
 data/guide.js              自动生成，请勿手动编辑
 editorial/<series>.json    按日本原版集数记录的我的评分和简介，以及额外条目（游戏/电影/事件）
 sources/                   从 IMDb、维基百科和腾讯抓取的原始数据
