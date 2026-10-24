@@ -76,6 +76,12 @@
   .links { display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
   .links a { color: inherit; text-decoration: none; border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; text-align: center; white-space: nowrap; }
   .links a:hover { border-color: var(--text); }
+  .links button.fav { font: inherit; font-size: 13px; color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; cursor: pointer; white-space: nowrap; }
+  .links button.fav:hover { border-color: var(--text); color: var(--text); }
+  .row.faved button.fav { color: var(--cute); border-color: var(--cute); background: var(--cute-bg); }
+  .row.faved { box-shadow: inset 3px 0 0 var(--cute); }
+  .row.faved.bookmark { box-shadow: inset 3px 0 0 var(--cute), inset 0 -3px 0 var(--r5); }
+  .row.watched.faved { opacity: .75; }
   .links .na { color: var(--muted); font-size: 12px; text-align: center; }
   .imdb b { font-variant-numeric: tabular-nums; }
   .imdb span { color: var(--muted); font-size: 11px; }
@@ -164,7 +170,7 @@
     input[type=search] { flex: 1 1 100%; font-size: 16px; }
     .seg button, #jumpNext { padding: 7px 11px; }
     button.mark { width: 28px; height: 28px; margin: 0; font-size: 12px; }
-    .links a { padding: 6px; }
+    .links a, .links button.fav { padding: 6px; }
   }
 </style>
 </head>
@@ -180,6 +186,7 @@
     </div>
     <label><input type="checkbox" id="showExtras" checked> 电影、游戏和事件</label>
     <label><input type="checkbox" id="hideWatched"> 隐藏已看</label>
+    <label><input type="checkbox" id="onlyFav"> 只看收藏</label>
     <button id="jumpNext">跳到下一集 ↓</button>
     <input type="search" id="q" placeholder="搜索标题 / 简介">
   </div>
@@ -192,10 +199,11 @@
       <b>评分：</b>5 必看 · 4 推荐 · 3 可看可不看 · 2 可跳过 · 1 跳过。4分以上的集数简介不含剧透。
       <span class="mood cute">可爱</span><span class="mood comedy">搞笑</span>标出以可爱宝可梦或搞笑为主的集，不论评分；选“＋可爱搞笑”可在评分筛选之外加上这些集（例如“4分以上”再加上3分以下的可爱/搞笑集），“只看可爱搞笑”则只显示它们。
       <b>#</b> 为腾讯视频集数，下方是日本原版EP集数。
+      点击 ♡ 收藏喜欢的集，勾选“只看收藏”即可只显示它们。
       点击最后看完那一行的 ▶，即可把它及之前的所有条目标为已看（再点一次后退一条）。
       <span id="tencentNote"></span>
     </p>
-    <p>观看进度只保存在当前浏览器里。在 iPhone 上请用 Safari 的“分享 → 添加到主屏幕”，这样 Safari 不会清除进度；也可以不时导出备份。</p>
+    <p>观看进度和收藏只保存在当前浏览器里，电脑和手机之间不会自动同步——可在一台设备上导出，再到另一台设备上导入。在 iPhone 上请用 Safari 的“分享 → 添加到主屏幕”，这样 Safari 不会清除进度；也可以不时导出备份。</p>
     <div class="backup">
       <button type="button" id="exportBtn">导出进度</button>
       <label class="btn">导入进度<input type="file" id="importFile" accept=".json,application/json"></label>
@@ -209,7 +217,8 @@
   const G = window.GUIDE;
   const PROGRESS_KEY = "pokemon-guide-progress";
   const OLD_WATCH_KEY = "pokemon-guide-watched";
-  const state = { min: 0, mood: "", extras: true, hideWatched: false, q: "" };
+  const FAV_KEY = "pokemon-guide-favorites";
+  const state = { min: 0, mood: "", extras: true, hideWatched: false, onlyFav: false, q: "" };
   const LABEL = { game: "游戏", movie: "电影", special: "特别篇", event: "事件" };
   const MOOD = { cute: "可爱", comedy: "搞笑" };
   const RLABEL = { 5: "必看", 4: "推荐", 3: "可看可不看", 2: "可跳过", 1: "跳过" };
@@ -233,6 +242,13 @@
   function setProgress(i) {
     progress = i;
     i >= 0 ? localStorage.setItem(PROGRESS_KEY, keyOf(G.rows[i])) : localStorage.removeItem(PROGRESS_KEY);
+    render();
+  }
+  // Favorites: a set of row keys, independent of the bookmark.
+  let favs = new Set(JSON.parse(localStorage.getItem(FAV_KEY) || "[]"));
+  function setFavs(next) {
+    favs = new Set([...next].filter(k => indexOf.has(k)));
+    favs.size ? localStorage.setItem(FAV_KEY, JSON.stringify([...favs])) : localStorage.removeItem(FAV_KEY);
     render();
   }
   // Game releases and real-world events are timeline context, not something to watch: no ▶ and never "next".
@@ -275,6 +291,7 @@
       if (state.mood === "only" && !tagged && !context) return false;
       if (state.min && (r.rating ?? 0) < state.min && !context && !(state.mood && tagged)) return false;
       if (state.hideWatched && isWatched(r.i)) return false;
+      if (state.onlyFav && !favs.has(keyOf(r))) return false;
       if (q && !`${r.title} ${r.titleZh} ${r.summary} ${r.japanese} ${r.star?.name ?? ""}`.toLowerCase().includes(q)) return false;
       return true;
     });
@@ -295,7 +312,7 @@
     });
     document.getElementById("list").innerHTML = html.join("");
     function rowHtml(r) {
-      const isEp = r.type === "episode", w = isWatched(r.i);
+      const isEp = r.type === "episode", w = isWatched(r.i), fav = favs.has(keyOf(r));
       const star = r.star
         ? `<div class="star" title="本集明星：${esc(r.star.name)} #${String(r.star.dex).padStart(3, "0")}"><img src="assets/sprites/${r.star.dex}.png" alt="${esc(r.star.name)}" loading="lazy"></div>`
         : `<div></div>`;
@@ -311,8 +328,9 @@
       const tx = r.tencentUrl
         ? `<a class="tx" href="${r.tencentUrl}" target="_blank" rel="noopener">▶ 腾讯视频</a>`
         : (isEp || r.type === "movie" || r.type === "special" ? `<span class="na">腾讯暂无</span>` : "");
-      const bare = !r.rating && !tx && !imdb;
-      const cls = [isEp ? "" : "extra " + r.type, bare ? "bare" : "", w ? "watched" : "", r.i === progress ? "bookmark" : "", r.i === nextI ? "next" : ""].join(" ");
+      const favBtn = watchable(r) ? `<button class="fav" title="${fav ? "取消收藏" : "收藏"}">${fav ? "♥ 已收藏" : "♡ 收藏"}</button>` : "";
+      const bare = !r.rating && !tx && !imdb && !favBtn;
+      const cls = [isEp ? "" : "extra " + r.type, bare ? "bare" : "", w ? "watched" : "", fav ? "faved" : "", r.i === progress ? "bookmark" : "", r.i === nextI ? "next" : ""].join(" ");
       return `<div class="row ${cls}" data-i="${r.i}">
         ${watchable(r) ? `<button class="mark" title="${r.i === progress ? "书签——点击后退一条" : "看到这里"}">▶</button>` : `<div></div>`}
         ${star}
@@ -323,7 +341,7 @@
           <div class="meta">${r.date}${r.japanese ? " · " + esc(r.japanese) : ""}${r.star ? ` · <span class="starname">★ ${esc(r.star.name)}</span>` : ""}</div>
         </div>
         ${rating}
-        <div class="links">${tx}${imdb}</div>
+        <div class="links">${tx}${imdb}${favBtn}</div>
       </div>`;
     }
     const eps = G.rows.filter(r => r.type === "episode");
@@ -338,6 +356,7 @@
       `剩余 ${ahead.length}/${eps.length} 集`,
       `4分以上剩余 ${topAhead.length}/${top.length}`,
       state.mood ? `可爱/搞笑剩余 ${moodAhead.length}/${moodEps.length}` : "",
+      favs.size ? `收藏 ${favs.size}` : "",
       `显示 ${rows.length} 条`,
     ];
     document.getElementById("stats").textContent = parts.filter(Boolean).join(" · ");
@@ -357,6 +376,7 @@
   });
   document.getElementById("showExtras").addEventListener("change", e => { state.extras = e.target.checked; render(); });
   document.getElementById("hideWatched").addEventListener("change", e => { state.hideWatched = e.target.checked; render(); });
+  document.getElementById("onlyFav").addEventListener("change", e => { state.onlyFav = e.target.checked; render(); });
   document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
   // iPhone/iPad: Tencent's universal links don't cover /x/cover/ pages, so open the app via its own
   // URL scheme and fall back to the web page if nothing took over (app not installed).
@@ -375,6 +395,11 @@
   document.getElementById("list").addEventListener("click", e => {
     const tx = e.target.closest("a.tx");
     if (tx) { if (IOS && openTencentApp(tx.href)) e.preventDefault(); return; }
+    if (e.target.classList.contains("fav")) {
+      const k = keyOf(G.rows[+e.target.closest(".row").dataset.i]), next = new Set(favs);
+      next.has(k) ? next.delete(k) : next.add(k);
+      return setFavs(next);
+    }
     if (!e.target.classList.contains("mark")) return;
     const i = +e.target.closest(".row").dataset.i;
     if (i !== progress) return setProgress(i);
@@ -390,9 +415,9 @@
   const backupMsg = document.getElementById("backupMsg");
   document.getElementById("exportBtn").addEventListener("click", async () => {
     const name = `pokemon-progress-${new Date().toISOString().slice(0, 10)}.json`;
-    const file = new File([JSON.stringify({ progress: progress >= 0 ? keyOf(G.rows[progress]) : null })], name, { type: "application/json" });
+    const file = new File([JSON.stringify({ progress: progress >= 0 ? keyOf(G.rows[progress]) : null, favorites: [...favs] })], name, { type: "application/json" });
     const lastEp = G.rows.slice(0, progress + 1).reverse().find(r => r.type === "episode");
-    const done = `已导出：${lastEp ? "看到 " + epLabel(lastEp) : "尚未开始"}`;
+    const done = `已导出：${lastEp ? "看到 " + epLabel(lastEp) : "尚未开始"} · 收藏 ${favs.size}`;
     // iOS: the share sheet lets you save to Files / iCloud Drive or AirDrop it.
     if (navigator.canShare && navigator.canShare({ files: [file] })) {
       try { await navigator.share({ files: [file] }); backupMsg.textContent = done; } catch {}
@@ -416,9 +441,10 @@
         i = Math.max(-1, ...G.rows.map((r, j) => r.type === "episode" && old.has(keyOf(r)) ? j : -1));
       }
       if (i === undefined) throw new Error();
+      if (Array.isArray(data.favorites)) setFavs(data.favorites);
       setProgress(i);
       const lastEp = G.rows.slice(0, i + 1).reverse().find(r => r.type === "episode");
-      backupMsg.textContent = `已导入：${lastEp ? "看到 " + epLabel(lastEp) : "尚未开始"}`;
+      backupMsg.textContent = `已导入：${lastEp ? "看到 " + epLabel(lastEp) : "尚未开始"}${Array.isArray(data.favorites) ? ` · 收藏 ${favs.size}` : ""}`;
     } catch {
       backupMsg.textContent = "这不是进度备份文件。";
     }
