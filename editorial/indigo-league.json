@@ -1,0 +1,410 @@
+{
+  "series": "indigo-league",
+  "seriesTitle": "Indigo League",
+  "seriesTitleZh": "关都篇（石英联盟）",
+  "tencentMissingJp": [
+    38,
+    65
+  ],
+  "tencentMissingNote": "Tencent's 271-episode upload is the Taiwan dub. It skips EP038 (never aired outside Japan) and EP065 (not aired in Taiwan), so Tencent numbers run 1 behind from EP039 and 2 behind from EP066. Verified by matching Tencent cover frames for 35-39, 45, 62-66, 74, 81.",
+  "episodes": {
+    "1": [
+      5,
+      "Where it all begins: a late-sleeping 10-year-old in Pallet Town ends up with a starter that wants nothing to do with him. Sets the heart of the whole series."
+    ],
+    "2": [
+      4,
+      "A desperate dash to the Viridian City Pokémon Center, and the first run-in with the trio who will turn up in nearly every episode after."
+    ],
+    "3": [
+      3,
+      "Ash catches his first Pokémon, a Caterpie, in Viridian Forest to Misty's horror; it evolves into Metapod while protecting him from Team Rocket."
+    ],
+    "4": [
+      3,
+      "Samurai, a young trainer, challenges Ash in Viridian Forest. A Beedrill swarm carries off Metapod, which evolves into Butterfree during the rescue."
+    ],
+    "5": [
+      5,
+      "Ash's first Gym battle, against Brock's Rock types, and a lesson that a bad matchup isn't won by stubbornness alone."
+    ],
+    "6": [
+      2,
+      "On Mt. Moon, a scientist named Seymour protects the Clefairy and their Moon Stone from Team Rocket. Cute but forgettable."
+    ],
+    "7": [
+      3,
+      "Misty's three older sisters run the Cerulean Gym. Misty battles Ash herself, and Team Rocket's interruption hands Ash the Cascade Badge."
+    ],
+    "8": [
+      2,
+      "Ash meets A.J., an undefeated trainer whose Sandshrew is raised with a brutal training regime, and starts to wonder how hard is too hard."
+    ],
+    "9": [
+      2,
+      "Pokémon Tech, a cram school for rich kids, lets students skip the badge journey. Ash defends a bullied student and takes on top student Giselle. Skippable."
+    ],
+    "10": [
+      4,
+      "A hidden village where a girl named Melanie nurses abandoned Pokémon, guarded by a fiercely protective Bulbasaur."
+    ],
+    "11": [
+      5,
+      "A Charmander waits on a rock for the trainer who promised to come back, even as the rain starts. One of the series' defining emotional episodes."
+    ],
+    "12": [
+      4,
+      "A gang of sunglasses-wearing Squirtle terrorizes a town with pranks, and their leader turns out to have a story."
+    ],
+    "13": [
+      3,
+      "Bill, a researcher stuck in a Kabuto costume, waits at his lighthouse for a giant mystery Pokémon, until Team Rocket scares it away."
+    ],
+    "14": [
+      4,
+      "Lt. Surge's Raichu humiliates Pikachu, and Pikachu has to decide what kind of Pokémon it wants to be."
+    ],
+    "15": [
+      3,
+      "Free cruise tickets on the St. Anne turn out to be a Team Rocket scam to steal trainers' Pokémon. James gets conned into buying a Magikarp."
+    ],
+    "16": [
+      3,
+      "Trapped inside the capsized St. Anne, Ash's group and Team Rocket must work together to escape; James's Magikarp finally gets useful."
+    ],
+    "17": [
+      3,
+      "Separated on an island of 'giant Pokémon', Ash's and Team Rocket's Pokémon team up. The giants are robots in a Team Rocket theme park."
+    ],
+    "18": [
+      1,
+      "Misty enters a beach beauty contest against Jessie and a cross-dressing James to pay off a broken boat. Pure filler; shelved in the US for years."
+    ],
+    "19": [
+      2,
+      "A giant Tentacruel attacks Porta Vista after a hotel developer wrecks the coral reef. Heavy-handed environmental message."
+    ],
+    "20": [
+      3,
+      "A ghost story at a seaside festival: a woman waiting forever for her lost love, and Brock falls hard for her. Atmospheric and a bit spooky."
+    ],
+    "21": [
+      5,
+      "Butterfree season arrives on the coast, and Ash faces a hard choice. Bring tissues."
+    ],
+    "22": [
+      3,
+      "Ash challenges Saffron City's Sabrina, a cold Psychic-type leader with unsettling powers, and loses badly. First of a three-part arc."
+    ],
+    "23": [
+      4,
+      "To stand a chance against Sabrina, Ash heads to Lavender Town's haunted Pokémon Tower. The series' most famous spooky episode."
+    ],
+    "24": [
+      4,
+      "The Sabrina arc's payoff: a ghost with a sense of humor against a psychic with none."
+    ],
+    "25": [
+      3,
+      "A Mankey steals Ash's hat and evolves into a rampaging Primeape; Ash eventually catches it."
+    ],
+    "26": [
+      3,
+      "Ash insults perfume in front of Erika and gets banned from the Celadon Gym; he sneaks in, Team Rocket sets it on fire, and he earns the Rainbow Badge."
+    ],
+    "27": [
+      2,
+      "A Hypno meant to cure adults' insomnia leaves the town's kids thinking they're Pokémon. Odd and skippable."
+    ],
+    "28": [
+      2,
+      "A breeder named Suzie entrusts her Vulpix to Brock after a Pokémon fashion contest. Brock fans only."
+    ],
+    "29": [
+      2,
+      "Ash enters Primeape in the P1 Grand Prix fighting tournament, then leaves it with a fighter who can train it better."
+    ],
+    "30": [
+      2,
+      "A city plagued by power outages: Magnemite flock to sick Pikachu, and the culprit in the power plant is a Grimer and a Muk, which Ash catches."
+    ],
+    "31": [
+      2,
+      "Trainers are hired to drive Diglett away from a dam site, but the Diglett are defending their home. Ekans and Koffing evolve."
+    ],
+    "32": [
+      3,
+      "A ninja mansion full of trap doors: Ash takes on Koga's Fuchsia Gym and wins the Soul Badge."
+    ],
+    "33": [
+      3,
+      "Ash rides an injured girl's Ponyta in a ranch race that Team Rocket has rigged; Ponyta evolves into Rapidash mid-race."
+    ],
+    "34": [
+      2,
+      "A Tarzan story in the Safari Zone: a boy raised by Kangaskhan is reunited with his parents."
+    ],
+    "35": [
+      4,
+      "A Safari Zone catching contest against Team Rocket, a warden with a secret, and rumors of a legendary dragon. Never dubbed in English (it has a gun scene), but the Taiwan dub on Tencent includes it."
+    ],
+    "36": [
+      2,
+      "Carrying medicine across the Cycling Road, the group clashes with a bike gang that Team Rocket has teamed up with."
+    ],
+    "37": [
+      3,
+      "Duplica, an impersonator whose Ditto can transform into anything except its face, battles Team Rocket. Light and fun."
+    ],
+    "38": [
+      3,
+      "Ash is digitized into the Pokémon transfer system to stop Team Rocket. Its flashing scene caused the 1997 'Pokémon Shock' seizures and it was never re-aired. Not on Tencent; history only, photosensitivity warning."
+    ],
+    "39": [
+      5,
+      "Pikachu wanders into a forest full of wild Pikachu, and Ash has to think about what's best for his friend."
+    ],
+    "40": [
+      3,
+      "A boy's three older brothers each evolved their Eevee and pressure him to do the same; he decides Eevee is fine as it is."
+    ],
+    "41": [
+      2,
+      "A sleeping Snorlax blocks a town's water supply, and everyone tries to wake it. Not the Snorlax Ash later catches."
+    ],
+    "42": [
+      2,
+      "Two rival gyms in lawless Dark City fight for official recognition and try to drag Ash into it."
+    ],
+    "43": [
+      3,
+      "A struggling magician and his Exeggutor cause chaos in town; Charmander evolves into a Charmeleon that no longer respects Ash."
+    ],
+    "44": [
+      2,
+      "A shopkeeper wants her weak Paras to evolve for its mushroom medicine; Charmeleon's disobedience continues."
+    ],
+    "45": [
+      4,
+      "Meet Jigglypuff, a frustrated singer whose audience keeps falling asleep. Starts a running gag that lasts years."
+    ],
+    "46": [
+      4,
+      "A dig site awakens Pokémon nobody has seen in millennia, and Ash's fire Pokémon is pushed to its limit."
+    ],
+    "47": [
+      2,
+      "Pikachu chokes on an apple, but the Pokémon Center is full after a Team Rocket accident, so an ordinary doctor and his Chansey step in."
+    ],
+    "48": [
+      4,
+      "James goes home to a family fortune and the arranged marriage he ran away from. Hilarious, and quietly sweet."
+    ],
+    "49": [
+      2,
+      "A Farfetch'd steals Misty's Poké Balls, and the gang track down its trainer."
+    ],
+    "50": [
+      3,
+      "The egg Ash found hatches into Togepi; Ash and Misty argue over who keeps it and Team Rocket try to steal it."
+    ],
+    "51": [
+      4,
+      "Bulbasaur is drawn to a hidden garden where its kind gather, and has to decide about its future."
+    ],
+    "52": [
+      2,
+      "Misty and Jessie compete in the Princess Festival tournament for dolls they both wanted as kids."
+    ],
+    "53": [
+      2,
+      "On Kids' Day a boy wants to meet the Meowth that once saved him, and Team Rocket's Meowth pretends to be it."
+    ],
+    "54": [
+      2,
+      "Ash trains alongside Officer Jenny's Growlithe police squad; Team Rocket fakes Jenny's voice to command them."
+    ],
+    "55": [
+      2,
+      "Todd, a Pokémon photographer, is hired by Team Rocket to 'capture' Pikachu and takes it literally. Introduces Todd."
+    ],
+    "56": [
+      3,
+      "Short on badges, Ash takes the Pokémon League entrance exam and finds out how little textbook knowledge he has."
+    ],
+    "57": [
+      2,
+      "Misty leaves Psyduck at a breeding center run by Butch and Cassidy, Team Rocket's rival duo, who frame Ash's group."
+    ],
+    "58": [
+      4,
+      "Cinnabar Island's Gym Leader hides behind riddles and disguises, and Team Rocket has taken over his gym."
+    ],
+    "59": [
+      4,
+      "Ash's Blaine rematch inside a volcano: the episode many fans call the league run's best battle."
+    ],
+    "60": [
+      2,
+      "A sleeping Blastoise king on an island; Squirtle revives its Squad persona to find out why it won't wake."
+    ],
+    "61": [
+      3,
+      "The Cerulean Gym is in trouble, and Misty battles Team Rocket in a water show while dressed as a mermaid."
+    ],
+    "62": [
+      1,
+      "Clefairy steal machine parts in Viridian City to build a spaceship. The season's weakest episode on IMDb."
+    ],
+    "63": [
+      5,
+      "The last badge, and the identity of Viridian City's Gym Leader."
+    ],
+    "64": [
+      2,
+      "Ash's mom takes in a runaway Mr. Mime from a circus, and Ash dresses up as a Mr. Mime to fill in."
+    ],
+    "65": [
+      2,
+      "The group helps a lost Jynx get home to Santa before Christmas. Not on Tencent (not aired in Taiwan), and later withdrawn in the US over Jynx’s design."
+    ],
+    "66": [
+      4,
+      "A blizzard separates Ash from everyone, leaving him and his Pokémon to get through the night together."
+    ],
+    "67": [
+      4,
+      "Back in Pallet Town, Ash finds Gary waiting, and Professor Oak has something to say to them both before the League."
+    ],
+    "68": [
+      2,
+      "On Seafoam Island, Professor Oak and Ash study how Slowpoke evolves into Slowbro, and Jessie tries to force it."
+    ],
+    "69": [
+      3,
+      "A surfer and his blue-eyed Pikachu, Puka, chase a legendary wave, and Pikachu learns to surf."
+    ],
+    "70": [
+      1,
+      "Bulbasaur gets paralyzed by Gloom's scent in a big greenhouse. Short and skippable."
+    ],
+    "71": [
+      2,
+      "Psyduck lands a role in an all-Pokémon movie opposite a prima-donna Wigglytuff."
+    ],
+    "72": [
+      4,
+      "Meowth's backstory: how a street cat taught itself to walk and talk like a human, and why. Team Rocket's best episode."
+    ],
+    "73": [
+      2,
+      "Ash trains in the mountains with Elite Four member Bruno, who mostly makes them do chores; a giant Onix rampages."
+    ],
+    "74": [
+      3,
+      "The group uncovers the ancient city of Pokémopolis, waking a giant Gengar and Alakazam. Kaiju-style oddity."
+    ],
+    "75": [
+      2,
+      "Ash helps Mandi, a League-bound trainer, get his stolen badges back from Team Rocket."
+    ],
+    "76": [
+      3,
+      "The Indigo Plateau opening ceremony: Ash joins the torch relay and meets the field before the League begins."
+    ],
+    "77": [
+      4,
+      "The Indigo League begins, starting with a water field that suits some of Ash's team better than others."
+    ],
+    "78": [
+      3,
+      "Rounds two and three of the League, on the rock and ice fields."
+    ],
+    "79": [
+      4,
+      "The fourth round, and Ash's toughest opponent yet."
+    ],
+    "80": [
+      4,
+      "Ash meets Ritchie, a trainer who seems a lot like him, Pikachu included."
+    ],
+    "81": [
+      5,
+      "A promise between rivals, and a battle that defines how Ash's first League run is remembered."
+    ],
+    "82": [
+      5,
+      "Ash's first League run ends, and he has to figure out what it meant."
+    ]
+  },
+  "extras": [
+    {
+      "type": "game",
+      "date": "1996-02-27",
+      "title": "Pokémon Red & Green launch (Japan)",
+      "titleZh": "《宝可梦 红/绿》日本发售",
+      "rating": null,
+      "summary": "Game Boy release that started everything. The anime adapts this Kanto region a year later."
+    },
+    {
+      "type": "game",
+      "date": "1996-10-15",
+      "title": "Pokémon Blue launch (Japan)",
+      "titleZh": "《宝可梦 蓝》日本发售",
+      "rating": null,
+      "summary": "Revised Japanese version; its code became the base of the international Red & Blue."
+    },
+    {
+      "type": "event",
+      "date": "1997-12-16",
+      "title": "\"Pokémon Shock\": anime pulled off air",
+      "titleZh": "“3D龙事件”：动画停播",
+      "rating": null,
+      "summary": "EP038's flashing scene sent hundreds of viewers to hospital. The show went on a four-month hiatus and returned with EP039 on 1998-04-16."
+    },
+    {
+      "type": "movie",
+      "date": "1998-07-18",
+      "title": "Mewtwo Strikes Back (Pokémon: The First Movie)",
+      "titleZh": "剧场版：超梦的逆袭",
+      "rating": 5,
+      "imdb": "tt0190641",
+      "tencentVid": "f0016nuw81n",
+      "tencentCid": "ejr0xfirssdm33y",
+      "summary": "A cloned Pokémon with a grudge invites the world’s strongest trainers to an island fortress. The franchise’s most famous film; best watched after EP063."
+    },
+    {
+      "type": "special",
+      "date": "1998-07-18",
+      "title": "Pikachu's Vacation (short)",
+      "titleZh": "皮卡丘的暑假（短片）",
+      "rating": 2,
+      "imdb": "tt0210233",
+      "summary": "A 20-minute short that played before the first movie: Ash’s Pokémon spend a day at a Pokémon-only resort. For young kids. Not in Tencent’s movie collection."
+    },
+    {
+      "type": "game",
+      "date": "1998-08-01",
+      "title": "Pokémon Stadium launch (Japan, N64)",
+      "titleZh": "《宝可梦竞技场》日本发售（N64）",
+      "rating": null,
+      "summary": "First home-console battle game, letting players see their Game Boy Pokémon in 3D."
+    },
+    {
+      "type": "game",
+      "date": "1998-09-12",
+      "title": "Pokémon Yellow launch (Japan)",
+      "titleZh": "《宝可梦 皮卡丘》日本发售",
+      "rating": null,
+      "summary": "Remake built around the anime: you start with a Pikachu that follows you and won't go in its Poké Ball, and meet Jessie & James."
+    },
+    {
+      "type": "game",
+      "date": "1998-09-28",
+      "title": "Pokémon Red & Blue launch (North America)",
+      "titleZh": "《宝可梦 红/蓝》北美发售",
+      "rating": null,
+      "summary": "The games hit the US weeks after the English dub started airing, and the worldwide craze took off."
+    }
+  ]
+}

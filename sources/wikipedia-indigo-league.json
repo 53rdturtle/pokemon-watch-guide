@@ -1,0 +1,658 @@
+[
+ {
+  "jp": 1,
+  "en": 1,
+  "title": "Pokémon, I Choose You!",
+  "romaji": "Pokémon! Kimi ni Kimeta!",
+  "japanese": "ポケモン! きみにきめた!",
+  "date": "1997-04-01"
+ },
+ {
+  "jp": 2,
+  "en": 2,
+  "title": "Pokémon Emergency!",
+  "romaji": "Taiketsu! Pokémon Sentā!",
+  "japanese": "たいけつ! ポケモンセンター!",
+  "date": "1997-04-08"
+ },
+ {
+  "jp": 3,
+  "en": 3,
+  "title": "Ash Catches a Pokémon",
+  "romaji": "Pokémon Getto Da Ze!",
+  "japanese": "ポケモン ゲットだぜ!",
+  "date": "1997-04-15"
+ },
+ {
+  "jp": 4,
+  "en": 4,
+  "title": "Challenge of the Samurai",
+  "romaji": "Samurai Shōnen no Chōsen!",
+  "japanese": "サムライしょうねんのちょうせん!",
+  "date": "1997-04-22"
+ },
+ {
+  "jp": 5,
+  "en": 5,
+  "title": "Showdown in Pewter City",
+  "romaji": "Nibi Jimu no Tatakai!",
+  "japanese": "ニビジムのたたかい!",
+  "date": "1997-04-29"
+ },
+ {
+  "jp": 6,
+  "en": 6,
+  "title": "Clefairy and the Moon Stone",
+  "romaji": "Pippi to Tsuki no Ishi",
+  "japanese": "ピッピとつきのいし",
+  "date": "1997-05-06"
+ },
+ {
+  "jp": 7,
+  "en": 7,
+  "title": "The Water Flowers of Cerulean City",
+  "romaji": "Hanada Shiti no Suichūka",
+  "japanese": "ハナダシティのすいちゅうか",
+  "date": "1997-05-13"
+ },
+ {
+  "jp": 8,
+  "en": 8,
+  "title": "The Path to the Pokémon League",
+  "romaji": "Pokemon Rīgu e no Michi",
+  "japanese": "ポケモンリーグへのみち",
+  "date": "1997-05-20"
+ },
+ {
+  "jp": 9,
+  "en": 9,
+  "title": "The School of Hard Knocks",
+  "romaji": "Pokemon Hisshō Manyuaru",
+  "japanese": "ポケモンひっしょうマニュアル",
+  "date": "1997-05-27"
+ },
+ {
+  "jp": 10,
+  "en": 10,
+  "title": "Bulbasaur and the Hidden Village",
+  "romaji": "Kakurezato no Fushigidane",
+  "japanese": "かくれざとのフシギダネ",
+  "date": "1997-06-03"
+ },
+ {
+  "jp": 11,
+  "en": 11,
+  "title": "Charmander – The Stray Pokémon",
+  "romaji": "Hagure Pokemon, Hitokage",
+  "japanese": "はぐれポケモンヒトカゲ",
+  "date": "1997-06-10"
+ },
+ {
+  "jp": 12,
+  "en": 12,
+  "title": "Here Comes the Squirtle Squad",
+  "romaji": "Zenigame-gundan Tōjō!",
+  "japanese": "ゼニガメぐんだんとうじょう!",
+  "date": "1997-06-17"
+ },
+ {
+  "jp": 13,
+  "en": 13,
+  "title": "Mystery at the Lighthouse",
+  "romaji": "Masaki no Tōdai",
+  "japanese": "マサキのとうだい",
+  "date": "1997-06-24"
+ },
+ {
+  "jp": 14,
+  "en": 14,
+  "title": "Electric Shock Showdown",
+  "romaji": "Dengeki Taiketsu! Kuchiba Jimu",
+  "japanese": "でんげきたいけつ! クチバジム",
+  "date": "1997-07-01"
+ },
+ {
+  "jp": 15,
+  "en": 15,
+  "title": "Battle Aboard the St. Anne",
+  "romaji": "Santo Annu-gō no Tatakai!",
+  "japanese": "サントアンヌごうのたたかい!",
+  "date": "1997-07-08"
+ },
+ {
+  "jp": 16,
+  "en": 16,
+  "title": "Pokémon Shipwreck",
+  "romaji": "Pokemon Hyōryūki",
+  "japanese": "ポケモンひょうりゅうき",
+  "date": "1997-07-15"
+ },
+ {
+  "jp": 17,
+  "en": 17,
+  "title": "Island of the Giant Pokémon",
+  "romaji": "Kyodai Pokemon no Shima!?",
+  "japanese": "きょだいポケモンのしま!?",
+  "date": "1997-07-22"
+ },
+ {
+  "jp": 18,
+  "en": 18,
+  "title": "Beauty and the Beach",
+  "romaji": "Aopuruko no Kyūjitsu",
+  "japanese": "アオプルコのきゅうじつ",
+  "date": "1997-07-29"
+ },
+ {
+  "jp": 19,
+  "en": 19,
+  "title": "Tentacool & Tentacruel",
+  "romaji": "Menokurage Dokukurage",
+  "japanese": "メノクラゲドククラゲ",
+  "date": "1997-08-05"
+ },
+ {
+  "jp": 20,
+  "en": 20,
+  "title": "The Ghost of Maiden's Peak",
+  "romaji": "Yūrei Pokemon to Natsumatsuri",
+  "japanese": "ゆうれいポケモンとなつまつり",
+  "date": "1997-08-12"
+ },
+ {
+  "jp": 21,
+  "en": 21,
+  "title": "Bye Bye Butterfree",
+  "romaji": "Bai Bai Batafurī",
+  "japanese": "バイバイバタフリー",
+  "date": "1997-08-19"
+ },
+ {
+  "jp": 22,
+  "en": 22,
+  "title": "Abra and the Psychic Showdown (Part 1)",
+  "romaji": "Kēshii! Chōnōryoku Taiketsu!",
+  "japanese": "ケーシィ! ちょうのうりょくたいけつ!",
+  "date": "1997-08-26"
+ },
+ {
+  "jp": 23,
+  "en": 23,
+  "title": "The Tower of Terror (Part 2)",
+  "romaji": "Pokemon Tawā de Getto da ze!",
+  "japanese": "ポケモンタワーでゲットだぜ!",
+  "date": "1997-09-02"
+ },
+ {
+  "jp": 24,
+  "en": 24,
+  "title": "Haunter vs. Kadabra (Part 3)",
+  "romaji": "Gōsuto Tai Esupā!",
+  "japanese": "ゴーストVSエスパー!",
+  "date": "1997-09-09"
+ },
+ {
+  "jp": 25,
+  "en": 25,
+  "title": "Primeape Goes Bananas",
+  "romaji": "Okoranai de ne Okorizaru!",
+  "japanese": "おこらないでねオコリザル!",
+  "date": "1997-09-16"
+ },
+ {
+  "jp": 26,
+  "en": 26,
+  "title": "Pokémon Scent-sation!",
+  "romaji": "Erika to Kusaihana",
+  "japanese": "エリカとクサイハナ",
+  "date": "1997-09-23"
+ },
+ {
+  "jp": 27,
+  "en": 27,
+  "title": "Hypno's Naptime",
+  "romaji": "Surīpā to Pokemon Gaeri!?",
+  "japanese": "スリーパーとポケモンがえり!?",
+  "date": "1997-09-30"
+ },
+ {
+  "jp": 28,
+  "en": 28,
+  "title": "Pokémon Fashion Flash",
+  "romaji": "Rokon! Burīdā Taiketsu!",
+  "japanese": "ロコン! ブリーダーたいけつ!",
+  "date": "1997-10-07"
+ },
+ {
+  "jp": 29,
+  "en": 29,
+  "title": "The Punchy Pokémon",
+  "romaji": "Kakutō Pokemon! Dai Batoru!",
+  "japanese": "かくとうポケモン! だいバトル!",
+  "date": "1997-10-14"
+ },
+ {
+  "jp": 30,
+  "en": 30,
+  "title": "Sparks Fly for Magnemite",
+  "romaji": "Koiru wa Denki Nezumi no Yume o Miru ka!?",
+  "japanese": "コイルはでんきネズミのユメをみるか!?",
+  "date": "1997-10-21"
+ },
+ {
+  "jp": 31,
+  "en": 31,
+  "title": "Dig Those Diglett!",
+  "romaji": "Diguda ga Ippai!",
+  "japanese": "ディグダがいっぱい!",
+  "date": "1997-10-28"
+ },
+ {
+  "jp": 32,
+  "en": 32,
+  "title": "The Ninja-Poké Showdown",
+  "romaji": "Sekichiku Ninja Taiketsu!",
+  "japanese": "セキチクにんじゃたいけつ!",
+  "date": "1997-11-04"
+ },
+ {
+  "jp": 33,
+  "en": 33,
+  "title": "The Flame Pokémon-athon!",
+  "romaji": "Honō no Pokemon Dai Rēsu!",
+  "japanese": "ほのおのポケモンだいレース!",
+  "date": "1997-11-11"
+ },
+ {
+  "jp": 34,
+  "en": 34,
+  "title": "The Kangaskhan Kid",
+  "romaji": "Garūra no Komoriuta",
+  "japanese": "ガルーラのこもりうた",
+  "date": "1997-11-18"
+ },
+ {
+  "jp": 35,
+  "en": null,
+  "title": "The Legend of Dratini",
+  "romaji": "Miniryū no Densetsu",
+  "japanese": "ミニリュウのでんせつ",
+  "date": "1997-11-25"
+ },
+ {
+  "jp": 36,
+  "en": 35,
+  "title": "The Bridge Bike Gang",
+  "romaji": "Arashi no Saikuringu Rōdo",
+  "japanese": "あらしのサイクリングロード",
+  "date": "1997-12-02"
+ },
+ {
+  "jp": 37,
+  "en": 36,
+  "title": "Ditto's Mysterious Mansion",
+  "romaji": "Metamon to Monomane Musume",
+  "japanese": "メタモンとものまねむすめ",
+  "date": "1997-12-09"
+ },
+ {
+  "jp": 38,
+  "en": null,
+  "title": "Electric Soldier Porygon",
+  "romaji": "[[Dennō Senshi Porygon]]",
+  "japanese": "でんのうせんしポリゴン",
+  "date": "1997-12-16"
+ },
+ {
+  "jp": 39,
+  "en": 37,
+  "title": "Pikachu's Goodbye",
+  "romaji": "Pikachū no Mori",
+  "japanese": "ピカチュウのもり",
+  "date": "1998-04-16"
+ },
+ {
+  "jp": 40,
+  "en": 38,
+  "title": "The Battling Eevee Brothers",
+  "romaji": "Ībui Yon Kyōdai",
+  "japanese": "イーブイ4きょうだい",
+  "date": "1998-04-16"
+ },
+ {
+  "jp": 41,
+  "en": 39,
+  "title": "Wake Up Snorlax!",
+  "romaji": "Okiro! Kabigon!",
+  "japanese": "おきろ! カビゴン!",
+  "date": "1998-04-23"
+ },
+ {
+  "jp": 42,
+  "en": 40,
+  "title": "Showdown at Dark City",
+  "romaji": "Taiketsu! Pokemon Jimu!",
+  "japanese": "たいけつ! ポケモンジム!",
+  "date": "1998-04-30"
+ },
+ {
+  "jp": 43,
+  "en": 41,
+  "title": "The March of the Exeggutor Squad",
+  "romaji": "Nasshī Gundan Daikōshin!",
+  "japanese": "ナッシーぐんだんだいこうしん!",
+  "date": "1998-05-07"
+ },
+ {
+  "jp": 44,
+  "en": 42,
+  "title": "The Problem with Paras",
+  "romaji": "Parasu to Parasekuto",
+  "japanese": "パラスとパラセクト",
+  "date": "1998-05-14"
+ },
+ {
+  "jp": 45,
+  "en": 43,
+  "title": "The Song of Jigglypuff",
+  "romaji": "Utatte! Purin!",
+  "japanese": "うたって! プリン!",
+  "date": "1998-05-21"
+ },
+ {
+  "jp": 46,
+  "en": 44,
+  "title": "Attack of the Prehistoric Pokémon",
+  "romaji": "Fukkatsu!? Kaseki Pokemon!",
+  "japanese": "ふっかつ!? かせきポケモン!",
+  "date": "1998-05-28"
+ },
+ {
+  "jp": 47,
+  "en": 45,
+  "title": "A Chansey Operation",
+  "romaji": "Rakkī no Karute",
+  "japanese": "ラッキーのカルテ",
+  "date": "1998-06-04"
+ },
+ {
+  "jp": 48,
+  "en": 46,
+  "title": "Holy Matrimony!",
+  "romaji": "Gādi to Kojirō",
+  "japanese": "ガーディとコジロウ",
+  "date": "1998-06-11"
+ },
+ {
+  "jp": 49,
+  "en": 47,
+  "title": "So Near, Yet So Farfetch'd",
+  "romaji": "Kamonegi no Kamo",
+  "japanese": "カモネギのカモ",
+  "date": "1998-06-18"
+ },
+ {
+  "jp": 50,
+  "en": 48,
+  "title": "Who Gets to Keep Togepi?",
+  "romaji": "Togepī wa Dare no Mono!?",
+  "japanese": "トゲピーはだれのもの!?",
+  "date": "1998-06-25"
+ },
+ {
+  "jp": 51,
+  "en": 49,
+  "title": "Bulbasaur's Mysterious Garden",
+  "romaji": "Fushigidane no Fushigi na Hanazono",
+  "japanese": "フシギダネのふしぎのはなぞの",
+  "date": "1998-07-02"
+ },
+ {
+  "jp": 52,
+  "en": 50,
+  "title": "Princess vs. Princess",
+  "romaji": "Gekitō! Pokemon Hinamatsuri",
+  "japanese": "げきとう! ポケモンひなまつり",
+  "date": "1998-07-09"
+ },
+ {
+  "jp": 53,
+  "en": 51,
+  "title": "The Purr-fect Hero",
+  "romaji": "Kodomo no Hi da yo! Zen'in Shūgō!",
+  "japanese": "こどものひだよ! ぜんいんしゅうごう!",
+  "date": "1998-07-09"
+ },
+ {
+  "jp": 54,
+  "en": 52,
+  "title": "The Case of the K-9 Caper!",
+  "romaji": "Keisatsuken Gādi",
+  "japanese": "けいさつけんガーディ",
+  "date": "1998-07-16"
+ },
+ {
+  "jp": 55,
+  "en": 53,
+  "title": "Pokémon Paparazzi",
+  "romaji": "Shattā Chansu wa Pikachū",
+  "japanese": "シャッターチャンスはピカチュウ",
+  "date": "1998-07-23"
+ },
+ {
+  "jp": 56,
+  "en": 54,
+  "title": "The Ultimate Test",
+  "romaji": "Pokemon Rīgu Kenteishiken!?",
+  "japanese": "ポケモンけんていしけん!?",
+  "date": "1998-07-30"
+ },
+ {
+  "jp": 57,
+  "en": 55,
+  "title": "The Breeding Center Secret",
+  "romaji": "Sodate-ya no Himitsu!",
+  "japanese": "そだてやのひみつ!",
+  "date": "1998-08-06"
+ },
+ {
+  "jp": 58,
+  "en": 56,
+  "title": "Riddle Me This",
+  "romaji": "Moero! Guren Jimu!",
+  "japanese": "もえろ! グレンジム!",
+  "date": "1998-08-13"
+ },
+ {
+  "jp": 59,
+  "en": 57,
+  "title": "Volcanic Panic",
+  "romaji": "Kessen! Guren Jimu!",
+  "japanese": "けっせん! グレンジム!",
+  "date": "1998-08-20"
+ },
+ {
+  "jp": 60,
+  "en": 58,
+  "title": "Beach Blank-Out Blastoise",
+  "romaji": "Kamekkusu no Shima",
+  "japanese": "カメックスのしま",
+  "date": "1998-08-27"
+ },
+ {
+  "jp": 61,
+  "en": 59,
+  "title": "The Misty Mermaid",
+  "romaji": "Hanada Jimu! Suichū no Tatakai!",
+  "japanese": "ハナダジム! すいちゅうのたたかい!",
+  "date": "1998-09-03"
+ },
+ {
+  "jp": 62,
+  "en": 60,
+  "title": "Clefairy Tales",
+  "romaji": "Pippi Tai Purin",
+  "japanese": "ピッピVSプリン",
+  "date": "1998-09-10"
+ },
+ {
+  "jp": 63,
+  "en": 61,
+  "title": "The Battle of the Badge",
+  "romaji": "Tokiwa Jimu! Saigo no Bajji!",
+  "japanese": "トキワジム! さいごのバッジ!",
+  "date": "1998-09-17"
+ },
+ {
+  "jp": 64,
+  "en": 62,
+  "title": "It's Mr. Mime Time!",
+  "romaji": "Pokemon Sākasu no Bariyādo",
+  "japanese": "ポケモンサーカスのバリヤード",
+  "date": "1998-09-24"
+ },
+ {
+  "jp": 65,
+  "en": 63,
+  "title": "Holiday Hi-Jynx",
+  "romaji": "Rūjura no Kurisumasu",
+  "japanese": "ルージュラのクリスマス",
+  "date": "1998-10-05"
+ },
+ {
+  "jp": 66,
+  "en": 64,
+  "title": "Snow Way Out",
+  "romaji": "Iwāku de Bibāku",
+  "japanese": "イワークでビバーク",
+  "date": "1998-10-05"
+ },
+ {
+  "jp": 67,
+  "en": 65,
+  "title": "Showdown at the Po-ké Corral",
+  "romaji": "Raibaru Taiketsu! Ōkido Kenkyūjo",
+  "japanese": "ライバルたいけつ! オーキドけんきゅうじょ",
+  "date": "1998-10-08"
+ },
+ {
+  "jp": 68,
+  "en": 66,
+  "title": "The Evolution Solution",
+  "romaji": "Yadon ga Yadoran ni naru Toki",
+  "japanese": "ヤドンがヤドランになるとき",
+  "date": "1998-10-15"
+ },
+ {
+  "jp": 69,
+  "en": 67,
+  "title": "The Pi-Kahuna",
+  "romaji": "Naminori Pikachū no Densetsu",
+  "japanese": "なみのりピカチュウのでんせつ",
+  "date": "1998-10-22"
+ },
+ {
+  "jp": 70,
+  "en": 68,
+  "title": "Make Room for Gloom",
+  "romaji": "Shokubutsuen no Kusaihana",
+  "japanese": "しょくぶつえんのクサイハナ",
+  "date": "1998-10-29"
+ },
+ {
+  "jp": 71,
+  "en": 69,
+  "title": "Lights, Camera, Quack-tion!",
+  "romaji": "Pokemon za Mūbī!",
+  "japanese": "ポケモン・ザ・ムービー!",
+  "date": "1998-11-05"
+ },
+ {
+  "jp": 72,
+  "en": 70,
+  "title": "Go West, Young Meowth",
+  "romaji": "Nyāsu no Aiueo",
+  "japanese": "ニャースのあいうえお",
+  "date": "1998-11-12"
+ },
+ {
+  "jp": 73,
+  "en": 71,
+  "title": "To Master the Onixpected!",
+  "romaji": "Shitennō Shiba Tōjō!",
+  "japanese": "してんのうシバとうじょう!",
+  "date": "1998-11-19"
+ },
+ {
+  "jp": 74,
+  "en": 72,
+  "title": "The Ancient Puzzle of Pokémopolis",
+  "romaji": "Gekitotsu! Chō Kodai Pokemon",
+  "japanese": "げきとつ! ちょうこだいポケモン",
+  "date": "1998-11-26"
+ },
+ {
+  "jp": 75,
+  "en": 73,
+  "title": "Bad to the Bone!",
+  "romaji": "Garagara no Hone Konbō",
+  "japanese": "ガラガラのホネこんぼう",
+  "date": "1998-12-03"
+ },
+ {
+  "jp": 76,
+  "en": 74,
+  "title": "All Fired Up!",
+  "romaji": "Faiyā! Pokemon Rīgu Kaikaishiki!",
+  "japanese": "ファイヤー! ポケモンリーグかいかいしき!",
+  "date": "1998-12-10"
+ },
+ {
+  "jp": 77,
+  "en": 75,
+  "title": "Round One: Begin!",
+  "romaji": "Pokemon Rīgu Kaimaku! Mizu no Fīrudo!",
+  "japanese": "ポケモンリーグかいまく! みずのフィールド!",
+  "date": "1998-12-17"
+ },
+ {
+  "jp": 78,
+  "en": 76,
+  "title": "Fire and Ice",
+  "romaji": "Kōri no Fīrudo! Honō no Tatakai!",
+  "japanese": "こおりのフィールド! ほのおのたたかい!",
+  "date": "1998-12-24"
+ },
+ {
+  "jp": 79,
+  "en": 77,
+  "title": "The Fourth Round Rumble",
+  "romaji": "Kusa no Fīrudo! Igai na Kyōteki!",
+  "japanese": "くさのフィールド! いがいなきょうてき!",
+  "date": "1999-01-01"
+ },
+ {
+  "jp": 80,
+  "en": 78,
+  "title": "A Friend in Deed",
+  "romaji": "Raibaru Tōjō!",
+  "japanese": "ライバルとうじょう!",
+  "date": "1999-01-07"
+ },
+ {
+  "jp": 81,
+  "en": 79,
+  "title": "Friend and Foe Alike",
+  "romaji": "Sekiei Sutajiamu! Tai Hiroshi!",
+  "japanese": "セキエイスタジアム! VSヒロシ!",
+  "date": "1999-01-14"
+ },
+ {
+  "jp": 82,
+  "en": 80,
+  "title": "Friends to the End",
+  "romaji": "Pokemon Rīgu! Saigo no Tatakai!",
+  "japanese": "ポケモンリーグ! さいごのたたかい!",
+  "date": "1999-01-21"
+ }
+]

@@ -1,0 +1,47 @@
+# Pokémon Watch Guide
+
+A static, single-page watch guide for the Pokémon anime: my 1–5 rating, IMDb rating, a summary (spoiler-free for 4+), and a Tencent Video link for every episode. Game launches, movies, specials and notable events are rows on the same timeline.
+
+Open `index.html` in a browser. No server or build step is needed to view it.
+
+## Ratings
+
+| Rating | Meaning |
+|---|---|
+| 5 | must watch |
+| 4 | should watch |
+| 3 | maybe |
+| 2 | skippable |
+| 1 | skip |
+
+About one third of each series' episodes are rated 4+.
+
+## Layout
+
+```
+index.html                 the page (filters, watched checkboxes stored in localStorage)
+data/guide.js              generated; do not edit by hand
+editorial/<series>.json    my ratings + summaries per Japanese episode number, plus extra rows (games/movies/events)
+sources/                   raw data pulled from IMDb, Wikipedia and Tencent
+tools/build.js             merges sources + editorial into data/guide.js
+tools/fetch-tencent-episodes.js   lists a Tencent cover's episode vids
+```
+
+Rebuild after editing anything in `editorial/` or `sources/`:
+
+```bash
+node tools/build.js
+```
+
+## Where the data comes from
+
+- **IMDb ratings**: IMDb's official non-commercial datasets (`title.episode.tsv.gz`, `title.ratings.tsv.gz` from https://datasets.imdbws.com). The website itself blocks scripted requests. The series id is `tt0168366`; IMDb season N, episode M uses Japanese episode order.
+- **English titles, air dates, Japanese titles**: English Wikipedia season pages (e.g. "Pokémon: Indigo League").
+- **Chinese titles**: Chinese Wikipedia's 寶可夢 (1997年—2002年動畫) page (Taiwan titles), converted to Simplified with opencc.
+- **Tencent links**: `精灵宝可梦 第1季` (cid `tyeqdw6rof7t5ow`, 271 episodes, Taiwan dub) and `精灵宝可梦 剧场版合集` (cid `ejr0xfirssdm33y`).
+
+### Tencent numbering
+
+Tencent numbers episodes in its own order, which skips Japanese episodes that never aired in Taiwan. For the Indigo League these are EP038 (Porygon) and EP065 (Holiday Hi-Jynx). I verified the offset by comparing Tencent cover frames with episode plots. The skipped episodes are listed in `tencentMissingJp` in each editorial file. When adding the Orange Islands and Johto, three more skipped episodes need to be located the same way (276 Japanese vs 271 Tencent).
+
+Tencent streams are region-locked: outside mainland China (or behind a VPN) the player shows 您所在区域暂无此内容版权.

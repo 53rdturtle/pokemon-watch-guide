@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pokémon Watch Guide</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --card: #fff; --text: #1d1d1f; --muted: #6e6e73; --line: #e3e3e0;
+    --r5: #d93a2b; --r4: #e98b1a; --r3: #8a8a8a; --r2: #b5b5b5; --r1: #cfcfcf;
+    --game: #3b6fd4; --movie: #8e44ad; --event: #444;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161618; --card: #1f1f22; --text: #ececee; --muted: #9a9aa0; --line: #333338;
+      --r3: #8f8f95; --r2: #66666b; --r1: #4d4d52; --event: #bbb; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); }
+  header { position: sticky; top: 0; z-index: 2; background: var(--bg); border-bottom: 1px solid var(--line); padding: 12px 16px 10px; }
+  h1 { font-size: 20px; margin: 0 0 8px; }
+  h1 small { font-weight: normal; color: var(--muted); font-size: 13px; margin-left: 6px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; font-size: 14px; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .seg button { border: 0; background: var(--card); color: var(--text); padding: 5px 10px; font: inherit; cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--line); }
+  .seg button.on { background: var(--text); color: var(--bg); }
+  label { cursor: pointer; user-select: none; white-space: nowrap; }
+  input[type=search] { font: inherit; padding: 5px 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); min-width: 160px; }
+  .stats { color: var(--muted); font-size: 13px; margin-top: 6px; }
+  main { max-width: 1100px; margin: 0 auto; padding: 8px 12px 60px; }
+  .note { color: var(--muted); font-size: 13px; margin: 8px 4px 12px; }
+  .row { display: grid; grid-template-columns: 26px 64px minmax(0, 1fr) 92px 96px; gap: 4px 12px; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 6px; }
+  .row.watched { opacity: .5; }
+  .row.extra { border-left: 4px solid var(--event); }
+  .row.extra.game { border-left-color: var(--game); }
+  .row.extra.movie, .row.extra.special { border-left-color: var(--movie); }
+  .num { font-variant-numeric: tabular-nums; }
+  .num b { display: block; font-size: 16px; }
+  .num span { color: var(--muted); font-size: 12px; }
+  .title { font-weight: 600; }
+  .title .en { font-weight: normal; color: var(--muted); font-size: 13px; margin-left: 6px; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 1px 6px; border-radius: 5px; color: #fff; margin-right: 6px; vertical-align: 1px; text-transform: uppercase; letter-spacing: .03em; }
+  .tag.game { background: var(--game); } .tag.movie, .tag.special { background: var(--movie); } .tag.event { background: var(--event); color: var(--bg); }
+  .summary { color: var(--text); font-size: 14px; margin-top: 3px; }
+  .meta { color: var(--muted); font-size: 12px; margin-top: 3px; }
+  .rating { font-size: 13px; font-weight: 700; padding: 3px 0; border-radius: 6px; text-align: center; color: #fff; }
+  .rating small { display: block; font-weight: normal; font-size: 11px; opacity: .9; }
+  .r5 { background: var(--r5); } .r4 { background: var(--r4); } .r3 { background: var(--r3); } .r2 { background: var(--r2); } .r1 { background: var(--r1); color: var(--text); }
+  .links { display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+  .links a { color: inherit; text-decoration: none; border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; text-align: center; white-space: nowrap; }
+  .links a:hover { border-color: var(--text); }
+  .links .na { color: var(--muted); font-size: 12px; text-align: center; }
+  .imdb b { font-variant-numeric: tabular-nums; }
+  .imdb span { color: var(--muted); font-size: 11px; }
+  input.w { margin-top: 4px; width: 18px; height: 18px; }
+  @media (max-width: 700px) {
+    .row { grid-template-columns: 22px minmax(0, 1fr) 84px; }
+    .row .num { grid-column: 2; grid-row: 1; display: flex; gap: 8px; align-items: baseline; }
+    .row .num b { display: inline; font-size: 14px; }
+    .row .body { grid-column: 1 / 3; grid-row: 2; }
+    .row .rating { grid-column: 3; grid-row: 1; }
+    .row .links { grid-column: 3; grid-row: 2; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Pokémon Watch Guide <small id="seriesTitle"></small></h1>
+  <div class="controls">
+    <div class="seg" id="minRating">
+      <button data-v="0" class="on">All</button><button data-v="3">3+</button><button data-v="4">4+ should</button><button data-v="5">5 must</button>
+    </div>
+    <label><input type="checkbox" id="showExtras" checked> Movies, games &amp; events</label>
+    <label><input type="checkbox" id="hideWatched"> Hide watched</label>
+    <input type="search" id="q" placeholder="Search title / summary">
+  </div>
+  <div class="stats" id="stats"></div>
+</header>
+<main>
+  <p class="note">
+    <b>Rating:</b> 5 must watch · 4 should watch · 3 maybe · 2 skippable · 1 skip. 4+ episodes have spoiler-free summaries.
+    <b>#</b> is the Tencent episode number, with the original Japanese EP number underneath.
+    <span id="tencentNote"></span>
+  </p>
+  <div id="list"></div>
+</main>
+<script src="data/guide.js"></script>
+<script>
+  const G = window.GUIDE;
+  const WATCH_KEY = "pokemon-guide-watched";
+  const watched = new Set(JSON.parse(localStorage.getItem(WATCH_KEY) || "[]"));
+  const state = { min: 0, extras: true, hideWatched: false, q: "" };
+  const LABEL = { game: "Game", movie: "Movie", special: "Special", event: "Event" };
+  const RLABEL = { 5: "must", 4: "should", 3: "maybe", 2: "skippable", 1: "skip" };
+
+  document.getElementById("seriesTitle").textContent = G.series.map(s => `${s.title} · ${s.titleZh}`).join(", ");
+  document.getElementById("tencentNote").textContent = G.series.map(s => s.tencentNote).join(" ");
+
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const keyOf = r => r.type === "episode" ? `${r.series}:${r.jp}` : `${r.type}:${r.date}:${r.title}`;
+
+  function render() {
+    const q = state.q.trim().toLowerCase();
+    const rows = G.rows.filter(r => {
+      if (r.type !== "episode" && !state.extras) return false;
+      if (state.min && (r.rating ?? 0) < state.min && !(r.type !== "episode" && r.rating == null && state.extras)) return false;
+      if (state.hideWatched && watched.has(keyOf(r))) return false;
+      if (q && !`${r.title} ${r.titleZh} ${r.summary} ${r.japanese}`.toLowerCase().includes(q)) return false;
+      return true;
+    });
+    document.getElementById("list").innerHTML = rows.map(r => {
+      const k = keyOf(r), isEp = r.type === "episode";
+      const num = isEp
+        ? `<div class="num"><b>${r.tencentNo ?? "—"}</b><span>EP${String(r.jp).padStart(3, "0")}</span></div>`
+        : `<div class="num"><span>${r.date.slice(0, 7)}</span></div>`;
+      const rating = r.rating
+        ? `<div class="rating r${r.rating}">${r.rating}<small>${RLABEL[r.rating]}</small></div>`
+        : `<div></div>`;
+      const imdb = r.imdbUrl
+        ? `<a class="imdb" href="${r.imdbUrl}" target="_blank" rel="noopener">IMDb <b>${r.imdbRating ?? "?"}</b> <span>${r.imdbVotes ? (r.imdbVotes >= 1000 ? (r.imdbVotes / 1000).toFixed(1) + "k" : r.imdbVotes) : ""}</span></a>`
+        : "";
+      const tx = r.tencentUrl
+        ? `<a href="${r.tencentUrl}" target="_blank" rel="noopener">▶ 腾讯视频</a>`
+        : (isEp || r.type === "movie" || r.type === "special" ? `<span class="na">Not on Tencent</span>` : "");
+      return `<div class="row ${isEp ? "" : "extra " + r.type} ${watched.has(k) ? "watched" : ""}" data-k="${esc(k)}">
+        <input type="checkbox" class="w" title="Watched" ${watched.has(k) ? "checked" : ""}>
+        ${num}
+        <div class="body">
+          <div class="title">${isEp ? "" : `<span class="tag ${r.type}">${LABEL[r.type]}</span>`}${esc(r.titleZh || r.title)}${r.titleZh ? `<span class="en">${esc(r.title)}</span>` : ""}</div>
+          <div class="summary">${esc(r.summary)}</div>
+          <div class="meta">${r.date}${r.japanese ? " · " + esc(r.japanese) : ""}</div>
+        </div>
+        ${rating}
+        <div class="links">${tx}${imdb}</div>
+      </div>`;
+    }).join("");
+    const eps = G.rows.filter(r => r.type === "episode");
+    const seen = eps.filter(r => watched.has(keyOf(r))).length;
+    const top = eps.filter(r => r.rating >= 4);
+    document.getElementById("stats").textContent =
+      `Showing ${rows.length} rows · ${eps.length} episodes, ${top.length} rated 4+ · watched ${seen}/${eps.length} (4+: ${top.filter(r => watched.has(keyOf(r))).length}/${top.length})`;
+  }
+
+  document.getElementById("minRating").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    state.min = +b.dataset.v;
+    for (const x of e.currentTarget.children) x.classList.toggle("on", x === b);
+    render();
+  });
+  document.getElementById("showExtras").addEventListener("change", e => { state.extras = e.target.checked; render(); });
+  document.getElementById("hideWatched").addEventListener("change", e => { state.hideWatched = e.target.checked; render(); });
+  document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+  document.getElementById("list").addEventListener("change", e => {
+    if (!e.target.classList.contains("w")) return;
+    const k = e.target.closest(".row").dataset.k;
+    e.target.checked ? watched.add(k) : watched.delete(k);
+    localStorage.setItem(WATCH_KEY, JSON.stringify([...watched]));
+    render();
+  });
+  render();
+</script>
+</body>
+</html>
