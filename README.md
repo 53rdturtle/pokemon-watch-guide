@@ -19,7 +19,7 @@ About one third of each series' episodes are rated 4+.
 ## Layout
 
 ```
-index.html                 the page (filters, watched checkboxes stored in localStorage)
+index.html                 the page (filters, a "watched up to here" bookmark stored in localStorage)
 data/guide.js              generated; do not edit by hand
 editorial/<series>.json    my ratings + summaries per Japanese episode number, plus extra rows (games/movies/events)
 sources/                   raw data pulled from IMDb, Wikipedia and Tencent

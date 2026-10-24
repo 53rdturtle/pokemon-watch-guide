@@ -52,7 +52,14 @@
   .links .na { color: var(--muted); font-size: 12px; text-align: center; }
   .imdb b { font-variant-numeric: tabular-nums; }
   .imdb span { color: var(--muted); font-size: 11px; }
-  input.w { margin-top: 4px; width: 18px; height: 18px; }
+  button.mark { margin-top: 2px; width: 22px; height: 22px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--card); color: var(--muted); font-size: 10px; line-height: 1; cursor: pointer; }
+  button.mark:hover { border-color: var(--text); color: var(--text); }
+  .row.watched button.mark { background: var(--muted); border-color: var(--muted); color: var(--bg); }
+  .row.bookmark { opacity: 1; box-shadow: inset 0 -3px 0 var(--r5); }
+  .row.bookmark button.mark { background: var(--r5); border-color: var(--r5); color: #fff; }
+  .row.next { outline: 2px solid var(--text); }
+  #jumpNext { font: inherit; padding: 5px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); cursor: pointer; }
+  .row { scroll-margin-top: 140px; }
   @media (max-width: 700px) {
     .row { grid-template-columns: 22px minmax(0, 1fr) 84px; }
     .row .num { grid-column: 2; grid-row: 1; display: flex; gap: 8px; align-items: baseline; }
@@ -72,6 +79,7 @@
     </div>
     <label><input type="checkbox" id="showExtras" checked> Movies, games &amp; events</label>
     <label><input type="checkbox" id="hideWatched"> Hide watched</label>
+    <button id="jumpNext">Jump to next ↓</button>
     <input type="search" id="q" placeholder="Search title / summary">
   </div>
   <div class="stats" id="stats"></div>
@@ -80,6 +88,7 @@
   <p class="note">
     <b>Rating:</b> 5 must watch · 4 should watch · 3 maybe · 2 skippable · 1 skip. 4+ episodes have spoiler-free summaries.
     <b>#</b> is the Tencent episode number, with the original Japanese EP number underneath.
+    Click ▶ on the last row you watched to mark everything up to it as watched (click it again to step back one).
     <span id="tencentNote"></span>
   </p>
   <div id="list"></div>
@@ -87,8 +96,8 @@
 <script src="data/guide.js"></script>
 <script>
   const G = window.GUIDE;
-  const WATCH_KEY = "pokemon-guide-watched";
-  const watched = new Set(JSON.parse(localStorage.getItem(WATCH_KEY) || "[]"));
+  const PROGRESS_KEY = "pokemon-guide-progress";
+  const OLD_WATCH_KEY = "pokemon-guide-watched";
   const state = { min: 0, extras: true, hideWatched: false, q: "" };
   const LABEL = { game: "Game", movie: "Movie", special: "Special", event: "Event" };
   const RLABEL = { 5: "must", 4: "should", 3: "maybe", 2: "skippable", 1: "skip" };
@@ -99,17 +108,35 @@
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const keyOf = r => r.type === "episode" ? `${r.series}:${r.jp}` : `${r.type}:${r.date}:${r.title}`;
 
+  // Progress is a single bookmark: the key of the last watched row. Every row at or before it (timeline order) is watched.
+  const indexOf = new Map(G.rows.map((r, i) => [keyOf(r), i]));
+  if (localStorage.getItem(PROGRESS_KEY) == null && localStorage.getItem(OLD_WATCH_KEY)) {
+    const old = new Set(JSON.parse(localStorage.getItem(OLD_WATCH_KEY)));
+    const last = Math.max(-1, ...G.rows.map((r, i) => r.type === "episode" && old.has(keyOf(r)) ? i : -1));
+    if (last >= 0) localStorage.setItem(PROGRESS_KEY, keyOf(G.rows[last]));
+    localStorage.removeItem(OLD_WATCH_KEY);
+  }
+  let progress = indexOf.get(localStorage.getItem(PROGRESS_KEY)) ?? -1;
+  const isWatched = i => i <= progress;
+  function setProgress(i) {
+    progress = i;
+    i >= 0 ? localStorage.setItem(PROGRESS_KEY, keyOf(G.rows[i])) : localStorage.removeItem(PROGRESS_KEY);
+    render();
+  }
+  const epLabel = r => `#${r.tencentNo ?? "—"} (EP${String(r.jp).padStart(3, "0")})`;
+
   function render() {
     const q = state.q.trim().toLowerCase();
-    const rows = G.rows.filter(r => {
+    const rows = G.rows.map((r, i) => ({ ...r, i })).filter(r => {
       if (r.type !== "episode" && !state.extras) return false;
       if (state.min && (r.rating ?? 0) < state.min && !(r.type !== "episode" && r.rating == null && state.extras)) return false;
-      if (state.hideWatched && watched.has(keyOf(r))) return false;
+      if (state.hideWatched && isWatched(r.i)) return false;
       if (q && !`${r.title} ${r.titleZh} ${r.summary} ${r.japanese}`.toLowerCase().includes(q)) return false;
       return true;
     });
+    const nextI = rows.find(r => !isWatched(r.i))?.i;
     document.getElementById("list").innerHTML = rows.map(r => {
-      const k = keyOf(r), isEp = r.type === "episode";
+      const isEp = r.type === "episode", w = isWatched(r.i);
       const num = isEp
         ? `<div class="num"><b>${r.tencentNo ?? "—"}</b><span>EP${String(r.jp).padStart(3, "0")}</span></div>`
         : `<div class="num"><span>${r.date.slice(0, 7)}</span></div>`;
@@ -122,8 +149,9 @@
       const tx = r.tencentUrl
         ? `<a href="${r.tencentUrl}" target="_blank" rel="noopener">▶ 腾讯视频</a>`
         : (isEp || r.type === "movie" || r.type === "special" ? `<span class="na">Not on Tencent</span>` : "");
-      return `<div class="row ${isEp ? "" : "extra " + r.type} ${watched.has(k) ? "watched" : ""}" data-k="${esc(k)}">
-        <input type="checkbox" class="w" title="Watched" ${watched.has(k) ? "checked" : ""}>
+      const cls = [isEp ? "" : "extra " + r.type, w ? "watched" : "", r.i === progress ? "bookmark" : "", r.i === nextI ? "next" : ""].join(" ");
+      return `<div class="row ${cls}" data-i="${r.i}">
+        <button class="mark" title="${r.i === progress ? "Bookmark — click to step back one" : "Watched up to here"}">▶</button>
         ${num}
         <div class="body">
           <div class="title">${isEp ? "" : `<span class="tag ${r.type}">${LABEL[r.type]}</span>`}${esc(r.titleZh || r.title)}${r.titleZh ? `<span class="en">${esc(r.title)}</span>` : ""}</div>
@@ -135,10 +163,18 @@
       </div>`;
     }).join("");
     const eps = G.rows.filter(r => r.type === "episode");
-    const seen = eps.filter(r => watched.has(keyOf(r))).length;
-    const top = eps.filter(r => r.rating >= 4);
-    document.getElementById("stats").textContent =
-      `Showing ${rows.length} rows · ${eps.length} episodes, ${top.length} rated 4+ · watched ${seen}/${eps.length} (4+: ${top.filter(r => watched.has(keyOf(r))).length}/${top.length})`;
+    const ahead = G.rows.filter((r, i) => !isWatched(i) && r.type === "episode");
+    const top = eps.filter(r => r.rating >= 4), topAhead = ahead.filter(r => r.rating >= 4);
+    const lastEp = G.rows.slice(0, progress + 1).reverse().find(r => r.type === "episode");
+    const parts = [
+      lastEp ? `Watched through ${epLabel(lastEp)}` : "Not started",
+      ahead[0] ? `next: ${epLabel(ahead[0])}` : "all caught up",
+      topAhead[0] && topAhead[0] !== ahead[0] ? `next 4+: ${epLabel(topAhead[0])}` : "",
+      `episodes left ${ahead.length}/${eps.length}`,
+      `4+ left ${topAhead.length}/${top.length}`,
+      `showing ${rows.length} rows`,
+    ];
+    document.getElementById("stats").textContent = parts.filter(Boolean).join(" · ");
   }
 
   document.getElementById("minRating").addEventListener("click", e => {
@@ -150,12 +186,14 @@
   document.getElementById("showExtras").addEventListener("change", e => { state.extras = e.target.checked; render(); });
   document.getElementById("hideWatched").addEventListener("change", e => { state.hideWatched = e.target.checked; render(); });
   document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
-  document.getElementById("list").addEventListener("change", e => {
-    if (!e.target.classList.contains("w")) return;
-    const k = e.target.closest(".row").dataset.k;
-    e.target.checked ? watched.add(k) : watched.delete(k);
-    localStorage.setItem(WATCH_KEY, JSON.stringify([...watched]));
-    render();
+  document.getElementById("list").addEventListener("click", e => {
+    if (!e.target.classList.contains("mark")) return;
+    const i = +e.target.closest(".row").dataset.i;
+    setProgress(i === progress ? i - 1 : i);
+  });
+  document.getElementById("jumpNext").addEventListener("click", () => {
+    const el = document.querySelector(".row.next") || document.querySelector(".row:last-child");
+    el?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
   render();
 </script>
