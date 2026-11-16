@@ -382,16 +382,12 @@
   document.getElementById("onlyFav").addEventListener("change", e => { state.onlyFav = e.target.checked; render(); });
   document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
   // iPhone/iPad: Tencent's universal links don't cover /x/cover/ pages, so open the app via its own
-  // URL scheme and fall back to the web page if nothing took over (app not installed).
+  // URL scheme. No web-page fallback: the app is always installed, and the fallback timer could fire
+  // behind Safari's "Open in 腾讯视频?" prompt and load the web player anyway.
   const IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
   function openTencentApp(url) {
     const m = url.match(/\/x\/cover\/([^/]+)\/([^/.]+)\.html/);
     if (!m) return false;
-    const fallback = setTimeout(() => { location.href = url; }, 1500);
-    const cancel = () => { if (document.hidden) clearTimeout(fallback); };
-    document.addEventListener("visibilitychange", cancel, { once: true });
-    window.addEventListener("pagehide", () => clearTimeout(fallback), { once: true });
-    window.addEventListener("blur", () => clearTimeout(fallback), { once: true }); // Safari's "Open in 腾讯视频?" prompt
     location.href = `tenvideo2://?action=1&cover_id=${m[1]}&video_id=${m[2]}`;
     return true;
   }
