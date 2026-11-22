@@ -55,6 +55,7 @@
   .num span { color: var(--muted); font-size: 12px; }
   .star { height: 40px; }
   .star img { display: block; width: 64px; height: 64px; margin: -14px -8px -10px; image-rendering: pixelated; transform-origin: 50% 85%; }
+  .star img.big { width: 96px; height: 96px; margin: -36px -24px -20px; } /* #387+ sprites: 96px canvas, same pixel size */
   .meta .starname { white-space: nowrap; }
   .row:hover .star img { animation: hop .45s ease-out; }
   .row.next .star img { animation: idle 1.6s ease-in-out infinite; }
@@ -158,6 +159,7 @@
     .row .num b { display: inline; font-size: 14px; }
     .row .star { grid-column: 2; grid-row: 1; height: 24px; }
     .row .star img { width: 40px; height: 40px; margin: -10px -6px -6px; }
+    .row .star img.big { width: 60px; height: 60px; margin: -23px -16px -13px; }
     .row .num { padding-left: 34px; }
     .row .body { grid-column: 1 / 3; grid-row: 2; }
     .row .rating { grid-column: 3; grid-row: 1; }
@@ -316,7 +318,7 @@
     function rowHtml(r) {
       const isEp = r.type === "episode", w = isWatched(r.i), fav = favs.has(keyOf(r));
       const star = r.star
-        ? `<div class="star" title="本集明星：${esc(r.star.name)} #${String(r.star.dex).padStart(3, "0")}"><img src="assets/sprites/${r.star.dex}.png" alt="${esc(r.star.name)}" loading="lazy"></div>`
+        ? `<div class="star" title="本集明星：${esc(r.star.name)} #${String(r.star.dex).padStart(3, "0")}"><img src="assets/sprites/${r.star.dex}.png"${r.star.dex > 386 ? ' class="big"' : ""} alt="${esc(r.star.name)}" loading="lazy"></div>`
         : `<div></div>`;
       const num = isEp
         ? `<div class="num"><b>${r.tencentNo ?? "—"}</b><span>${r.code}</span></div>`

@@ -41,10 +41,11 @@ manifest.webmanifest       添加到主屏幕用的 App 信息
 icons/                     由 tools/make-icons.js 生成
 data/guide.js              自动生成，请勿手动编辑
 editorial/<season>.json    每一季一个文件（无印：关都、橘子群岛、城都之旅、城都联盟冠军、大师之旅；超世代：advanced、advanced-challenge、advanced-battle、battle-frontier），按日本原版集数（无印EP、超世代AG，各自从1数起）记录的 [评分, 简介, 本集明星宝可梦的全国图鉴编号, 可选的可爱/搞笑标签]，以及额外条目（游戏/电影/事件，可选 star 字段）
-assets/sprites/<编号>.png  本集明星宝可梦的像素图（火红/叶绿版精灵图，来自 PokeAPI/sprites）
+assets/sprites/<编号>.png  本集明星宝可梦的像素图（只放用到的，由 tools/fetch-sprites.js 下载）
 sources/                   从 IMDb、维基百科和腾讯抓取的原始数据（wikipedia-<season>.json 每季一个；zh-titles-、imdb-、tencent-<系列>.json 每个系列一个：original-series、advanced-generation）
 tools/build.js             将 sources 和 editorial 合并生成 data/guide.js（系列和季的列表在文件开头的 SERIES）
 tools/fetch-tencent-episodes.js   列出腾讯某个专辑（cover）的分集 vid
+tools/fetch-sprites.js     下载明星宝可梦像素图；--names 补全 #1–1025 的中文名
 ```
 
 修改 `editorial/` 或 `sources/` 后需要重新构建：
@@ -58,7 +59,8 @@ node tools/build.js
 - **IMDb 评分**：IMDb 官方非商业数据集（https://datasets.imdbws.com 上的 `title.episode.tsv.gz`、`title.ratings.tsv.gz`）。IMDb 网站本身会拦截脚本请求。剧集 id 为 `tt0168366`；IMDb 第 N 季第 M 集采用日本原版集数顺序。第 6–9 季是超世代的四季。
 - **英文标题、播出日期、日文标题**：英文维基百科各季页面（"Pokémon: Indigo League"、"Adventures in the Orange Islands"、"The Johto Journeys"、"Johto League Champions"、"Master Quest"，以及超世代的 "Pokémon: Advanced"、"Advanced Challenge"、"Advanced Battle"、"Battle Frontier"）。IMDb 第2–5季分别对应无印后四季，同样按日本原版顺序。
 - **中文标题**：中文维基百科“寶可夢 (1997年—2002年動畫)”和“寶可夢 超世代”页面（台湾译名），用 opencc 转为简体。
-- **本集明星宝可梦像素图**：PokeAPI/sprites 仓库中的《火红/叶绿》精灵图（`sprites/pokemon/versions/generation-iii/firered-leafgreen/<编号>.png`），已下载到 `assets/sprites/`，中文名在 `sources/pokemon-names-zh.json`。新增明星宝可梦时需同时补上图片和名字，否则构建会报错。这套精灵图只有第1–3世代（#1–386），所以第四世代的宝可梦（如小卡比兽、路卡利欧、玛纳霏）不能当明星，改用相关的宝可梦。中文名取自 PokeAPI 的简体中文名。
+- **本集明星宝可梦像素图**：来自 PokeAPI/sprites 仓库。#1–386 用《火红/叶绿》精灵图（`sprites/pokemon/versions/generation-iii/firered-leafgreen/<编号>.png`，64×64）；#387–1025 用 PokeAPI 的默认精灵图（`sprites/pokemon/<编号>.png`，96×96，#649 之前是《黑/白》原图，之后是同风格的社区像素图）。两套像素颗粒一样大，页面上 96×96 的图按 96px 显示（加 `big` 类），火红/叶绿按 64px，看起来是同一套。为了让仓库保持小巧，只下载用到的图：新增明星宝可梦后运行 `node tools/fetch-sprites.js`，它会扫描 `editorial/` 补齐缺少的图（也可以指定编号，如 `node tools/fetch-sprites.js 448 700`，`--force` 重新下载）。缺图时构建会报错。
+- **宝可梦中文名**：`sources/pokemon-names-zh.json`，覆盖 #1–1025。前三世代里早先当过明星的约 30 只沿用台配时代的旧译名（如拉普拉斯、3D龙），其余取自 PokeAPI 的简体中文名（`node tools/fetch-sprites.js --names` 只补缺少的，不会覆盖已有的）。
 - **腾讯链接**：`精灵宝可梦 第1季`（cid `tyeqdw6rof7t5ow`，271 集，无印，台湾配音）、`精灵宝可梦 第2季`（cid `9yfjl0rjm0l5tys`，188 集，超世代，台湾配音）和 `精灵宝可梦 剧场版合集`（cid `ejr0xfirssdm33y`）。
 
 ### 腾讯集数编号
