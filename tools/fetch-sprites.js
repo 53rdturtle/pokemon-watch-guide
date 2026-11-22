@@ -1,7 +1,7 @@
 // Downloads starred-Pokémon sprites from PokeAPI/sprites into assets/sprites/<dex>.png (only the ones in use, to keep the repo small).
 // #1–386: FireRed/LeafGreen 64×64; #387–1025: PokeAPI's default 96×96 sprites (Black/White through #649, BW-style after),
 // drawn at the same pixel size as the FRLG ones (index.html shows them at 96px instead of 64px).
-// Usage: node tools/fetch-sprites.js [dex ...] [--force]   no dex: every starred dex in editorial/ that has no sprite yet
+// Usage: node tools/fetch-sprites.js [dex ...] [--force]   no dex: every starred dex in editorial/pokemon/ that has no sprite yet
 //        node tools/fetch-sprites.js --names               add missing Chinese names #1–1025 to sources/pokemon-names-zh.json
 //                                                          (PokeAPI zh-Hans; names already in the file are kept)
 const fs = require("fs");
@@ -15,11 +15,11 @@ const spriteUrl = (dex) => dex <= 386
   : `${RAW}/sprites/master/sprites/pokemon/${dex}.png`;
 const spritePath = (dex) => path.join(root, `assets/sprites/${dex}.png`);
 
-// Every dex starred in editorial/: episodes are [rating, summary, dex, tags], extras have a star field.
+// Every dex starred in editorial/pokemon/: episodes are [rating, summary, dex, tags], extras have a star field.
 function starredDex() {
   const out = new Set();
-  for (const f of fs.readdirSync(path.join(root, "editorial")).filter((f) => f.endsWith(".json"))) {
-    const ed = JSON.parse(fs.readFileSync(path.join(root, "editorial", f), "utf8"));
+  for (const f of fs.readdirSync(path.join(root, "editorial/pokemon")).filter((f) => f.endsWith(".json"))) {
+    const ed = JSON.parse(fs.readFileSync(path.join(root, "editorial/pokemon", f), "utf8"));
     for (const ep of Object.values(ed.episodes || {})) if (ep[2] != null) out.add(ep[2]);
     for (const x of ed.extras || []) if (x.star != null) out.add(x.star);
   }
