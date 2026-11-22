@@ -32,7 +32,7 @@ const imdbUrl = (id) => `https://www.imdb.com/title/${id}/`;
 const starOf = (dex) => {
   if (dex == null) return null;
   if (!pokemonZh[dex]) throw new Error(`No Chinese name for Pokémon #${dex} in sources/pokemon-names-zh.json`);
-  if (!fs.existsSync(path.join(root, `assets/sprites/${dex}.png`))) throw new Error(`Missing sprite assets/sprites/${dex}.png`);
+  if (!fs.existsSync(path.join(root, `assets/sprites/${dex}.png`))) throw new Error(`Missing sprite assets/sprites/${dex}.png (run node tools/fetch-sprites.js)`);
   return { dex, name: pokemonZh[dex] };
 };
 // Optional 4th editorial field: mood tags for picking episodes by taste regardless of rating.
