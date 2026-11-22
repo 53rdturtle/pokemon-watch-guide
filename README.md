@@ -45,6 +45,7 @@ editorial/<show>/<season>.json  每一季一个文件（无印：关都、橘子
 assets/sprites/<编号>.png  本集明星宝可梦的像素图（只放用到的，由 tools/fetch-sprites.js 下载）
 sources/<show>/            从 IMDb、维基百科和腾讯抓取的原始数据（wikipedia-<season>.json 每季一个；zh-titles-、imdb-、tencent-<系列>.json 每个系列一个：original-series、advanced-generation）
 sources/pokemon-names-zh.json  明星宝可梦的中文名
+sources/streaming-survey.json  计划加入的各部动画在哪里能看（专辑 id、集数对应、IMDb 覆盖），见下文“新作品的播放来源调查”
 tools/build.js             将 sources 和 editorial 合并生成 data/<show>.js（动画 → 系列 → 季的列表在文件开头的 SHOWS：每部动画可选的明星像素图、自己的标签词表；每个系列的视频链接来源，默认腾讯，没有专辑时为 null）
 tools/compare-guide.js     比较两次构建的 rows/series 是否完全相同（重构 build.js 时用）
 tools/fetch-tencent-episodes.js   列出腾讯某个专辑（cover）的分集 vid
@@ -72,7 +73,7 @@ node tools/build.js
 
 ### 新作品的播放来源调查（2026-11-21）
 
-计划加入的作品在哪里能看、集数怎么对应，详见 `sources/streaming-survey.json`（含专辑 id、API 地址、IMDb 覆盖情况）。腾讯搜索结果中以 `sdp` 开头的 id 只是指向外站的“全网搜”条目，不是腾讯自己的专辑。
+计划加入的作品在哪里能看、集数怎么对应，详见 `sources/streaming-survey.json`（含专辑 id、API 地址、IMDb 覆盖情况）。其中 `provider` 的写法（`tencent`、`iqiyi`、`bilibili`、`youku`）对应 `tools/build.js` 里系列的 `link`；目前 `PROVIDERS` 只实现了 `tencent`，用其他来源的作品需要先补上对应的链接格式。腾讯搜索结果中以 `sdp` 开头的 id 只是指向外站的“全网搜”条目，不是腾讯自己的专辑。
 
 | 作品 | 播放来源（id） | 版本 | 集数对应 / 缺集 | IMDb 单集评分 | 中文标题来源 |
 |---|---|---|---|---|---|
