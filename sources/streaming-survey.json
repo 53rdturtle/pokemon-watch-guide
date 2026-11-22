@@ -1,0 +1,208 @@
+{
+ "surveyed": "2026-11-21",
+ "notes": "Streaming albums for the planned shows. tencent = v.qq.com cover id (cid); null when Tencent has no TV album of its own, then provider names the fallback. verified = read from the platform's JSON API; otherwise from search results only. IMDb counts come from the official datasets (title.episode / title.ratings) downloaded on the survey date.",
+ "apis": {
+  "tencentSearch": "POST https://pbaccess.video.qq.com/trpc.videosearch.mobile_search.MultiTerminalSearch/MbSearch?vplatform=2 (15-char ids starting with sdp are whole-web-search pointers to other sites, not Tencent albums)",
+  "tencentEpisodes": "node tools/fetch-tencent-episodes.js <cid> <out.json> (albums over 600 episodes need the page_context tabs that the episode list returns)",
+  "iqiyiEpisodes": "https://pcw-api.iqiyi.com/albums/album/avlistinfo?aid=<albumId>&page=1&size=100",
+  "bilibiliSeason": "https://api.bilibili.com/pgc/view/web/season?season_id=<ss>",
+  "youkuSearch": "https://so.youku.com/search/q_<title> (JS-rendered; gives showid and episode count only)"
+ },
+ "shows": [
+  {
+   "id": "digimon",
+   "nameZh": "数码宝贝",
+   "jpEpisodes": { "adventure": 54, "adventure02": 50, "tamers": 51 },
+   "tencent": null,
+   "provider": "iqiyi",
+   "albums": [
+    { "part": "adventure", "title": "数码宝贝", "url": "https://www.iqiyi.com/a_19rrhb1dmp.html", "albumId": 202726701, "episodes": 54, "audio": "ja + zh subs", "access": "ep1 free, 2-54 VIP; page says some episodes are unavailable for copyright reasons", "verified": true },
+    { "part": "adventure02", "title": "数码宝贝02", "url": "https://www.iqiyi.com/a_19rrhb1dp5.html", "albumId": 202726901, "episodes": 50, "audio": "ja + zh subs", "access": "ep1 free, 2-50 VIP", "verified": true },
+    { "part": "tamers", "title": "数码宝贝03 驯兽师之王", "url": "https://www.iqiyi.com/a_19rrhb1df9.html", "albumId": 202727001, "episodes": 51, "audio": "ja + zh subs", "access": "ep1 free, 2-51 VIP", "verified": true }
+   ],
+   "numberingDrift": "none: all three albums are 1:1 with JP. iQIYI episode URLs are random ids, take them from the avlistinfo API.",
+   "missing": "unknown which episodes the copyright notice refers to",
+   "imdb": [
+    { "part": "adventure", "series": "tt0210418", "episodes": 54, "rated": 54, "avgVotes": 268 },
+    { "part": "adventure02", "series": "tt0243694", "episodes": 50, "rated": 50, "avgVotes": 147 },
+    { "part": "tamers", "series": "tt0295080", "episodes": 51, "rated": 51, "avgVotes": 119 }
+   ],
+   "zhTitles": "iQIYI API titles (mainland); zh.wikipedia 數碼寶貝大冒險 / 數碼寶貝大冒險02 / 數碼寶貝03馴獸師之王 episode tables (Tamers ep1 matches iQIYI, Adventure ep1 differs)."
+  },
+  {
+   "id": "hamtaro",
+   "nameZh": "哈姆太郎",
+   "jpEpisodes": 296,
+   "tencent": null,
+   "provider": null,
+   "albums": [],
+   "numberingDrift": "n/a",
+   "missing": "no licensed mainland album: Youku seasons show 暂无片源, iQIYI has no album, Bilibili has only user uploads (its search could not be checked from here)",
+   "imdb": [ { "series": "tt0318895", "episodes": 296, "rated": 26, "avgVotes": 18 } ],
+   "zhTitles": "zh.wikipedia 哈姆太郎 has Chinese titles for eps 1-50 only (table stops at 193); the rest need Japanese titles or our own translation.",
+   "verdict": "no streaming link; build without play links or postpone"
+  },
+  {
+   "id": "keroro",
+   "nameZh": "Keroro军曹",
+   "jpEpisodes": 358,
+   "tencent": null,
+   "tencentNote": "hshpaiw3kpxepms 超剧场版 Keroro军曹 has only the 5 short films",
+   "provider": "bilibili",
+   "albums": [
+    { "title": "Keroro军曹", "url": "https://www.bilibili.com/bangumi/play/ss103", "seasonId": 103, "mediaId": 103, "episodes": 358, "audio": "ja + zh subs", "access": "API shows all episodes free (status 2, no 会员 badge); one snippet says 大会员专享. area_limit set: probably mainland only", "verified": true }
+   ],
+   "numberingDrift": "none: 358 = JP. ep_ids 67494-68442 with gaps, map from the season API. Titles join both halves with '+'.",
+   "missing": "none found",
+   "imdb": [ { "series": "tt0434693", "title": "Sgt. Frog", "episodes": 356, "rated": 27, "avgVotes": 16 } ],
+   "zhTitles": "Bilibili long_title; zh.wikipedia Keroro軍曹動畫集數列表 (both halves per episode, Taiwan-style wording; ignore the 74.1-74.15 mini-segment sub-numbers)."
+  },
+  {
+   "id": "conan",
+   "nameZh": "名侦探柯南",
+   "jpEpisodes": 1221,
+   "tencent": "hzgtnf6tbvfekfv",
+   "provider": "tencent",
+   "albums": [
+    { "title": "名侦探柯南[普通话版]", "cid": "hzgtnf6tbvfekfv", "episodes": 1281, "audio": "Mandarin dub", "access": "ongoing", "verified": true },
+    { "title": "名侦探柯南剧场版", "cid": "qjoizo0oirx43ja", "episodes": 18, "audio": "Mandarin", "note": "films 1997-2016; most films also have single-film covers (e.g. 5wg77t6vu3utemv 唐红的恋歌)", "verified": true }
+   ],
+   "numberingDrift": "Tencent uses the 海外版 (split) numbering: specials of 1 hour or more are split into 30-minute 上集/下集 parts, so Tencent 1281 = JP 1221 (+60). zh.wikipedia 名偵探柯南動畫集數列表 gives 官方版 and 海外版 numbers side by side for every episode, so the mapping can be built from it.",
+   "missing": "none: Tencent is complete up to JP 1221 (海外版 1281)",
+   "imdb": [ { "series": "tt0131179", "episodes": 1224, "rated": 1224, "avgVotes": 78, "note": "IMDb splits it into 54 uneven seasons; map by cumulative order and check against JP titles" } ],
+   "zhTitles": "Tencent titles (第N话 <title>, mainland) and zh.wikipedia 名偵探柯南動畫集數列表 中文譯名."
+  },
+  {
+   "id": "doraemon",
+   "nameZh": "哆啦A梦 (2005)",
+   "jpEpisodes": "about 1300 segments (2005-present)",
+   "tencent": "fv5yce1z791diy3",
+   "provider": "tencent",
+   "albums": [
+    { "title": "哆啦A梦 第1季", "cid": "fv5yce1z791diy3", "episodes": 142, "audio": "Mandarin dub", "verified": true },
+    { "title": "哆啦A梦 第2季", "cid": "ozaoxf82wa4w575", "episodes": 132, "audio": "Mandarin dub", "verified": true },
+    { "title": "哆啦A梦 第3季", "cid": "9p15mebx5gn4pz4", "episodes": 294, "audio": "Mandarin dub", "verified": true },
+    { "title": "哆啦A梦 第4季", "cid": "c25gt5ljdlbkrqd", "episodes": 99, "audio": "Mandarin dub", "verified": true },
+    { "title": "哆啦A梦 第5季", "cid": "mzc0020005ycqoe", "episodes": 80, "audio": "Mandarin dub", "verified": true },
+    { "title": "哆啦A梦剧场版合集", "cid": "z8alyhrvkd3jp2y", "episodes": 32, "note": "films 1980-2014; newer films have their own covers", "verified": true }
+   ],
+   "numberingDrift": "Tencent numbers parts, not JP episodes: segments are split into ~10-minute parts (独裁按钮-上/中/下). Seasons 1-2 carry part titles, season 3 only video titles (e.g. 哆啦A梦vs吸血鬼，上集（一）), seasons 4-5 no titles at all (只有第N话 and duration). Coverage stops around 2012-2013.",
+   "missing": "everything after about 2013; mapping seasons 4-5 needs runtime/screenshot matching",
+   "imdb": [ { "series": "tt4083422", "episodes": 978, "rated": 151, "avgVotes": 13, "note": "too sparse to use" } ],
+   "zhTitles": "zh.wikipedia 哆啦A夢動畫集數列表 (2005年至今); Tencent season 1-2 part titles."
+  },
+  {
+   "id": "shinchan",
+   "nameZh": "蜡笔小新",
+   "jpEpisodes": "about 1250 broadcast episodes of ~3 segments",
+   "tencent": "nsgczu8u2kvpe9e",
+   "provider": "tencent",
+   "albums": [
+    { "title": "蜡笔小新 第1季", "cid": "nsgczu8u2kvpe9e", "episodes": 480, "audio": "Mandarin dub", "verified": true },
+    { "title": "蜡笔小新 第2季", "cid": "486f7vrwfxzb9b5", "episodes": 873, "audio": "Mandarin dub", "verified": true },
+    { "title": "蜡笔小新 第3季", "cid": "xr3wcifqf4c3ghv", "episodes": 156, "audio": "Mandarin dub", "verified": true },
+    { "title": "蜡笔小新 第4季", "cid": "qwzpd184if155sa", "episodes": 156, "audio": "Mandarin dub", "verified": true },
+    { "title": "蜡笔小新 第5季", "cid": "u0oluhum5doxku8", "episodes": 156, "audio": "Mandarin dub", "verified": true },
+    { "title": "蜡笔小新 第6季", "cid": "w1ppt1vtbxcilgv", "episodes": 156, "audio": "Mandarin dub", "verified": true },
+    { "title": "蜡笔小新 第7季", "cid": "mzc002008hw5asj", "episodes": 312, "audio": "Mandarin dub", "verified": true },
+    { "title": "蜡笔小新 第8季", "cid": "mzc002007wvyaqd", "episodes": 84, "audio": "Mandarin dub", "verified": true },
+    { "title": "蜡笔小新剧场版合集", "cid": "bymafsjpccgo4bw", "episodes": 21, "note": "films 1993-2013; later films have their own covers", "verified": true }
+   ],
+   "numberingDrift": "Tencent items are single segments (~8-10 min), and its seasons are dub batches, not JP years. Seasons 1-5 have segment titles only (no numbers, Taiwan-dub style '...哦'); seasons 6-8 have no titles at all (第N话 + duration). Mapping = title matching against zh.wikipedia for 1-5, manual for 6-8.",
+   "missing": "unknown; the dub batches (2373 items in total) do not cover every JP segment",
+   "imdb": [ { "series": "tt0245612", "episodes": 88, "rated": 88, "avgVotes": 15, "note": "English-dub entry only; no usable JP per-episode ratings" } ],
+   "zhTitles": "zh.wikipedia 蠟筆小新動畫集數列表 (1992年—2001年 / 2002年—2011年 / 2012年—2021年 / 2022年 - ); Tencent season 1-5 segment titles."
+  },
+  {
+   "id": "inuyasha",
+   "nameZh": "犬夜叉",
+   "jpEpisodes": { "tv": 167, "finalAct": 26 },
+   "tencent": null,
+   "provider": "bilibili",
+   "albums": [
+    { "part": "tv", "title": "犬夜叉", "url": "https://www.bilibili.com/bangumi/play/ss28324", "seasonId": 28324, "mediaId": 28222083, "episodes": 167, "audio": "ja + zh subs", "access": "currently 限时免费, normally 大会员; area_limit: mainland only", "verified": true },
+    { "part": "finalAct", "title": "犬夜叉 完结篇", "url": "https://www.bilibili.com/bangumi/play/ss4687", "seasonId": 4687, "mediaId": 28223352, "episodes": 26, "audio": "ja + zh subs", "access": "same as TV", "verified": true }
+   ],
+   "numberingDrift": "none: 1:1. ep_ids ep289986-ep290152 (TV) and ep289960-ep289985 (Final Act), in order.",
+   "missing": "none",
+   "imdb": [ { "part": "tv", "series": "tt0290223", "episodes": 167, "rated": 167, "avgVotes": 139 }, { "part": "finalAct", "series": "tt1534184", "episodes": 26, "rated": 26 } ],
+   "zhTitles": "Bilibili long_title (mainland); zh.wikipedia 犬夜叉 各话标题 section; Moegirl."
+  },
+  {
+   "id": "kirby",
+   "nameZh": "星之卡比",
+   "jpEpisodes": 100,
+   "tencent": null,
+   "provider": "bilibili",
+   "albums": [
+    { "title": "星之卡比", "url": "https://www.bilibili.com/bangumi/play/ss2102", "seasonId": 2102, "mediaId": 2102, "episodes": 100, "audio": "ja + zh subs", "access": "API shows free; one snippet says 大会员专享. area_limit: probably mainland only", "verified": true }
+   ],
+   "numberingDrift": "none: 1:1, ep_id = 45781 + n (check against the API).",
+   "missing": "none",
+   "imdb": [ { "series": "tt0338621", "episodes": 100, "rated": 70, "avgVotes": 14 } ],
+   "zhTitles": "Bilibili long_title; zh.wikipedia 星之卡比 (動畫) 中文標題 (near-identical)."
+  },
+  {
+   "id": "yokai-watch",
+   "nameZh": "妖怪手表 (2014)",
+   "jpEpisodes": 214,
+   "tencent": null,
+   "provider": "youku + mango (partial)",
+   "albums": [
+    { "part": "s1", "title": "妖怪手表 第一季", "provider": "youku", "showId": "ab2d79f86dd011e3b8b7", "episodes": 42, "verified": false, "note": "42集全, fewer than JP" },
+    { "part": "s2", "title": "妖怪手表 第二季", "provider": "mango", "url": "https://www.mgtv.com/b/328223/5036022.html", "access": "付费播放", "verified": false }
+   ],
+   "numberingDrift": "large: JP 214 vs the Taiwan release 169 (S1 1-49, S2 50-117, S3 118-169); mainland albums are partial. Bilibili ss38366 and iQIYI v_19rqw9ump4 are the 2021 妖怪手表♪ series, NOT 2014.",
+   "missing": "most of the series; no complete mainland album",
+   "imdb": [ { "series": "tt4523640", "episodes": 102, "rated": 102, "avgVotes": 14, "note": "English-dub numbering (3 seasons), not JP" } ],
+   "zhTitles": "zh.wikipedia 妖怪手表 (动画) 各集内容 table (JP + Chinese titles).",
+   "verdict": "weakest source; postpone or link the partial albums only"
+  },
+  {
+   "id": "one-piece",
+   "nameZh": "海贼王 / 航海王",
+   "jpEpisodes": "about 1180 (on break until 2027)",
+   "tencent": null,
+   "provider": "iqiyi",
+   "albums": [
+    { "title": "航海王", "url": "https://www.iqiyi.com/a_19rrhb3xvl.html", "episodes": 1180, "audio": "ja + zh subs (presumed)", "access": "newest episodes VIP (dated snippet); page says some episodes are unavailable for copyright reasons", "verified": true }
+   ],
+   "numberingDrift": "expected 1:1 with JP (iQ.com pages use JP numbers); specials 291/292/303/336 are in the main numbering. Ignore a_19rrh8ngb1 (Taiwan feed, up to 1007).",
+   "missing": "unknown gaps (部分剧集暂时无法观看); check with avlistinfo before filling",
+   "imdb": [ { "series": "tt0388629", "episodes": 1201, "rated": 1201, "avgVotes": 3878, "note": "absolute JP numbering in season 1 (1-1180)" } ],
+   "zhTitles": "zh.wikipedia ONE PIECE動畫集數列表 (titles follow iQIYI unless replaced by Taiwan versions)."
+  },
+  {
+   "id": "naruto",
+   "nameZh": "火影忍者 / 疾风传",
+   "jpEpisodes": { "naruto": 220, "shippuden": 500 },
+   "tencent": "mzc00200nc1cbum",
+   "provider": "tencent",
+   "albums": [
+    { "title": "火影忍者疾风传[日语版]", "cid": "mzc00200nc1cbum", "episodes": 720, "audio": "ja + zh subs", "access": "VIP", "verified": true }
+   ],
+   "numberingDrift": "one album for both series: Tencent 1-220 = Naruto 1-220, Tencent 221-720 = Shippuden 1-500 (Tencent N = Shippuden N-220). Checked: ep1 漩涡鸣人！拜见！, ep696 = Shippuden 476.",
+   "missing": "none",
+   "imdb": [ { "part": "naruto", "series": "tt0409591", "episodes": 220, "rated": 220, "avgVotes": 1456 }, { "part": "shippuden", "series": "tt0988824", "episodes": 501, "rated": 501, "avgVotes": 1184 } ],
+   "zhTitles": "zh.wikipedia 火影忍者動畫集數列表 and 火影忍者疾風傳動畫集數列表 (前期)/(後期); Baidu Baike 火影忍者疾风传.",
+   "movies": "Tencent single-film covers, e.g. 0cmnizwer4f3ikb 羁绊, mzc00200grcegj5 火之意志的继承者, mzc00200yvc8oug 终章, jwrzn5nsjx8g0vv 博人传"
+  },
+  {
+   "id": "bleach",
+   "nameZh": "死神 / 境·界",
+   "jpEpisodes": { "bleach": 366, "tybw": "40 in 3 cours + part 4 (2026)" },
+   "tencent": null,
+   "provider": "youku",
+   "albums": [
+    { "part": "bleach", "title": "BLEACH 境·界", "url": "https://v.youku.com/v_nextstage/id_e1f23322845b11e5b692.html", "showId": "e1f23322845b11e5b692", "episodes": 366, "audio": "ja + zh subs (presumed)", "access": "独播; members only per snippet", "verified": true },
+    { "part": "tybw-1", "title": "境界 新篇章 第一季", "showId": "dfaa4222433e4bcab500", "episodes": 13, "jp": "1-13", "verified": true },
+    { "part": "tybw-2", "title": "境界 新篇章 诀别谭篇", "showId": "dadbc073781a40d5a264", "episodes": 13, "jp": "14-26", "verified": false },
+    { "part": "tybw-3", "title": "境界 新篇章 相克谭篇", "showId": "cadf0eeca540465d9df2", "episodes": 14, "jp": "27-40", "verified": true }
+   ],
+   "numberingDrift": "Bleach 1:1. TYBW is one album per cour, each numbered from 1. Ignore Youku's arc-cut repackages (尸魂界拯救篇 43话 etc.) and Bilibili ss43281 (HK/Macau/Taiwan only).",
+   "missing": "TYBW part 4 (祸进谭, July 2026) not on Youku yet (暂无片源)",
+   "imdb": [ { "part": "bleach", "series": "tt0434665", "episodes": 369, "rated": 369, "avgVotes": 1247, "note": "366 + 3 unnumbered specials" }, { "part": "tybw", "series": "tt14986406", "episodes": 51, "rated": 51, "avgVotes": 26756 } ],
+   "zhTitles": "zh.wikipedia 死神集数列表 and BLEACH 千年血战篇."
+  }
+ ]
+}
