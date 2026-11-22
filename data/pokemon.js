@@ -1,6 +1,6 @@
 window.GUIDES = window.GUIDES || {};
 window.GUIDES["pokemon"] = {
- "generated": "2026-11-22T00:34:51.765Z",
+ "generated": "2026-11-22T02:59:20.810Z",
  "show": {
   "id": "pokemon",
   "nameZh": "宝可梦",

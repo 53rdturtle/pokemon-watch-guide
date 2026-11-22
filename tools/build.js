@@ -79,7 +79,7 @@ function buildShow(show) {
     if (id == null) return null;
     if (!show.stars) throw new Error(`${where} has a star but ${show.id} has no star sprites`);
     if (!starNames[id]) throw new Error(`No Chinese name for star #${id} in ${show.stars.names}`);
-    if (!exists(`${show.stars.sprites}/${id}.png`)) throw new Error(`Missing sprite ${show.stars.sprites}/${id}.png`);
+    if (!exists(`${show.stars.sprites}/${id}.png`)) throw new Error(`Missing sprite ${show.stars.sprites}/${id}.png (run node tools/fetch-sprites.js)`);
     return { dex: id, name: starNames[id] };
   };
   // Optional 4th editorial field: tags from the show's vocabulary (Pokémon: moods for picking episodes by taste regardless of rating).
