@@ -39,15 +39,18 @@
 index.html                 页面（筛选器；“看到这里”书签保存在 localStorage；可导出/导入）
 manifest.webmanifest       添加到主屏幕用的 App 信息
 icons/                     由 tools/make-icons.js 生成
-data/guide.js              自动生成，请勿手动编辑
-editorial/<season>.json    每一季一个文件（无印：关都、橘子群岛、城都之旅、城都联盟冠军、大师之旅；超世代：advanced、advanced-challenge、advanced-battle、battle-frontier），按日本原版集数（无印EP、超世代AG，各自从1数起）记录的 [评分, 简介, 本集明星宝可梦的全国图鉴编号, 可选的可爱/搞笑标签]，以及额外条目（游戏/电影/事件，可选 star 字段）
+data/<show>.js             每部动画一个数据文件（宝可梦：data/pokemon.js），自动生成，请勿手动编辑；页面按需加载，index.html 里内嵌的清单（<script id="shows">）记录每个文件的哈希
+data/guide.js              旧版单文件的空占位，让还在用旧页面的主屏幕 App 能自动刷新到新版
+editorial/<show>/<season>.json  每一季一个文件（无印：关都、橘子群岛、城都之旅、城都联盟冠军、大师之旅；超世代：advanced、advanced-challenge、advanced-battle、battle-frontier），按日本原版集数（无印EP、超世代AG，各自从1数起）记录的 [评分, 简介, 本集明星宝可梦的全国图鉴编号, 可选的可爱/搞笑标签]，以及额外条目（游戏/电影/事件，可选 star 字段）
 assets/sprites/<编号>.png  本集明星宝可梦的像素图（火红/叶绿版精灵图，来自 PokeAPI/sprites）
-sources/                   从 IMDb、维基百科和腾讯抓取的原始数据（wikipedia-<season>.json 每季一个；zh-titles-、imdb-、tencent-<系列>.json 每个系列一个：original-series、advanced-generation）
-tools/build.js             将 sources 和 editorial 合并生成 data/guide.js（系列和季的列表在文件开头的 SERIES）
+sources/<show>/            从 IMDb、维基百科和腾讯抓取的原始数据（wikipedia-<season>.json 每季一个；zh-titles-、imdb-、tencent-<系列>.json 每个系列一个：original-series、advanced-generation）
+sources/pokemon-names-zh.json  明星宝可梦的中文名
+tools/build.js             将 sources 和 editorial 合并生成 data/<show>.js（动画 → 系列 → 季的列表在文件开头的 SHOWS：每部动画可选的明星像素图、自己的标签词表；每个系列的视频链接来源，默认腾讯，没有专辑时为 null）
+tools/compare-guide.js     比较两次构建的 rows/series 是否完全相同（重构 build.js 时用）
 tools/fetch-tencent-episodes.js   列出腾讯某个专辑（cover）的分集 vid
 ```
 
-修改 `editorial/` 或 `sources/` 后需要重新构建：
+修改 `editorial/` 或 `sources/` 后需要重新构建（会按动画分别打印评分比例）：
 
 ```bash
 node tools/build.js

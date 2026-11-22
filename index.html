@@ -176,7 +176,7 @@
 </head>
 <body>
 <header>
-  <h1>宝可梦观看指南 <small id="seriesTitle"></small></h1>
+  <h1><span id="showTitle">宝可梦观看指南</span> <small id="seriesTitle"></small></h1>
   <div class="controls">
     <div class="seg" id="minRating">
       <button data-v="0" class="on">全部</button><button data-v="3">3分以上 看一半</button><button data-v="4">4分以上 推荐</button><button data-v="5">5分 必看</button>
@@ -212,251 +212,263 @@
   </details>
   <div id="list"></div>
 </main>
-<script src="data/guide.js?v=56d13ebe0b"></script>
+<script id="shows">window.SHOWS = [{"id":"pokemon","nameZh":"宝可梦","v":"4362bb3832"}];</script>
 <script>
-  const G = window.GUIDE;
-  const PROGRESS_KEY = "pokemon-guide-progress";
-  const OLD_WATCH_KEY = "pokemon-guide-watched";
-  const FAV_KEY = "pokemon-guide-favorites";
-  const state = { min: 0, mood: "", extras: true, hideWatched: false, onlyFav: false, q: "" };
-  const LABEL = { game: "游戏", movie: "电影", special: "特别篇", event: "事件" };
-  const MOOD = { cute: "可爱", comedy: "搞笑" };
-  const RLABEL = { 5: "必看", 4: "推荐", 3: "可看", 2: "可跳过", 1: "跳过" };
+  // One data file per show (data/<show>.js), loaded on demand. tools/build.js stamps each one's content hash
+  // into the manifest above so browsers never pair a cached old data file with a newer page.
+  const SHOW = SHOWS.find(s => s.id === localStorage.getItem("guide-show")) || SHOWS[0];
+  const dataScript = Object.assign(document.createElement("script"), { src: `data/${SHOW.id}.js?v=${SHOW.v}` });
+  dataScript.onload = () => start(window.GUIDES[SHOW.id]);
+  document.head.append(dataScript);
 
-  // Header: one "<series> <first>–<last>" span per anime series, e.g. "无印 EP001–276 · 超世代 AG001–192".
-  const GROUPS = [...new Set(G.series.map(s => s.group))].map(name => G.series.filter(s => s.group === name));
-  document.getElementById("seriesTitle").textContent = GROUPS.map(g => `${g[0].group} ${g[0].from}–${g.at(-1).to.replace(/^\D+/, "")}`).join(" · ");
-  document.getElementById("tencentNote").textContent = G.series.map(s => s.tencentNote).filter(Boolean).join(" ");
+  function start(G) {
+    const PROGRESS_KEY = `${SHOW.id}-guide-progress`;
+    const OLD_WATCH_KEY = `${SHOW.id}-guide-watched`;
+    const FAV_KEY = `${SHOW.id}-guide-favorites`;
+    const state = { min: 0, mood: "", extras: true, hideWatched: false, onlyFav: false, q: "" };
+    const LABEL = { game: "游戏", movie: "电影", special: "特别篇", event: "事件" };
+    const MOOD = G.show.tags;
+    // Streaming link per series ("tencent", or null when the series has no album); extras link to Tencent.
+    const LINK = { tencent: "腾讯视频" };
+    const linkOf = r => r.type === "episode" ? G.groups.find(g => g.name === G.series.find(s => s.id === r.series).group).link : "tencent";
+    const RLABEL = { 5: "必看", 4: "推荐", 3: "可看", 2: "可跳过", 1: "跳过" };
 
-  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const keyOf = r => r.type === "episode" ? `${r.series}:${r.jp}` : `${r.type}:${r.date}:${r.title}`;
+    document.getElementById("showTitle").textContent = `${G.show.nameZh}观看指南`;
+    // Header: one "<series> <first>–<last>" span per anime series, e.g. "无印 EP001–276 · 超世代 AG001–192".
+    const GROUPS = [...new Set(G.series.map(s => s.group))].map(name => G.series.filter(s => s.group === name));
+    document.getElementById("seriesTitle").textContent = GROUPS.map(g => `${g[0].group} ${g[0].from}–${g.at(-1).to.replace(/^\D+/, "")}`).join(" · ");
+    document.getElementById("tencentNote").textContent = G.series.map(s => s.tencentNote).filter(Boolean).join(" ");
 
-  // Progress is a single bookmark: the key of the last watched row. Every row at or before it (timeline order) is watched.
-  const indexOf = new Map(G.rows.map((r, i) => [keyOf(r), i]));
-  if (localStorage.getItem(PROGRESS_KEY) == null && localStorage.getItem(OLD_WATCH_KEY)) {
-    const old = new Set(JSON.parse(localStorage.getItem(OLD_WATCH_KEY)));
-    const last = Math.max(-1, ...G.rows.map((r, i) => r.type === "episode" && old.has(keyOf(r)) ? i : -1));
-    if (last >= 0) localStorage.setItem(PROGRESS_KEY, keyOf(G.rows[last]));
-    localStorage.removeItem(OLD_WATCH_KEY);
-  }
-  let progress = indexOf.get(localStorage.getItem(PROGRESS_KEY)) ?? -1;
-  const isWatched = i => i <= progress;
-  function setProgress(i) {
-    progress = i;
-    i >= 0 ? localStorage.setItem(PROGRESS_KEY, keyOf(G.rows[i])) : localStorage.removeItem(PROGRESS_KEY);
-    render();
-  }
-  // Favorites: a set of row keys, independent of the bookmark.
-  let favs = new Set(JSON.parse(localStorage.getItem(FAV_KEY) || "[]"));
-  function setFavs(next) {
-    favs = new Set([...next].filter(k => indexOf.has(k)));
-    favs.size ? localStorage.setItem(FAV_KEY, JSON.stringify([...favs])) : localStorage.removeItem(FAV_KEY);
-    render();
-  }
-  // Game releases and real-world events are timeline context, not something to watch: no ▶ and never "next".
-  const watchable = r => r.type === "episode" || r.type === "movie" || r.type === "special";
-  // Broadcast breaks: consecutive episodes more than 45 days apart (e.g. the 1997–98 hiatus). `at` is the row index after the break.
-  const GAPS = [];
-  G.rows.reduce((last, r, i) => {
-    if (r.type !== "episode") return last;
-    if (last) {
-      const days = (new Date(r.date) - new Date(last.date)) / 864e5;
-      if (days > 45) GAPS.push({ at: G.rows.findIndex((x, j) => j > G.rows.indexOf(last) && x.date > last.date), months: Math.round(days / 30.44), from: last.date.slice(0, 7), to: r.date.slice(0, 7) });
+    const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    const keyOf = r => r.type === "episode" ? `${r.series}:${r.jp}` : `${r.type}:${r.date}:${r.title}`;
+
+    // Progress is a single bookmark: the key of the last watched row. Every row at or before it (timeline order) is watched.
+    const indexOf = new Map(G.rows.map((r, i) => [keyOf(r), i]));
+    if (localStorage.getItem(PROGRESS_KEY) == null && localStorage.getItem(OLD_WATCH_KEY)) {
+      const old = new Set(JSON.parse(localStorage.getItem(OLD_WATCH_KEY)));
+      const last = Math.max(-1, ...G.rows.map((r, i) => r.type === "episode" && old.has(keyOf(r)) ? i : -1));
+      if (last >= 0) localStorage.setItem(PROGRESS_KEY, keyOf(G.rows[last]));
+      localStorage.removeItem(OLD_WATCH_KEY);
     }
-    return r;
-  }, null);
-  function yearHeader(y, done) {
-    const all = G.rows.map((r, i) => ({ r, i })).filter(x => x.r.date.startsWith(y));
-    const eps = all.filter(x => x.r.type === "episode"), seen = eps.filter(x => isWatched(x.i)).length;
-    const counts = Object.entries(all.reduce((c, x) => (x.r.type !== "episode" && (c[x.r.type] = (c[x.r.type] || 0) + 1), c), {}))
-      .map(([t, n]) => `${n} ${t === "game" ? "款" : t === "event" ? "件" : "部"}${LABEL[t]}`);
-    const sub = eps.length ? [`${eps.length} 集`, ...counts, `已看 ${seen}/${eps.length}`] : ["动画开播前", ...counts];
-    const bar = eps.length ? `<span class="yp"><i style="width:${(seen / eps.length * 100).toFixed(1)}%"></i></span>` : "";
-    return `<div class="tl-year${done}"><div class="tl"><i class="dot"></i></div><span class="y">${y}</span><span class="ys">${sub.join(" · ")}</span>${bar}</div>`;
-  }
-  // Season banners: shown above the first episode of each season (`at` is that row's index).
-  const SEASONS = G.series.map(s => ({ ...s, at: G.rows.findIndex(r => r.type === "episode" && r.series === s.id) }));
-  function seasonBanner(s) {
-    const eps = G.rows.map((r, i) => ({ r, i })).filter(x => x.r.type === "episode" && x.r.series === s.id);
-    const seen = eps.filter(x => isWatched(x.i)).length, top = eps.filter(x => x.r.rating >= 4).length;
-    const done = isWatched(s.at) ? " done" : "";
-    return `<div class="tl-series${done}"><div class="tl${done}"><i class="dot"></i></div><b>${esc(s.titleZh)}</b><span class="en">${esc(s.title)}</span>
-      <div class="ss">${s.from}–${s.to} · ${eps.length} 集 · 4分以上 ${top} 集 · 已看 ${seen}/${eps.length}</div></div>`;
-  }
-  const epLabel = r => `#${r.tencentNo ?? "—"} (${r.code})`;
-
-  function render() {
-    const q = state.q.trim().toLowerCase();
-    const rows = G.rows.map((r, i) => ({ ...r, i })).filter(r => {
-      const tagged = r.tags.length > 0, context = r.type !== "episode" && r.rating == null && state.extras;
-      if (r.type !== "episode" && !state.extras) return false;
-      if (state.mood === "only" && !tagged && !context) return false;
-      if (state.min && (r.rating ?? 0) < state.min && !context && !(state.mood && tagged)) return false;
-      if (state.hideWatched && isWatched(r.i)) return false;
-      if (state.onlyFav && !favs.has(keyOf(r))) return false;
-      if (q && !`${r.code ?? ""} ${r.title} ${r.titleZh} ${r.summary} ${r.japanese} ${r.star?.name ?? ""}`.toLowerCase().includes(q)) return false;
-      return true;
-    });
-    const nextI = rows.find(r => !isWatched(r.i) && watchable(r))?.i;
-    const html = [];
-    rows.forEach((r, k) => {
-      const prev = rows[k - 1], after = rows[k + 1];
-      const y = r.date.slice(0, 4), m = +r.date.slice(5, 7);
-      const doneTo = x => x && isWatched(x.i) ? " done" : "";
-      const gap = GAPS.find(g => prev && prev.i < g.at && g.at <= r.i);
-      if (gap) html.push(`<div class="tl-gap${doneTo(r)}"><div class="tl"></div>⋯ <b>停播 ${gap.months} 个月</b> · ${gap.from} → ${gap.to}</div>`);
-      if (!prev || prev.date.slice(0, 4) !== y) html.push(yearHeader(y, doneTo(r)));
-      for (const s of SEASONS) if ((prev ? prev.i : -1) < s.at && s.at <= r.i && G.series.length > 1) html.push(seasonBanner(s));
-      const newMonth = !prev || prev.date.slice(0, 7) !== r.date.slice(0, 7);
-      const seg = doneTo(after) || (isWatched(r.i) ? " half" : "");
-      const dotCls = [r.type === "episode" ? (r.rating ? "r" + r.rating : "") : r.type, r.i === progress ? "ball" : "", r.i === nextI ? "next" : ""].join(" ");
-      html.push(`<div class="tl-item"><div class="tl${seg}">${newMonth ? `<span class="mo">${m}月</span>` : ""}<i class="dot ${dotCls}"></i></div>${rowHtml(r)}</div>`);
-    });
-    document.getElementById("list").innerHTML = html.join("");
-    function rowHtml(r) {
-      const isEp = r.type === "episode", w = isWatched(r.i), fav = favs.has(keyOf(r));
-      const star = r.star
-        ? `<div class="star" title="本集明星：${esc(r.star.name)} #${String(r.star.dex).padStart(3, "0")}"><img src="assets/sprites/${r.star.dex}.png" alt="${esc(r.star.name)}" loading="lazy"></div>`
-        : `<div></div>`;
-      const num = isEp
-        ? `<div class="num"><b>${r.tencentNo ?? "—"}</b><span>${r.code}</span></div>`
-        : `<div class="num"><span>${r.date.slice(0, 7)}</span></div>`;
-      const rating = r.rating
-        ? `<div class="rating r${r.rating}">${r.rating}<small>${RLABEL[r.rating]}</small></div>`
-        : `<div></div>`;
-      const imdb = r.imdbUrl
-        ? `<a class="imdb" href="${r.imdbUrl}" target="_blank" rel="noopener">IMDb <b>${r.imdbRating ?? "?"}</b> <span>${r.imdbVotes ? (r.imdbVotes >= 1000 ? (r.imdbVotes / 1000).toFixed(1) + "k" : r.imdbVotes) : ""}</span></a>`
-        : "";
-      const tx = r.tencentUrl
-        ? `<a class="tx" href="${r.tencentUrl}" target="_blank" rel="noopener">▶ 腾讯视频</a>`
-        : (isEp || r.type === "movie" || r.type === "special" ? `<span class="na">腾讯暂无</span>` : "");
-      const favBtn = watchable(r) ? `<button class="fav" title="${fav ? "取消收藏" : "收藏"}">${fav ? "♥ 已收藏" : "♡ 收藏"}</button>` : "";
-      const bare = !r.rating && !tx && !imdb && !favBtn;
-      const cls = [isEp ? "" : "extra " + r.type, bare ? "bare" : "", w ? "watched" : "", fav ? "faved" : "", r.i === progress ? "bookmark" : "", r.i === nextI ? "next" : ""].join(" ");
-      return `<div class="row ${cls}" data-i="${r.i}">
-        ${watchable(r) ? `<button class="mark" title="${r.i === progress ? "书签——点击后退一条" : "看到这里"}">▶</button>` : `<div></div>`}
-        ${star}
-        ${num}
-        <div class="body">
-          <div class="title">${isEp ? "" : `<span class="tag ${r.type}">${LABEL[r.type]}</span>`}${r.tags.map(t => `<span class="mood ${t}">${MOOD[t]}</span>`).join("")}${esc(r.titleZh || r.title)}${r.titleZh ? `<span class="en">${esc(r.title)}</span>` : ""}</div>
-          <div class="summary">${esc(r.summary)}</div>
-          <div class="meta">${r.date}${r.japanese ? " · " + esc(r.japanese) : ""}${r.star ? ` · <span class="starname">★ ${esc(r.star.name)}</span>` : ""}</div>
-        </div>
-        ${rating}
-        <div class="links">${tx}${imdb}${favBtn}</div>
-      </div>`;
+    let progress = indexOf.get(localStorage.getItem(PROGRESS_KEY)) ?? -1;
+    const isWatched = i => i <= progress;
+    function setProgress(i) {
+      progress = i;
+      i >= 0 ? localStorage.setItem(PROGRESS_KEY, keyOf(G.rows[i])) : localStorage.removeItem(PROGRESS_KEY);
+      render();
     }
-    const eps = G.rows.filter(r => r.type === "episode");
-    const ahead = G.rows.filter((r, i) => !isWatched(i) && r.type === "episode");
-    const bar = state.min >= 3 ? state.min : 4; // follow the 3分以上 / 5分 filter; otherwise count 4+
-    const top = eps.filter(r => r.rating >= bar), topAhead = ahead.filter(r => r.rating >= bar);
-    const moodEps = eps.filter(r => r.tags.length), moodAhead = ahead.filter(r => r.tags.length);
-    const lastEp = G.rows.slice(0, progress + 1).reverse().find(r => r.type === "episode");
-    const parts = [
-      lastEp ? `已看到 ${epLabel(lastEp)}` : "尚未开始",
-      ahead[0] ? `下一集：${epLabel(ahead[0])}` : "已全部看完",
-      topAhead[0] && topAhead[0] !== ahead[0] ? `下一集${bar}分${bar < 5 ? "以上" : ""}：${epLabel(topAhead[0])}` : "",
-      `剩余 ${ahead.length}/${eps.length} 集`,
-      `${bar}分${bar < 5 ? "以上" : ""}剩余 ${topAhead.length}/${top.length}`,
-      state.mood ? `可爱/搞笑剩余 ${moodAhead.length}/${moodEps.length}` : "",
-      favs.size ? `收藏 ${favs.size}` : "",
-      `显示 ${rows.length} 条`,
-    ];
-    document.getElementById("stats").textContent = parts.filter(Boolean).join(" · ");
-  }
-
-  document.getElementById("minRating").addEventListener("click", e => {
-    const b = e.target.closest("button"); if (!b) return;
-    state.min = +b.dataset.v;
-    for (const x of e.currentTarget.children) x.classList.toggle("on", x === b);
-    render();
-  });
-  document.getElementById("mood").addEventListener("click", e => {
-    const b = e.target.closest("button"); if (!b) return;
-    state.mood = b.dataset.v;
-    for (const x of e.currentTarget.children) x.classList.toggle("on", x === b);
-    render();
-  });
-  document.getElementById("showExtras").addEventListener("change", e => { state.extras = e.target.checked; render(); });
-  document.getElementById("hideWatched").addEventListener("change", e => { state.hideWatched = e.target.checked; render(); });
-  document.getElementById("onlyFav").addEventListener("change", e => { state.onlyFav = e.target.checked; render(); });
-  document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
-  // iPhone/iPad: Tencent's universal links don't cover /x/cover/ pages, so open the app via its own
-  // URL scheme. No web-page fallback: the app is always installed, and the fallback timer could fire
-  // behind Safari's "Open in 腾讯视频?" prompt and load the web player anyway.
-  const IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
-  function openTencentApp(url) {
-    const m = url.match(/\/x\/cover\/([^/]+)\/([^/.]+)\.html/);
-    if (!m) return false;
-    location.href = `tenvideo2://?action=1&cover_id=${m[1]}&video_id=${m[2]}`;
-    return true;
-  }
-  document.getElementById("list").addEventListener("click", e => {
-    const tx = e.target.closest("a.tx");
-    if (tx) { if (IOS && openTencentApp(tx.href)) e.preventDefault(); return; }
-    if (e.target.classList.contains("fav")) {
-      const k = keyOf(G.rows[+e.target.closest(".row").dataset.i]), next = new Set(favs);
-      next.has(k) ? next.delete(k) : next.add(k);
-      return setFavs(next);
+    // Favorites: a set of row keys, independent of the bookmark.
+    let favs = new Set(JSON.parse(localStorage.getItem(FAV_KEY) || "[]"));
+    function setFavs(next) {
+      favs = new Set([...next].filter(k => indexOf.has(k)));
+      favs.size ? localStorage.setItem(FAV_KEY, JSON.stringify([...favs])) : localStorage.removeItem(FAV_KEY);
+      render();
     }
-    if (!e.target.classList.contains("mark")) return;
-    const i = +e.target.closest(".row").dataset.i;
-    if (i !== progress) return setProgress(i);
-    let j = i - 1; // step back to the previous watchable row so the bookmark never lands on a game/event
-    while (j >= 0 && !watchable(G.rows[j])) j--;
-    setProgress(j);
-  });
-  const jumpNext = behavior => {
-    const el = document.querySelector(".row.next") || [...document.querySelectorAll(".row")].at(-1);
-    el?.scrollIntoView({ behavior, block: "start" });
-  };
-  document.getElementById("jumpNext").addEventListener("click", () => jumpNext("smooth"));
-
-  const backupMsg = document.getElementById("backupMsg");
-  document.getElementById("exportBtn").addEventListener("click", async () => {
-    const name = `pokemon-progress-${new Date().toISOString().slice(0, 10)}.json`;
-    const file = new File([JSON.stringify({ progress: progress >= 0 ? keyOf(G.rows[progress]) : null, favorites: [...favs] })], name, { type: "application/json" });
-    const lastEp = G.rows.slice(0, progress + 1).reverse().find(r => r.type === "episode");
-    const done = `已导出：${lastEp ? "看到 " + epLabel(lastEp) : "尚未开始"} · 收藏 ${favs.size}`;
-    // iOS: the share sheet lets you save to Files / iCloud Drive or AirDrop it.
-    if (navigator.canShare && navigator.canShare({ files: [file] })) {
-      try { await navigator.share({ files: [file] }); backupMsg.textContent = done; } catch {}
-      return;
-    }
-    const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(file), download: name });
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-    backupMsg.textContent = done;
-  });
-
-  document.getElementById("importFile").addEventListener("change", async e => {
-    const f = e.target.files[0]; if (!f) return;
-    e.target.value = "";
-    try {
-      const data = JSON.parse(await f.text());
-      let i;
-      if (data && "progress" in data) i = data.progress == null ? -1 : indexOf.get(data.progress);
-      else if (Array.isArray(data?.watched)) { // old per-episode checklist backup: bookmark its last watched episode
-        const old = new Set(data.watched);
-        i = Math.max(-1, ...G.rows.map((r, j) => r.type === "episode" && old.has(keyOf(r)) ? j : -1));
+    // Game releases and real-world events are timeline context, not something to watch: no ▶ and never "next".
+    const watchable = r => r.type === "episode" || r.type === "movie" || r.type === "special";
+    // Broadcast breaks: consecutive episodes more than 45 days apart (e.g. the 1997–98 hiatus). `at` is the row index after the break.
+    const GAPS = [];
+    G.rows.reduce((last, r, i) => {
+      if (r.type !== "episode") return last;
+      if (last) {
+        const days = (new Date(r.date) - new Date(last.date)) / 864e5;
+        if (days > 45) GAPS.push({ at: G.rows.findIndex((x, j) => j > G.rows.indexOf(last) && x.date > last.date), months: Math.round(days / 30.44), from: last.date.slice(0, 7), to: r.date.slice(0, 7) });
       }
-      if (i === undefined) throw new Error();
-      if (Array.isArray(data.favorites)) setFavs(data.favorites);
-      setProgress(i);
-      const lastEp = G.rows.slice(0, i + 1).reverse().find(r => r.type === "episode");
-      backupMsg.textContent = `已导入：${lastEp ? "看到 " + epLabel(lastEp) : "尚未开始"}${Array.isArray(data.favorites) ? ` · 收藏 ${favs.size}` : ""}`;
-    } catch {
-      backupMsg.textContent = "这不是进度备份文件。";
+      return r;
+    }, null);
+    function yearHeader(y, done) {
+      const all = G.rows.map((r, i) => ({ r, i })).filter(x => x.r.date.startsWith(y));
+      const eps = all.filter(x => x.r.type === "episode"), seen = eps.filter(x => isWatched(x.i)).length;
+      const counts = Object.entries(all.reduce((c, x) => (x.r.type !== "episode" && (c[x.r.type] = (c[x.r.type] || 0) + 1), c), {}))
+        .map(([t, n]) => `${n} ${t === "game" ? "款" : t === "event" ? "件" : "部"}${LABEL[t]}`);
+      const sub = eps.length ? [`${eps.length} 集`, ...counts, `已看 ${seen}/${eps.length}`] : ["动画开播前", ...counts];
+      const bar = eps.length ? `<span class="yp"><i style="width:${(seen / eps.length * 100).toFixed(1)}%"></i></span>` : "";
+      return `<div class="tl-year${done}"><div class="tl"><i class="dot"></i></div><span class="y">${y}</span><span class="ys">${sub.join(" · ")}</span>${bar}</div>`;
     }
-  });
-  render();
-  // Opening the page lands on the next episode to watch (once there's progress to pick up from).
-  history.scrollRestoration = "manual";
-  if (progress >= 0) jumpNext("instant");
+    // Season banners: shown above the first episode of each season (`at` is that row's index).
+    const SEASONS = G.series.map(s => ({ ...s, at: G.rows.findIndex(r => r.type === "episode" && r.series === s.id) }));
+    function seasonBanner(s) {
+      const eps = G.rows.map((r, i) => ({ r, i })).filter(x => x.r.type === "episode" && x.r.series === s.id);
+      const seen = eps.filter(x => isWatched(x.i)).length, top = eps.filter(x => x.r.rating >= 4).length;
+      const done = isWatched(s.at) ? " done" : "";
+      return `<div class="tl-series${done}"><div class="tl${done}"><i class="dot"></i></div><b>${esc(s.titleZh)}</b><span class="en">${esc(s.title)}</span>
+        <div class="ss">${s.from}–${s.to} · ${eps.length} 集 · 4分以上 ${top} 集 · 已看 ${seen}/${eps.length}</div></div>`;
+    }
+    const epLabel = r => `#${r.tencentNo ?? "—"} (${r.code})`;
+
+    function render() {
+      const q = state.q.trim().toLowerCase();
+      const rows = G.rows.map((r, i) => ({ ...r, i })).filter(r => {
+        const tagged = r.tags.length > 0, context = r.type !== "episode" && r.rating == null && state.extras;
+        if (r.type !== "episode" && !state.extras) return false;
+        if (state.mood === "only" && !tagged && !context) return false;
+        if (state.min && (r.rating ?? 0) < state.min && !context && !(state.mood && tagged)) return false;
+        if (state.hideWatched && isWatched(r.i)) return false;
+        if (state.onlyFav && !favs.has(keyOf(r))) return false;
+        if (q && !`${r.code ?? ""} ${r.title} ${r.titleZh} ${r.summary} ${r.japanese} ${r.star?.name ?? ""}`.toLowerCase().includes(q)) return false;
+        return true;
+      });
+      const nextI = rows.find(r => !isWatched(r.i) && watchable(r))?.i;
+      const html = [];
+      rows.forEach((r, k) => {
+        const prev = rows[k - 1], after = rows[k + 1];
+        const y = r.date.slice(0, 4), m = +r.date.slice(5, 7);
+        const doneTo = x => x && isWatched(x.i) ? " done" : "";
+        const gap = GAPS.find(g => prev && prev.i < g.at && g.at <= r.i);
+        if (gap) html.push(`<div class="tl-gap${doneTo(r)}"><div class="tl"></div>⋯ <b>停播 ${gap.months} 个月</b> · ${gap.from} → ${gap.to}</div>`);
+        if (!prev || prev.date.slice(0, 4) !== y) html.push(yearHeader(y, doneTo(r)));
+        for (const s of SEASONS) if ((prev ? prev.i : -1) < s.at && s.at <= r.i && G.series.length > 1) html.push(seasonBanner(s));
+        const newMonth = !prev || prev.date.slice(0, 7) !== r.date.slice(0, 7);
+        const seg = doneTo(after) || (isWatched(r.i) ? " half" : "");
+        const dotCls = [r.type === "episode" ? (r.rating ? "r" + r.rating : "") : r.type, r.i === progress ? "ball" : "", r.i === nextI ? "next" : ""].join(" ");
+        html.push(`<div class="tl-item"><div class="tl${seg}">${newMonth ? `<span class="mo">${m}月</span>` : ""}<i class="dot ${dotCls}"></i></div>${rowHtml(r)}</div>`);
+      });
+      document.getElementById("list").innerHTML = html.join("");
+      function rowHtml(r) {
+        const isEp = r.type === "episode", w = isWatched(r.i), fav = favs.has(keyOf(r));
+        const star = r.star
+          ? `<div class="star" title="本集明星：${esc(r.star.name)} #${String(r.star.dex).padStart(3, "0")}"><img src="${G.show.sprites}/${r.star.dex}.png" alt="${esc(r.star.name)}" loading="lazy"></div>`
+          : `<div></div>`;
+        const num = isEp
+          ? `<div class="num"><b>${r.tencentNo ?? "—"}</b><span>${r.code}</span></div>`
+          : `<div class="num"><span>${r.date.slice(0, 7)}</span></div>`;
+        const rating = r.rating
+          ? `<div class="rating r${r.rating}">${r.rating}<small>${RLABEL[r.rating]}</small></div>`
+          : `<div></div>`;
+        const imdb = r.imdbUrl
+          ? `<a class="imdb" href="${r.imdbUrl}" target="_blank" rel="noopener">IMDb <b>${r.imdbRating ?? "?"}</b> <span>${r.imdbVotes ? (r.imdbVotes >= 1000 ? (r.imdbVotes / 1000).toFixed(1) + "k" : r.imdbVotes) : ""}</span></a>`
+          : "";
+        const tx = r.tencentUrl
+          ? `<a class="tx" href="${r.tencentUrl}" target="_blank" rel="noopener">▶ ${LINK[linkOf(r)]}</a>`
+          : (watchable(r) && linkOf(r) ? `<span class="na">${LINK[linkOf(r)].slice(0, 2)}暂无</span>` : "");
+        const favBtn = watchable(r) ? `<button class="fav" title="${fav ? "取消收藏" : "收藏"}">${fav ? "♥ 已收藏" : "♡ 收藏"}</button>` : "";
+        const bare = !r.rating && !tx && !imdb && !favBtn;
+        const cls = [isEp ? "" : "extra " + r.type, bare ? "bare" : "", w ? "watched" : "", fav ? "faved" : "", r.i === progress ? "bookmark" : "", r.i === nextI ? "next" : ""].join(" ");
+        return `<div class="row ${cls}" data-i="${r.i}">
+          ${watchable(r) ? `<button class="mark" title="${r.i === progress ? "书签——点击后退一条" : "看到这里"}">▶</button>` : `<div></div>`}
+          ${star}
+          ${num}
+          <div class="body">
+            <div class="title">${isEp ? "" : `<span class="tag ${r.type}">${LABEL[r.type]}</span>`}${r.tags.map(t => `<span class="mood ${t}">${MOOD[t]}</span>`).join("")}${esc(r.titleZh || r.title)}${r.titleZh ? `<span class="en">${esc(r.title)}</span>` : ""}</div>
+            <div class="summary">${esc(r.summary)}</div>
+            <div class="meta">${r.date}${r.japanese ? " · " + esc(r.japanese) : ""}${r.star ? ` · <span class="starname">★ ${esc(r.star.name)}</span>` : ""}</div>
+          </div>
+          ${rating}
+          <div class="links">${tx}${imdb}${favBtn}</div>
+        </div>`;
+      }
+      const eps = G.rows.filter(r => r.type === "episode");
+      const ahead = G.rows.filter((r, i) => !isWatched(i) && r.type === "episode");
+      const bar = state.min >= 3 ? state.min : 4; // follow the 3分以上 / 5分 filter; otherwise count 4+
+      const top = eps.filter(r => r.rating >= bar), topAhead = ahead.filter(r => r.rating >= bar);
+      const moodEps = eps.filter(r => r.tags.length), moodAhead = ahead.filter(r => r.tags.length);
+      const lastEp = G.rows.slice(0, progress + 1).reverse().find(r => r.type === "episode");
+      const parts = [
+        lastEp ? `已看到 ${epLabel(lastEp)}` : "尚未开始",
+        ahead[0] ? `下一集：${epLabel(ahead[0])}` : "已全部看完",
+        topAhead[0] && topAhead[0] !== ahead[0] ? `下一集${bar}分${bar < 5 ? "以上" : ""}：${epLabel(topAhead[0])}` : "",
+        `剩余 ${ahead.length}/${eps.length} 集`,
+        `${bar}分${bar < 5 ? "以上" : ""}剩余 ${topAhead.length}/${top.length}`,
+        state.mood ? `可爱/搞笑剩余 ${moodAhead.length}/${moodEps.length}` : "",
+        favs.size ? `收藏 ${favs.size}` : "",
+        `显示 ${rows.length} 条`,
+      ];
+      document.getElementById("stats").textContent = parts.filter(Boolean).join(" · ");
+    }
+
+    document.getElementById("minRating").addEventListener("click", e => {
+      const b = e.target.closest("button"); if (!b) return;
+      state.min = +b.dataset.v;
+      for (const x of e.currentTarget.children) x.classList.toggle("on", x === b);
+      render();
+    });
+    document.getElementById("mood").addEventListener("click", e => {
+      const b = e.target.closest("button"); if (!b) return;
+      state.mood = b.dataset.v;
+      for (const x of e.currentTarget.children) x.classList.toggle("on", x === b);
+      render();
+    });
+    document.getElementById("showExtras").addEventListener("change", e => { state.extras = e.target.checked; render(); });
+    document.getElementById("hideWatched").addEventListener("change", e => { state.hideWatched = e.target.checked; render(); });
+    document.getElementById("onlyFav").addEventListener("change", e => { state.onlyFav = e.target.checked; render(); });
+    document.getElementById("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+    // iPhone/iPad: Tencent's universal links don't cover /x/cover/ pages, so open the app via its own
+    // URL scheme. No web-page fallback: the app is always installed, and the fallback timer could fire
+    // behind Safari's "Open in 腾讯视频?" prompt and load the web player anyway.
+    const IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+    function openTencentApp(url) {
+      const m = url.match(/\/x\/cover\/([^/]+)\/([^/.]+)\.html/);
+      if (!m) return false;
+      location.href = `tenvideo2://?action=1&cover_id=${m[1]}&video_id=${m[2]}`;
+      return true;
+    }
+    document.getElementById("list").addEventListener("click", e => {
+      const tx = e.target.closest("a.tx");
+      if (tx) { if (IOS && openTencentApp(tx.href)) e.preventDefault(); return; }
+      if (e.target.classList.contains("fav")) {
+        const k = keyOf(G.rows[+e.target.closest(".row").dataset.i]), next = new Set(favs);
+        next.has(k) ? next.delete(k) : next.add(k);
+        return setFavs(next);
+      }
+      if (!e.target.classList.contains("mark")) return;
+      const i = +e.target.closest(".row").dataset.i;
+      if (i !== progress) return setProgress(i);
+      let j = i - 1; // step back to the previous watchable row so the bookmark never lands on a game/event
+      while (j >= 0 && !watchable(G.rows[j])) j--;
+      setProgress(j);
+    });
+    const jumpNext = behavior => {
+      const el = document.querySelector(".row.next") || [...document.querySelectorAll(".row")].at(-1);
+      el?.scrollIntoView({ behavior, block: "start" });
+    };
+    document.getElementById("jumpNext").addEventListener("click", () => jumpNext("smooth"));
+
+    const backupMsg = document.getElementById("backupMsg");
+    document.getElementById("exportBtn").addEventListener("click", async () => {
+      const name = `${SHOW.id}-progress-${new Date().toISOString().slice(0, 10)}.json`;
+      const file = new File([JSON.stringify({ progress: progress >= 0 ? keyOf(G.rows[progress]) : null, favorites: [...favs] })], name, { type: "application/json" });
+      const lastEp = G.rows.slice(0, progress + 1).reverse().find(r => r.type === "episode");
+      const done = `已导出：${lastEp ? "看到 " + epLabel(lastEp) : "尚未开始"} · 收藏 ${favs.size}`;
+      // iOS: the share sheet lets you save to Files / iCloud Drive or AirDrop it.
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        try { await navigator.share({ files: [file] }); backupMsg.textContent = done; } catch {}
+        return;
+      }
+      const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(file), download: name });
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      backupMsg.textContent = done;
+    });
+
+    document.getElementById("importFile").addEventListener("change", async e => {
+      const f = e.target.files[0]; if (!f) return;
+      e.target.value = "";
+      try {
+        const data = JSON.parse(await f.text());
+        let i;
+        if (data && "progress" in data) i = data.progress == null ? -1 : indexOf.get(data.progress);
+        else if (Array.isArray(data?.watched)) { // old per-episode checklist backup: bookmark its last watched episode
+          const old = new Set(data.watched);
+          i = Math.max(-1, ...G.rows.map((r, j) => r.type === "episode" && old.has(keyOf(r)) ? j : -1));
+        }
+        if (i === undefined) throw new Error();
+        if (Array.isArray(data.favorites)) setFavs(data.favorites);
+        setProgress(i);
+        const lastEp = G.rows.slice(0, i + 1).reverse().find(r => r.type === "episode");
+        backupMsg.textContent = `已导入：${lastEp ? "看到 " + epLabel(lastEp) : "尚未开始"}${Array.isArray(data.favorites) ? ` · 收藏 ${favs.size}` : ""}`;
+      } catch {
+        backupMsg.textContent = "这不是进度备份文件。";
+      }
+    });
+    render();
+    // Opening the page lands on the next episode to watch (once there's progress to pick up from).
+    history.scrollRestoration = "manual";
+    if (progress >= 0) jumpNext("instant");
+  }
 
   // Home-screen web apps on iOS keep serving the HTML they first loaded (and resume without reloading),
   // so new versions never show up. On launch and whenever the app comes back to the foreground, fetch the
-  // page from the network and reload if its <style> or this script changed. "reload" also refreshes the HTTP cache.
+  // page from the network and reload if its <style> or inline scripts (including the data manifest) changed. "reload" also refreshes the HTTP cache.
   let lastCheck = 0;
   async function checkForUpdate() {
     if (Date.now() - lastCheck < 60e3) return;
@@ -464,7 +476,7 @@
     try {
       const html = await (await fetch(location.pathname, { cache: "reload" })).text();
       const doc = new DOMParser().parseFromString(html, "text/html");
-      const code = d => [d.querySelector("style")?.textContent, [...d.querySelectorAll("script:not([src])")].at(-1)?.textContent].join("\n");
+      const code = d => [d.querySelector("style")?.textContent, ...[...d.querySelectorAll("script:not([src])")].map(x => x.textContent)].join("\n");
       const fresh = code(doc);
       if (!fresh.includes("checkForUpdate") || fresh === code(document)) return;
       if (sessionStorage.getItem("pokemon-guide-reloaded") === String(fresh.length)) return; // don't loop if the reload came back stale
